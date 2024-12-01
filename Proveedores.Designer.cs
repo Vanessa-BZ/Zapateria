@@ -68,7 +68,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(369, 278);
+            this.button5.Location = new System.Drawing.Point(480, 287);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 28);
@@ -78,7 +78,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(229, 348);
+            this.button4.Location = new System.Drawing.Point(340, 357);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 28);
@@ -89,7 +89,7 @@
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(94, 278);
+            this.button3.Location = new System.Drawing.Point(205, 287);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(111, 28);
@@ -100,7 +100,7 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(229, 278);
+            this.button2.Location = new System.Drawing.Point(340, 287);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
@@ -112,7 +112,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(155, 237);
+            this.label4.Location = new System.Drawing.Point(266, 246);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 17);
@@ -121,7 +121,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(229, 230);
+            this.textBox4.Location = new System.Drawing.Point(340, 239);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(224, 22);
@@ -131,7 +131,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(155, 205);
+            this.label3.Location = new System.Drawing.Point(266, 214);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 17);
@@ -140,7 +140,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(229, 198);
+            this.textBox3.Location = new System.Drawing.Point(340, 207);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(224, 22);
@@ -148,7 +148,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(354, 104);
+            this.button1.Location = new System.Drawing.Point(465, 113);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
@@ -158,7 +158,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(107, 104);
+            this.textBox2.Location = new System.Drawing.Point(218, 113);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(237, 22);
@@ -168,7 +168,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(74, 170);
+            this.label2.Location = new System.Drawing.Point(185, 179);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(151, 17);
@@ -177,7 +177,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(229, 166);
+            this.textBox1.Location = new System.Drawing.Point(340, 175);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(224, 22);
@@ -192,7 +192,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(729, 46);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Bienvenido a la ventana de Proovedores";
+            this.label5.Text = "Bienvenido a la ventana de Proveedores";
             // 
             // Proveedores
             // 

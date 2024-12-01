@@ -67,7 +67,7 @@ namespace ConexionSQL
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-        private void AbrirFormularioZapatos(Form FormularioZapatos)
+       /* private void AbrirFormularioZapatos(Form FormularioZapatos)
         {
             if (FormularioZapatosActual != null)
             {
@@ -82,7 +82,7 @@ namespace ConexionSQL
             FormularioZapatos.BringToFront();
             FormularioZapatos.Show();
 
-        }
+        }*/
        
     }
 }

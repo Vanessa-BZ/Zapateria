@@ -200,9 +200,9 @@
             this.label5.Location = new System.Drawing.Point(36, 56);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(729, 46);
+            this.label5.Size = new System.Drawing.Size(654, 46);
             this.label5.TabIndex = 26;
-            this.label5.Text = "Bienvenido a la ventana de Proovedores";
+            this.label5.Text = "Bienvenido a la ventana de Zapatos";
             // 
             // Zapatos
             // 

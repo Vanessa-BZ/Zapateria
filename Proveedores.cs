@@ -66,7 +66,7 @@ namespace ConexionSQL
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-        private void AbrirFormularioProveedores(Form FormularioProveedores)
+        /*private void AbrirFormularioProveedores(Form FormularioProveedores)
         {
             if (FormularioProveedoresActual != null)
             {
@@ -81,6 +81,6 @@ namespace ConexionSQL
             FormularioProveedores.BringToFront();
             FormularioProveedores.Show();
 
-        }
+        }*/
     }
 }

@@ -67,7 +67,7 @@ namespace ConexionSQL
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-        private void AbrirFormularioVentas(Form FormularioVentas)
+        /*private void AbrirFormularioVentas(Form FormularioVentas)
         {
             if (FormularioVentasActual != null)
             {
@@ -82,7 +82,7 @@ namespace ConexionSQL
             FormularioVentas.BringToFront();
             FormularioVentas.Show();
 
-        }
+        }*/
       
         private void Reset()
         {
