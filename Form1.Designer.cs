@@ -39,9 +39,9 @@
             this.labelFormularioHijo = new System.Windows.Forms.Label();
             this.iconFormularioHijoActual = new FontAwesome.Sharp.IconPictureBox();
             this.panelEscritorio = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
@@ -61,8 +61,9 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(253, 543);
+            this.panelMenu.Size = new System.Drawing.Size(190, 441);
             this.panelMenu.TabIndex = 0;
             // 
             // btnZapatos
@@ -70,17 +71,18 @@
             this.btnZapatos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnZapatos.FlatAppearance.BorderSize = 0;
             this.btnZapatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnZapatos.Font = new System.Drawing.Font("Morning Rainbow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZapatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnZapatos.ForeColor = System.Drawing.Color.White;
             this.btnZapatos.IconChar = FontAwesome.Sharp.IconChar.ShoePrints;
             this.btnZapatos.IconColor = System.Drawing.Color.White;
             this.btnZapatos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnZapatos.IconSize = 40;
             this.btnZapatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnZapatos.Location = new System.Drawing.Point(0, 380);
+            this.btnZapatos.Location = new System.Drawing.Point(0, 308);
+            this.btnZapatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnZapatos.Name = "btnZapatos";
-            this.btnZapatos.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnZapatos.Size = new System.Drawing.Size(253, 83);
+            this.btnZapatos.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.btnZapatos.Size = new System.Drawing.Size(190, 67);
             this.btnZapatos.TabIndex = 3;
             this.btnZapatos.Text = "Zapatos";
             this.btnZapatos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -93,17 +95,18 @@
             this.btnProveedores.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProveedores.FlatAppearance.BorderSize = 0;
             this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProveedores.Font = new System.Drawing.Font("Morning Rainbow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.Color.White;
             this.btnProveedores.IconChar = FontAwesome.Sharp.IconChar.Truck;
             this.btnProveedores.IconColor = System.Drawing.Color.White;
             this.btnProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProveedores.IconSize = 40;
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(0, 297);
+            this.btnProveedores.Location = new System.Drawing.Point(0, 241);
+            this.btnProveedores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnProveedores.Size = new System.Drawing.Size(253, 83);
+            this.btnProveedores.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.btnProveedores.Size = new System.Drawing.Size(190, 67);
             this.btnProveedores.TabIndex = 2;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -116,17 +119,18 @@
             this.btnVentas.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnVentas.FlatAppearance.BorderSize = 0;
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentas.Font = new System.Drawing.Font("Morning Rainbow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVentas.ForeColor = System.Drawing.Color.White;
             this.btnVentas.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
             this.btnVentas.IconColor = System.Drawing.Color.White;
             this.btnVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnVentas.IconSize = 40;
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 214);
+            this.btnVentas.Location = new System.Drawing.Point(0, 174);
+            this.btnVentas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnVentas.Size = new System.Drawing.Size(253, 83);
+            this.btnVentas.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.btnVentas.Size = new System.Drawing.Size(190, 67);
             this.btnVentas.TabIndex = 1;
             this.btnVentas.Text = "Ventas";
             this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -139,16 +143,18 @@
             this.panelLogo.Controls.Add(this.btnInicio);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(253, 214);
+            this.panelLogo.Size = new System.Drawing.Size(190, 174);
             this.panelLogo.TabIndex = 0;
             // 
             // btnInicio
             // 
             this.btnInicio.Image = global::ConexionSQL.Properties.Resources.image_removebg_preview__21_;
-            this.btnInicio.Location = new System.Drawing.Point(12, 27);
+            this.btnInicio.Location = new System.Drawing.Point(9, 22);
+            this.btnInicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(222, 162);
+            this.btnInicio.Size = new System.Drawing.Size(166, 132);
             this.btnInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnInicio.TabIndex = 0;
             this.btnInicio.TabStop = false;
@@ -161,9 +167,10 @@
             this.panelBarraTitulo.Controls.Add(this.labelFormularioHijo);
             this.panelBarraTitulo.Controls.Add(this.iconFormularioHijoActual);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBarraTitulo.Location = new System.Drawing.Point(253, 0);
+            this.panelBarraTitulo.Location = new System.Drawing.Point(190, 0);
+            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(817, 56);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(616, 46);
             this.panelBarraTitulo.TabIndex = 1;
             this.panelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseDown);
             // 
@@ -173,10 +180,11 @@
             this.exit.IconChar = FontAwesome.Sharp.IconChar.X;
             this.exit.IconColor = System.Drawing.Color.White;
             this.exit.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.exit.IconSize = 33;
-            this.exit.Location = new System.Drawing.Point(772, 12);
+            this.exit.IconSize = 25;
+            this.exit.Location = new System.Drawing.Point(579, 10);
+            this.exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(33, 35);
+            this.exit.Size = new System.Drawing.Size(25, 28);
             this.exit.TabIndex = 2;
             this.exit.TabStop = false;
             this.exit.Click += new System.EventHandler(this.exit_Click);
@@ -186,9 +194,10 @@
             this.labelFormularioHijo.AutoSize = true;
             this.labelFormularioHijo.Font = new System.Drawing.Font("Lucida Bright", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFormularioHijo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelFormularioHijo.Location = new System.Drawing.Point(75, 19);
+            this.labelFormularioHijo.Location = new System.Drawing.Point(56, 15);
+            this.labelFormularioHijo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFormularioHijo.Name = "labelFormularioHijo";
-            this.labelFormularioHijo.Size = new System.Drawing.Size(56, 19);
+            this.labelFormularioHijo.Size = new System.Drawing.Size(44, 16);
             this.labelFormularioHijo.TabIndex = 1;
             this.labelFormularioHijo.Text = "Home";
             this.labelFormularioHijo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelFormularioHijo_MouseDown);
@@ -200,10 +209,11 @@
             this.iconFormularioHijoActual.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
             this.iconFormularioHijoActual.IconColor = System.Drawing.Color.SlateBlue;
             this.iconFormularioHijoActual.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconFormularioHijoActual.IconSize = 35;
-            this.iconFormularioHijoActual.Location = new System.Drawing.Point(28, 12);
+            this.iconFormularioHijoActual.IconSize = 27;
+            this.iconFormularioHijoActual.Location = new System.Drawing.Point(21, 10);
+            this.iconFormularioHijoActual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconFormularioHijoActual.Name = "iconFormularioHijoActual";
-            this.iconFormularioHijoActual.Size = new System.Drawing.Size(36, 35);
+            this.iconFormularioHijoActual.Size = new System.Drawing.Size(27, 28);
             this.iconFormularioHijoActual.TabIndex = 0;
             this.iconFormularioHijoActual.TabStop = false;
             // 
@@ -213,50 +223,55 @@
             this.panelEscritorio.Controls.Add(this.label2);
             this.panelEscritorio.Controls.Add(this.pictureBox1);
             this.panelEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEscritorio.Location = new System.Drawing.Point(253, 56);
+            this.panelEscritorio.Location = new System.Drawing.Point(190, 46);
+            this.panelEscritorio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelEscritorio.Name = "panelEscritorio";
-            this.panelEscritorio.Size = new System.Drawing.Size(817, 487);
+            this.panelEscritorio.Size = new System.Drawing.Size(616, 395);
             this.panelEscritorio.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(253, 56);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(817, 11);
-            this.panel1.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ConexionSQL.Properties.Resources.image_removebg_preview__21_;
-            this.pictureBox1.Location = new System.Drawing.Point(148, 89);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(504, 366);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(321, 42);
+            this.label2.Location = new System.Drawing.Point(241, 34);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 35);
+            this.label2.Size = new System.Drawing.Size(129, 27);
             this.label2.TabIndex = 6;
             this.label2.Text = "Bienvenido";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ConexionSQL.Properties.Resources.image_removebg_preview__21_;
+            this.pictureBox1.Location = new System.Drawing.Point(111, 72);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(378, 297);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(190, 46);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(616, 9);
+            this.panel1.TabIndex = 3;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 543);
+            this.ClientSize = new System.Drawing.Size(802, 441);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelEscritorio);
             this.Controls.Add(this.panelBarraTitulo);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "                                  ";
             this.Load += new System.EventHandler(this.Form1_Load);
