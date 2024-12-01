@@ -55,9 +55,9 @@
             this.panelProveedor.Controls.Add(this.btnPmodificar);
             this.panelProveedor.Controls.Add(this.btnPagregar);
             this.panelProveedor.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelProveedor.Location = new System.Drawing.Point(621, 0);
+            this.panelProveedor.Location = new System.Drawing.Point(687, 0);
             this.panelProveedor.Name = "panelProveedor";
-            this.panelProveedor.Size = new System.Drawing.Size(179, 450);
+            this.panelProveedor.Size = new System.Drawing.Size(113, 450);
             this.panelProveedor.TabIndex = 3;
             // 
             // panel2
@@ -66,21 +66,21 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(179, 100);
+            this.panel2.Size = new System.Drawing.Size(113, 100);
             this.panel2.TabIndex = 8;
             // 
             // btnPeliminar
             // 
             this.btnPeliminar.FlatAppearance.BorderSize = 0;
             this.btnPeliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPeliminar.Font = new System.Drawing.Font("Morning Rainbow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPeliminar.Font = new System.Drawing.Font("Morning Rainbow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPeliminar.ForeColor = System.Drawing.Color.White;
             this.btnPeliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.btnPeliminar.IconColor = System.Drawing.Color.White;
             this.btnPeliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPeliminar.IconSize = 32;
+            this.btnPeliminar.IconSize = 20;
             this.btnPeliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPeliminar.Location = new System.Drawing.Point(9, 314);
+            this.btnPeliminar.Location = new System.Drawing.Point(0, 314);
             this.btnPeliminar.Name = "btnPeliminar";
             this.btnPeliminar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.btnPeliminar.Size = new System.Drawing.Size(163, 96);
@@ -95,14 +95,14 @@
             // 
             this.btnPmodificar.FlatAppearance.BorderSize = 0;
             this.btnPmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPmodificar.Font = new System.Drawing.Font("Morning Rainbow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPmodificar.Font = new System.Drawing.Font("Morning Rainbow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPmodificar.ForeColor = System.Drawing.Color.White;
             this.btnPmodificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
             this.btnPmodificar.IconColor = System.Drawing.Color.White;
             this.btnPmodificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPmodificar.IconSize = 32;
+            this.btnPmodificar.IconSize = 20;
             this.btnPmodificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPmodificar.Location = new System.Drawing.Point(6, 212);
+            this.btnPmodificar.Location = new System.Drawing.Point(0, 212);
             this.btnPmodificar.Name = "btnPmodificar";
             this.btnPmodificar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.btnPmodificar.Size = new System.Drawing.Size(166, 96);
@@ -117,14 +117,14 @@
             // 
             this.btnPagregar.FlatAppearance.BorderSize = 0;
             this.btnPagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagregar.Font = new System.Drawing.Font("Morning Rainbow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagregar.Font = new System.Drawing.Font("Morning Rainbow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagregar.ForeColor = System.Drawing.Color.White;
             this.btnPagregar.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btnPagregar.IconColor = System.Drawing.Color.White;
             this.btnPagregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPagregar.IconSize = 32;
+            this.btnPagregar.IconSize = 20;
             this.btnPagregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPagregar.Location = new System.Drawing.Point(6, 110);
+            this.btnPagregar.Location = new System.Drawing.Point(0, 110);
             this.btnPagregar.Name = "btnPagregar";
             this.btnPagregar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.btnPagregar.Size = new System.Drawing.Size(166, 96);
@@ -140,7 +140,7 @@
             this.panelProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelProveedores.Location = new System.Drawing.Point(0, 0);
             this.panelProveedores.Name = "panelProveedores";
-            this.panelProveedores.Size = new System.Drawing.Size(621, 450);
+            this.panelProveedores.Size = new System.Drawing.Size(687, 450);
             this.panelProveedores.TabIndex = 4;
             // 
             // Proveedores

@@ -30,10 +30,10 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelventas = new System.Windows.Forms.Panel();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnVmodificar = new FontAwesome.Sharp.IconButton();
             this.btnVagregar = new FontAwesome.Sharp.IconButton();
+            this.panelventas = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,9 +45,9 @@
             this.panel1.Controls.Add(this.btnVmodificar);
             this.panel1.Controls.Add(this.btnVagregar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(621, 0);
+            this.panel1.Location = new System.Drawing.Point(674, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(179, 450);
+            this.panel1.Size = new System.Drawing.Size(126, 450);
             this.panel1.TabIndex = 2;
             // 
             // panel2
@@ -55,27 +55,19 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(179, 100);
+            this.panel2.Size = new System.Drawing.Size(126, 100);
             this.panel2.TabIndex = 8;
-            // 
-            // panelventas
-            // 
-            this.panelventas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelventas.Location = new System.Drawing.Point(0, 0);
-            this.panelventas.Name = "panelventas";
-            this.panelventas.Size = new System.Drawing.Size(621, 450);
-            this.panelventas.TabIndex = 2;
             // 
             // btnEliminar
             // 
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Morning Rainbow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Font = new System.Drawing.Font("Morning Rainbow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.btnEliminar.IconColor = System.Drawing.Color.White;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.IconSize = 32;
+            this.btnEliminar.IconSize = 20;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.Location = new System.Drawing.Point(9, 314);
             this.btnEliminar.Name = "btnEliminar";
@@ -92,12 +84,12 @@
             // 
             this.btnVmodificar.FlatAppearance.BorderSize = 0;
             this.btnVmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVmodificar.Font = new System.Drawing.Font("Morning Rainbow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVmodificar.Font = new System.Drawing.Font("Morning Rainbow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVmodificar.ForeColor = System.Drawing.Color.White;
             this.btnVmodificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
             this.btnVmodificar.IconColor = System.Drawing.Color.White;
             this.btnVmodificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVmodificar.IconSize = 32;
+            this.btnVmodificar.IconSize = 20;
             this.btnVmodificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVmodificar.Location = new System.Drawing.Point(6, 212);
             this.btnVmodificar.Name = "btnVmodificar";
@@ -114,12 +106,12 @@
             // 
             this.btnVagregar.FlatAppearance.BorderSize = 0;
             this.btnVagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVagregar.Font = new System.Drawing.Font("Morning Rainbow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVagregar.Font = new System.Drawing.Font("Morning Rainbow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVagregar.ForeColor = System.Drawing.Color.White;
             this.btnVagregar.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btnVagregar.IconColor = System.Drawing.Color.White;
             this.btnVagregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVagregar.IconSize = 32;
+            this.btnVagregar.IconSize = 20;
             this.btnVagregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVagregar.Location = new System.Drawing.Point(6, 110);
             this.btnVagregar.Name = "btnVagregar";
@@ -131,6 +123,14 @@
             this.btnVagregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVagregar.UseVisualStyleBackColor = true;
             this.btnVagregar.Click += new System.EventHandler(this.btnVagregar_Click);
+            // 
+            // panelventas
+            // 
+            this.panelventas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelventas.Location = new System.Drawing.Point(0, 0);
+            this.panelventas.Name = "panelventas";
+            this.panelventas.Size = new System.Drawing.Size(674, 450);
+            this.panelventas.TabIndex = 2;
             // 
             // Ventas
             // 

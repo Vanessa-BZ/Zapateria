@@ -57,9 +57,9 @@
             this.panelProveedor.Controls.Add(this.btnZmodificar);
             this.panelProveedor.Controls.Add(this.btnZagregar);
             this.panelProveedor.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelProveedor.Location = new System.Drawing.Point(621, 0);
+            this.panelProveedor.Location = new System.Drawing.Point(674, 0);
             this.panelProveedor.Name = "panelProveedor";
-            this.panelProveedor.Size = new System.Drawing.Size(179, 450);
+            this.panelProveedor.Size = new System.Drawing.Size(126, 450);
             this.panelProveedor.TabIndex = 4;
             // 
             // panel2
@@ -68,7 +68,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(179, 100);
+            this.panel2.Size = new System.Drawing.Size(126, 100);
             this.panel2.TabIndex = 8;
             // 
             // label2
@@ -83,12 +83,12 @@
             // 
             this.btnZeliminar.FlatAppearance.BorderSize = 0;
             this.btnZeliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnZeliminar.Font = new System.Drawing.Font("Morning Rainbow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZeliminar.Font = new System.Drawing.Font("Morning Rainbow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnZeliminar.ForeColor = System.Drawing.Color.White;
             this.btnZeliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
             this.btnZeliminar.IconColor = System.Drawing.Color.White;
             this.btnZeliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnZeliminar.IconSize = 32;
+            this.btnZeliminar.IconSize = 20;
             this.btnZeliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnZeliminar.Location = new System.Drawing.Point(9, 314);
             this.btnZeliminar.Name = "btnZeliminar";
@@ -105,12 +105,12 @@
             // 
             this.btnZmodificar.FlatAppearance.BorderSize = 0;
             this.btnZmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnZmodificar.Font = new System.Drawing.Font("Morning Rainbow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZmodificar.Font = new System.Drawing.Font("Morning Rainbow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnZmodificar.ForeColor = System.Drawing.Color.White;
             this.btnZmodificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
             this.btnZmodificar.IconColor = System.Drawing.Color.White;
             this.btnZmodificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnZmodificar.IconSize = 32;
+            this.btnZmodificar.IconSize = 20;
             this.btnZmodificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnZmodificar.Location = new System.Drawing.Point(6, 212);
             this.btnZmodificar.Name = "btnZmodificar";
@@ -127,12 +127,12 @@
             // 
             this.btnZagregar.FlatAppearance.BorderSize = 0;
             this.btnZagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnZagregar.Font = new System.Drawing.Font("Morning Rainbow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZagregar.Font = new System.Drawing.Font("Morning Rainbow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnZagregar.ForeColor = System.Drawing.Color.White;
             this.btnZagregar.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btnZagregar.IconColor = System.Drawing.Color.White;
             this.btnZagregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnZagregar.IconSize = 32;
+            this.btnZagregar.IconSize = 20;
             this.btnZagregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnZagregar.Location = new System.Drawing.Point(6, 110);
             this.btnZagregar.Name = "btnZagregar";
@@ -150,7 +150,7 @@
             this.panelZapatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelZapatos.Location = new System.Drawing.Point(0, 0);
             this.panelZapatos.Name = "panelZapatos";
-            this.panelZapatos.Size = new System.Drawing.Size(621, 450);
+            this.panelZapatos.Size = new System.Drawing.Size(674, 450);
             this.panelZapatos.TabIndex = 5;
             // 
             // Zapatos
