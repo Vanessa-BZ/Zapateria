@@ -23,7 +23,6 @@ namespace ConexionSQL
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
-            panelProveedor.Controls.Add(leftBorderBtn);
 
             //form
             this.Text = string.Empty;
@@ -82,23 +81,6 @@ namespace ConexionSQL
             FormularioProveedores.BringToFront();
             FormularioProveedores.Show();
 
-        }
-        private void btnPagregar_Click(object sender, EventArgs e)
-        {
-            ActivateButtom(sender, Color.MediumPurple);
-            AbrirFormularioProveedores(new ProveedoresAgregar());
-        }
-
-        private void btnPmodificar_Click(object sender, EventArgs e)
-        {
-            ActivateButtom(sender, Color.MediumPurple);
-            AbrirFormularioProveedores(new ProveedoresModificar());
-        }
-
-        private void btnPeliminar_Click(object sender, EventArgs e)
-        {
-            ActivateButtom(sender, Color.MediumPurple);
-            AbrirFormularioProveedores(new ProveedoresEliminar());
         }
     }
 }

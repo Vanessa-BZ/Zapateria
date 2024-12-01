@@ -23,7 +23,6 @@ namespace ConexionSQL
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
-            panel1.Controls.Add(leftBorderBtn);
 
             //form
             this.Text = string.Empty;
@@ -84,23 +83,7 @@ namespace ConexionSQL
             FormularioVentas.Show();
 
         }
-        private void btnVagregar_Click(object sender, EventArgs e)
-        {
-            ActivateButtom(sender, Color.Purple);
-            AbrirFormularioVentas(new VentasAgregar());
-        }
-
-        private void btnVmodificar_Click(object sender, EventArgs e)
-        {
-            ActivateButtom(sender, Color.Purple);
-            AbrirFormularioVentas(new VentasModificar());
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            ActivateButtom(sender, Color.Purple);
-            AbrirFormularioVentas(new VentasEliminar());
-        }
+      
         private void Reset()
         {
             DisableButtom();

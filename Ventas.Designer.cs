@@ -28,109 +28,171 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnEliminar = new FontAwesome.Sharp.IconButton();
-            this.btnVmodificar = new FontAwesome.Sharp.IconButton();
-            this.btnVagregar = new FontAwesome.Sharp.IconButton();
             this.panelventas = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panelventas.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnEliminar);
-            this.panel1.Controls.Add(this.btnVmodificar);
-            this.panel1.Controls.Add(this.btnVagregar);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(674, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(126, 450);
-            this.panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(126, 100);
-            this.panel2.TabIndex = 8;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Morning Rainbow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnEliminar.IconColor = System.Drawing.Color.White;
-            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.IconSize = 20;
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(9, 314);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnEliminar.Size = new System.Drawing.Size(163, 96);
-            this.btnEliminar.TabIndex = 7;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnVmodificar
-            // 
-            this.btnVmodificar.FlatAppearance.BorderSize = 0;
-            this.btnVmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVmodificar.Font = new System.Drawing.Font("Morning Rainbow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVmodificar.ForeColor = System.Drawing.Color.White;
-            this.btnVmodificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.btnVmodificar.IconColor = System.Drawing.Color.White;
-            this.btnVmodificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVmodificar.IconSize = 20;
-            this.btnVmodificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVmodificar.Location = new System.Drawing.Point(6, 212);
-            this.btnVmodificar.Name = "btnVmodificar";
-            this.btnVmodificar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnVmodificar.Size = new System.Drawing.Size(166, 96);
-            this.btnVmodificar.TabIndex = 6;
-            this.btnVmodificar.Text = "Modificar";
-            this.btnVmodificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVmodificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVmodificar.UseVisualStyleBackColor = true;
-            this.btnVmodificar.Click += new System.EventHandler(this.btnVmodificar_Click);
-            // 
-            // btnVagregar
-            // 
-            this.btnVagregar.FlatAppearance.BorderSize = 0;
-            this.btnVagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVagregar.Font = new System.Drawing.Font("Morning Rainbow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVagregar.ForeColor = System.Drawing.Color.White;
-            this.btnVagregar.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.btnVagregar.IconColor = System.Drawing.Color.White;
-            this.btnVagregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVagregar.IconSize = 20;
-            this.btnVagregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVagregar.Location = new System.Drawing.Point(6, 110);
-            this.btnVagregar.Name = "btnVagregar";
-            this.btnVagregar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnVagregar.Size = new System.Drawing.Size(166, 96);
-            this.btnVagregar.TabIndex = 5;
-            this.btnVagregar.Text = "Agregar";
-            this.btnVagregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVagregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVagregar.UseVisualStyleBackColor = true;
-            this.btnVagregar.Click += new System.EventHandler(this.btnVagregar_Click);
             // 
             // panelventas
             // 
+            this.panelventas.Controls.Add(this.button5);
+            this.panelventas.Controls.Add(this.button4);
+            this.panelventas.Controls.Add(this.button3);
+            this.panelventas.Controls.Add(this.button2);
+            this.panelventas.Controls.Add(this.label4);
+            this.panelventas.Controls.Add(this.textBox4);
+            this.panelventas.Controls.Add(this.label3);
+            this.panelventas.Controls.Add(this.textBox3);
+            this.panelventas.Controls.Add(this.button1);
+            this.panelventas.Controls.Add(this.textBox2);
+            this.panelventas.Controls.Add(this.label2);
+            this.panelventas.Controls.Add(this.textBox1);
+            this.panelventas.Controls.Add(this.label5);
             this.panelventas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelventas.Location = new System.Drawing.Point(0, 0);
             this.panelventas.Name = "panelventas";
-            this.panelventas.Size = new System.Drawing.Size(674, 450);
+            this.panelventas.Size = new System.Drawing.Size(800, 450);
             this.panelventas.TabIndex = 2;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(363, 296);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 28);
+            this.button5.TabIndex = 38;
+            this.button5.Text = "Agregar";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(223, 366);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(100, 28);
+            this.button4.TabIndex = 37;
+            this.button4.Text = "Guardar";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Enabled = false;
+            this.button3.Location = new System.Drawing.Point(88, 296);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(111, 28);
+            this.button3.TabIndex = 36;
+            this.button3.Text = "Modificar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(223, 296);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 28);
+            this.button2.TabIndex = 35;
+            this.button2.Text = "Eliminar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.Location = new System.Drawing.Point(149, 255);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 17);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Unidades";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(223, 248);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(224, 22);
+            this.textBox4.TabIndex = 33;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(149, 223);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 17);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Precio";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(223, 216);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(224, 22);
+            this.textBox3.TabIndex = 31;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(348, 122);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(101, 122);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(237, 22);
+            this.textBox2.TabIndex = 29;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.Location = new System.Drawing.Point(68, 188);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(151, 17);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Nombre del Proovedor";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(223, 184);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(224, 22);
+            this.textBox1.TabIndex = 27;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(36, 56);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(729, 46);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Bienvenido a la ventana de Proovedores";
             // 
             // Ventas
             // 
@@ -139,20 +201,28 @@
             this.BackColor = System.Drawing.Color.MediumOrchid;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelventas);
-            this.Controls.Add(this.panel1);
             this.Name = "Ventas";
             this.Text = "Agregar";
-            this.panel1.ResumeLayout(false);
+            this.panelventas.ResumeLayout(false);
+            this.panelventas.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton btnEliminar;
-        private FontAwesome.Sharp.IconButton btnVmodificar;
-        private FontAwesome.Sharp.IconButton btnVagregar;
         private System.Windows.Forms.Panel panelventas;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
     }
 }
