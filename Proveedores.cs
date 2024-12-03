@@ -14,7 +14,7 @@ namespace ConexionSQL
 {
     public partial class Proveedores : Form
     {
-        private Form FormularioProveedoresActual;
+        //private Form FormularioProveedoresActual;
         private Panel leftBorderBtn;
         private IconButton currentBtn;
 
@@ -66,21 +66,40 @@ namespace ConexionSQL
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-        /*private void AbrirFormularioProveedores(Form FormularioProveedores)
+        //txt con color al dar clic
+       private void txtEnter(object sender, EventArgs e)
         {
-            if (FormularioProveedoresActual != null)
+            TextBox txt = sender as TextBox;
+            foreach (Control ctrl in pContainer.Controls)
             {
-                FormularioProveedoresActual.Close();
+                if (ctrl is PictureBox
+                    && ctrl.Name == " pb"+txt.Tag.ToString())
+                        {
+                    txt.BackColor = Color.MediumPurple;
+                }
+                if(ctrl is Label &&
+                    ctrl.Name=="lbl"+txt.Tag.ToString())
+                {
+                    ctrl.ForeColor = Color.MediumPurple;
+                }
+               }
+        }
+        private void txtLeave(object sender, EventArgs e)
+        {
+            TextBox txt = sender as TextBox;
+            foreach (Control ctrl in pContainer.Controls)
+            {
+                if (ctrl is PictureBox
+                    && ctrl.Name == " pb" + txt.Tag.ToString())
+                {
+                    txt.BackColor = Color.Black;
+                }
+                if (ctrl is Label &&
+                    ctrl.Name == "lbl" + txt.Tag.ToString())
+                {
+                    ctrl.ForeColor = Color.Black;
+                }
             }
-            FormularioProveedoresActual = FormularioProveedores;
-            FormularioProveedores.TopLevel = false;
-            FormularioProveedores.FormBorderStyle = FormBorderStyle.None;
-            FormularioProveedores.Dock = DockStyle.Fill;
-            panelProveedores.Controls.Add(FormularioProveedores);
-            panelProveedores.Tag = FormularioProveedores;
-            FormularioProveedores.BringToFront();
-            FormularioProveedores.Show();
-
-        }*/
+        }
     }
 }

@@ -28,201 +28,392 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelventas = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panelventas.SuspendLayout();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.lblNombre5 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.pbNombre5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.lblNombre3 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.pbNombre3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.lblNombre2 = new System.Windows.Forms.Label();
+            this.pbNombre6 = new System.Windows.Forms.TextBox();
+            this.pbNombre1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbNombre = new System.Windows.Forms.PictureBox();
+            this.botonRedondeado5 = new BotonRedondeado();
+            this.botonRedondeado4 = new BotonRedondeado();
+            this.botonRedondeado3 = new BotonRedondeado();
+            this.botonRedondeado2 = new BotonRedondeado();
+            this.botonRedondeado1 = new BotonRedondeado();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNombre5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNombre3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNombre1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNombre)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panelventas
-            // 
-            this.panelventas.Controls.Add(this.button5);
-            this.panelventas.Controls.Add(this.button4);
-            this.panelventas.Controls.Add(this.button3);
-            this.panelventas.Controls.Add(this.button2);
-            this.panelventas.Controls.Add(this.label4);
-            this.panelventas.Controls.Add(this.textBox4);
-            this.panelventas.Controls.Add(this.label3);
-            this.panelventas.Controls.Add(this.textBox3);
-            this.panelventas.Controls.Add(this.button1);
-            this.panelventas.Controls.Add(this.textBox2);
-            this.panelventas.Controls.Add(this.label2);
-            this.panelventas.Controls.Add(this.textBox1);
-            this.panelventas.Controls.Add(this.label5);
-            this.panelventas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelventas.Location = new System.Drawing.Point(0, 0);
-            this.panelventas.Name = "panelventas";
-            this.panelventas.Size = new System.Drawing.Size(800, 450);
-            this.panelventas.TabIndex = 2;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(363, 296);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 28);
-            this.button5.TabIndex = 38;
-            this.button5.Text = "Agregar";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(223, 366);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 28);
-            this.button4.TabIndex = 37;
-            this.button4.Text = "Guardar";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(88, 296);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 28);
-            this.button3.TabIndex = 36;
-            this.button3.Text = "Modificar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(223, 296);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 35;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(149, 255);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 17);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Unidades";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(223, 248);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(224, 22);
-            this.textBox4.TabIndex = 33;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(149, 223);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 17);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Precio";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(223, 216);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(224, 22);
-            this.textBox3.TabIndex = 31;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(348, 122);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(101, 122);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(237, 22);
-            this.textBox2.TabIndex = 29;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(68, 188);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 17);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Nombre del Proovedor";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(223, 184);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 22);
-            this.textBox1.TabIndex = 27;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(36, 56);
+            this.label5.Location = new System.Drawing.Point(109, 21);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(635, 46);
-            this.label5.TabIndex = 26;
+            this.label5.TabIndex = 89;
             this.label5.Text = "Bienvenido a la ventana de Ventas";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.MediumOrchid;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(289, 127);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(270, 23);
+            this.textBox1.TabIndex = 95;
+            this.textBox1.Tag = "Nombre";
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.MediumOrchid;
+            this.pictureBox10.Location = new System.Drawing.Point(287, 115);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(272, 40);
+            this.pictureBox10.TabIndex = 96;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.Tag = "Nombre";
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.Black;
+            this.pictureBox11.Location = new System.Drawing.Point(285, 113);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(276, 44);
+            this.pictureBox11.TabIndex = 97;
+            this.pictureBox11.TabStop = false;
+            // 
+            // lblNombre5
+            // 
+            this.lblNombre5.AutoSize = true;
+            this.lblNombre5.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre5.Location = new System.Drawing.Point(567, 312);
+            this.lblNombre5.Name = "lblNombre5";
+            this.lblNombre5.Size = new System.Drawing.Size(48, 29);
+            this.lblNombre5.TabIndex = 94;
+            this.lblNombre5.Tag = "Nombre";
+            this.lblNombre5.Text = "Total";
+            // 
+            // textBox9
+            // 
+            this.textBox9.BackColor = System.Drawing.Color.MediumOrchid;
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(561, 342);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(270, 22);
+            this.textBox9.TabIndex = 91;
+            this.textBox9.Tag = "Nombre";
+            // 
+            // pbNombre5
+            // 
+            this.pbNombre5.BackColor = System.Drawing.Color.MediumOrchid;
+            this.pbNombre5.Location = new System.Drawing.Point(559, 330);
+            this.pbNombre5.Name = "pbNombre5";
+            this.pbNombre5.Size = new System.Drawing.Size(272, 40);
+            this.pbNombre5.TabIndex = 92;
+            this.pbNombre5.TabStop = false;
+            this.pbNombre5.Tag = "Nombre";
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackColor = System.Drawing.Color.Black;
+            this.pictureBox9.Location = new System.Drawing.Point(557, 328);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(276, 44);
+            this.pictureBox9.TabIndex = 93;
+            this.pictureBox9.TabStop = false;
+            // 
+            // lblNombre3
+            // 
+            this.lblNombre3.AutoSize = true;
+            this.lblNombre3.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre3.Location = new System.Drawing.Point(154, 312);
+            this.lblNombre3.Name = "lblNombre3";
+            this.lblNombre3.Size = new System.Drawing.Size(50, 29);
+            this.lblNombre3.TabIndex = 85;
+            this.lblNombre3.Tag = "Nombre";
+            this.lblNombre3.Text = "Fecha";
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.MediumOrchid;
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(148, 342);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(270, 22);
+            this.textBox7.TabIndex = 82;
+            this.textBox7.Tag = "Nombre";
+            // 
+            // pbNombre3
+            // 
+            this.pbNombre3.BackColor = System.Drawing.Color.MediumOrchid;
+            this.pbNombre3.Location = new System.Drawing.Point(146, 330);
+            this.pbNombre3.Name = "pbNombre3";
+            this.pbNombre3.Size = new System.Drawing.Size(272, 40);
+            this.pbNombre3.TabIndex = 83;
+            this.pbNombre3.TabStop = false;
+            this.pbNombre3.Tag = "Nombre";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Black;
+            this.pictureBox5.Location = new System.Drawing.Point(144, 328);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(276, 44);
+            this.pictureBox5.TabIndex = 84;
+            this.pictureBox5.TabStop = false;
+            // 
+            // lblNombre2
+            // 
+            this.lblNombre2.AutoSize = true;
+            this.lblNombre2.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre2.Location = new System.Drawing.Point(568, 209);
+            this.lblNombre2.Name = "lblNombre2";
+            this.lblNombre2.Size = new System.Drawing.Size(85, 29);
+            this.lblNombre2.TabIndex = 81;
+            this.lblNombre2.Tag = "Nombre";
+            this.lblNombre2.Text = "ID Zapatos";
+            // 
+            // pbNombre6
+            // 
+            this.pbNombre6.BackColor = System.Drawing.Color.MediumOrchid;
+            this.pbNombre6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pbNombre6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pbNombre6.Location = new System.Drawing.Point(561, 239);
+            this.pbNombre6.Multiline = true;
+            this.pbNombre6.Name = "pbNombre6";
+            this.pbNombre6.Size = new System.Drawing.Size(270, 22);
+            this.pbNombre6.TabIndex = 78;
+            this.pbNombre6.Tag = "Nombre";
+            // 
+            // pbNombre1
+            // 
+            this.pbNombre1.BackColor = System.Drawing.Color.MediumOrchid;
+            this.pbNombre1.Location = new System.Drawing.Point(559, 227);
+            this.pbNombre1.Name = "pbNombre1";
+            this.pbNombre1.Size = new System.Drawing.Size(272, 40);
+            this.pbNombre1.TabIndex = 79;
+            this.pbNombre1.TabStop = false;
+            this.pbNombre1.Tag = "Nombre";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Black;
+            this.pictureBox3.Location = new System.Drawing.Point(557, 225);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(276, 44);
+            this.pictureBox3.TabIndex = 80;
+            this.pictureBox3.TabStop = false;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(156, 208);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(77, 29);
+            this.lblNombre.TabIndex = 77;
+            this.lblNombre.Tag = "Nombre";
+            this.lblNombre.Text = "ID Ventas";
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.MediumOrchid;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(150, 238);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(270, 22);
+            this.textBox5.TabIndex = 74;
+            this.textBox5.Tag = "Nombre";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.MediumOrchid;
+            this.pictureBox1.Location = new System.Drawing.Point(148, 226);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(272, 40);
+            this.pictureBox1.TabIndex = 76;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Tag = "Nombre";
+            // 
+            // pbNombre
+            // 
+            this.pbNombre.BackColor = System.Drawing.Color.Black;
+            this.pbNombre.Location = new System.Drawing.Point(146, 224);
+            this.pbNombre.Name = "pbNombre";
+            this.pbNombre.Size = new System.Drawing.Size(276, 44);
+            this.pbNombre.TabIndex = 75;
+            this.pbNombre.TabStop = false;
+            // 
+            // botonRedondeado5
+            // 
+            this.botonRedondeado5.ColorBorde = System.Drawing.Color.Black;
+            this.botonRedondeado5.ColorDeFondo = System.Drawing.Color.SlateBlue;
+            this.botonRedondeado5.GrosorBorde = 2;
+            this.botonRedondeado5.Location = new System.Drawing.Point(577, 115);
+            this.botonRedondeado5.Name = "botonRedondeado5";
+            this.botonRedondeado5.Radio = 20;
+            this.botonRedondeado5.Size = new System.Drawing.Size(122, 35);
+            this.botonRedondeado5.TabIndex = 102;
+            this.botonRedondeado5.Text = "Buscar";
+            this.botonRedondeado5.UseVisualStyleBackColor = true;
+            // 
+            // botonRedondeado4
+            // 
+            this.botonRedondeado4.ColorBorde = System.Drawing.Color.Black;
+            this.botonRedondeado4.ColorDeFondo = System.Drawing.Color.SlateBlue;
+            this.botonRedondeado4.GrosorBorde = 2;
+            this.botonRedondeado4.Location = new System.Drawing.Point(407, 524);
+            this.botonRedondeado4.Name = "botonRedondeado4";
+            this.botonRedondeado4.Radio = 20;
+            this.botonRedondeado4.Size = new System.Drawing.Size(122, 35);
+            this.botonRedondeado4.TabIndex = 101;
+            this.botonRedondeado4.Text = "Guardar";
+            this.botonRedondeado4.UseVisualStyleBackColor = true;
+            // 
+            // botonRedondeado3
+            // 
+            this.botonRedondeado3.ColorBorde = System.Drawing.Color.Black;
+            this.botonRedondeado3.ColorDeFondo = System.Drawing.Color.SlateBlue;
+            this.botonRedondeado3.GrosorBorde = 2;
+            this.botonRedondeado3.Location = new System.Drawing.Point(610, 449);
+            this.botonRedondeado3.Name = "botonRedondeado3";
+            this.botonRedondeado3.Radio = 20;
+            this.botonRedondeado3.Size = new System.Drawing.Size(122, 33);
+            this.botonRedondeado3.TabIndex = 100;
+            this.botonRedondeado3.Text = "Agregar";
+            this.botonRedondeado3.UseVisualStyleBackColor = true;
+            // 
+            // botonRedondeado2
+            // 
+            this.botonRedondeado2.ColorBorde = System.Drawing.Color.Black;
+            this.botonRedondeado2.ColorDeFondo = System.Drawing.Color.SlateBlue;
+            this.botonRedondeado2.GrosorBorde = 2;
+            this.botonRedondeado2.Location = new System.Drawing.Point(407, 449);
+            this.botonRedondeado2.Name = "botonRedondeado2";
+            this.botonRedondeado2.Radio = 20;
+            this.botonRedondeado2.Size = new System.Drawing.Size(122, 33);
+            this.botonRedondeado2.TabIndex = 99;
+            this.botonRedondeado2.Text = "Eliminar";
+            this.botonRedondeado2.UseVisualStyleBackColor = true;
+            // 
+            // botonRedondeado1
+            // 
+            this.botonRedondeado1.BackColor = System.Drawing.Color.MediumPurple;
+            this.botonRedondeado1.ColorBorde = System.Drawing.Color.Black;
+            this.botonRedondeado1.ColorDeFondo = System.Drawing.Color.SlateBlue;
+            this.botonRedondeado1.GrosorBorde = 2;
+            this.botonRedondeado1.Location = new System.Drawing.Point(215, 449);
+            this.botonRedondeado1.Name = "botonRedondeado1";
+            this.botonRedondeado1.Radio = 20;
+            this.botonRedondeado1.Size = new System.Drawing.Size(122, 33);
+            this.botonRedondeado1.TabIndex = 98;
+            this.botonRedondeado1.Text = "Modificar";
+            this.botonRedondeado1.UseVisualStyleBackColor = false;
             // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumOrchid;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelventas);
+            this.ClientSize = new System.Drawing.Size(940, 603);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.botonRedondeado5);
+            this.Controls.Add(this.botonRedondeado4);
+            this.Controls.Add(this.botonRedondeado3);
+            this.Controls.Add(this.botonRedondeado2);
+            this.Controls.Add(this.botonRedondeado1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pictureBox10);
+            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.lblNombre5);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.pbNombre5);
+            this.Controls.Add(this.pictureBox9);
+            this.Controls.Add(this.lblNombre3);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.pbNombre3);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.lblNombre2);
+            this.Controls.Add(this.pbNombre6);
+            this.Controls.Add(this.pbNombre1);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbNombre);
             this.Name = "Ventas";
             this.Text = "Agregar";
-            this.panelventas.ResumeLayout(false);
-            this.panelventas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNombre5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNombre3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNombre1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNombre)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panelventas;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+
         private System.Windows.Forms.Label label5;
+        private BotonRedondeado botonRedondeado5;
+        private BotonRedondeado botonRedondeado4;
+        private BotonRedondeado botonRedondeado3;
+        private BotonRedondeado botonRedondeado2;
+        private BotonRedondeado botonRedondeado1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.Label lblNombre5;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.PictureBox pbNombre5;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Label lblNombre3;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.PictureBox pbNombre3;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label lblNombre2;
+        private System.Windows.Forms.TextBox pbNombre6;
+        private System.Windows.Forms.PictureBox pbNombre1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbNombre;
     }
 }
