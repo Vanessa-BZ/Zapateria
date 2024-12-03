@@ -69,11 +69,11 @@
     <Compile Include="Zapatos.Designer.cs">
       <DependentUpon>Zapatos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Savan shoes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Savan shoes.Designer.cs">
+      <DependentUpon>Savan shoes.cs</DependentUpon>
     </Compile>
     <Compile Include="Proveedores.cs">
       <SubType>Form</SubType>
@@ -89,8 +89,8 @@
     <EmbeddedResource Include="Zapatos.resx">
       <DependentUpon>Zapatos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Savan shoes.resx">
+      <DependentUpon>Savan shoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
