@@ -41,7 +41,7 @@ namespace ConexionSQL
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+                currentBtn.ImageAlign = ContentAlignment.MiddleCenter;
                 //borde de boton
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
@@ -56,10 +56,10 @@ namespace ConexionSQL
             {
                 currentBtn.BackColor = Color.FromArgb(255, 128, 128);
                 currentBtn.ForeColor = Color.White;
-                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = Color.White;
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+                currentBtn.ImageAlign = ContentAlignment.MiddleCenter;
             }
         }
     }
