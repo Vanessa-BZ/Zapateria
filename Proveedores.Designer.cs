@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.panelProveedores = new System.Windows.Forms.Panel();
-            this.pContainer = new System.Windows.Forms.Panel();
+            this.pContainerP = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.botonRedondeado5 = new BotonRedondeado();
-            this.botonRedondeado4 = new BotonRedondeado();
-            this.botonRedondeado3 = new BotonRedondeado();
-            this.botonRedondeado2 = new BotonRedondeado();
-            this.botonRedondeado1 = new BotonRedondeado();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnBuscarP = new BotonRedondeado();
+            this.btnGuardarP = new BotonRedondeado();
+            this.btnAgregarP = new BotonRedondeado();
+            this.btnEliminarP = new BotonRedondeado();
+            this.btnModificarP = new BotonRedondeado();
+            this.txtBuscarP = new System.Windows.Forms.TextBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.lblNombre5 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtComercializacion = new System.Windows.Forms.TextBox();
             this.pbNombre5 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.lblNombre4 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtUnidades = new System.Windows.Forms.TextBox();
             this.pbNombre4 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.lblNombre3 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.pbNombre3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtNombreProv = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbNombre = new System.Windows.Forms.PictureBox();
             this.panelProveedores.SuspendLayout();
-            this.pContainer.SuspendLayout();
+            this.pContainerP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre5)).BeginInit();
@@ -71,7 +71,7 @@
             // 
             // panelProveedores
             // 
-            this.panelProveedores.Controls.Add(this.pContainer);
+            this.panelProveedores.Controls.Add(this.pContainerP);
             this.panelProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelProveedores.Location = new System.Drawing.Point(0, 0);
             this.panelProveedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -79,143 +79,143 @@
             this.panelProveedores.Size = new System.Drawing.Size(981, 703);
             this.panelProveedores.TabIndex = 4;
             // 
-            // pContainer
+            // pContainerP
             // 
-            this.pContainer.Controls.Add(this.label5);
-            this.pContainer.Controls.Add(this.botonRedondeado5);
-            this.pContainer.Controls.Add(this.botonRedondeado4);
-            this.pContainer.Controls.Add(this.botonRedondeado3);
-            this.pContainer.Controls.Add(this.botonRedondeado2);
-            this.pContainer.Controls.Add(this.botonRedondeado1);
-            this.pContainer.Controls.Add(this.textBox1);
-            this.pContainer.Controls.Add(this.pictureBox10);
-            this.pContainer.Controls.Add(this.pictureBox11);
-            this.pContainer.Controls.Add(this.lblNombre5);
-            this.pContainer.Controls.Add(this.textBox9);
-            this.pContainer.Controls.Add(this.pbNombre5);
-            this.pContainer.Controls.Add(this.pictureBox9);
-            this.pContainer.Controls.Add(this.lblNombre4);
-            this.pContainer.Controls.Add(this.textBox8);
-            this.pContainer.Controls.Add(this.pbNombre4);
-            this.pContainer.Controls.Add(this.pictureBox7);
-            this.pContainer.Controls.Add(this.lblNombre3);
-            this.pContainer.Controls.Add(this.textBox7);
-            this.pContainer.Controls.Add(this.pbNombre3);
-            this.pContainer.Controls.Add(this.pictureBox5);
-            this.pContainer.Controls.Add(this.lblNombre);
-            this.pContainer.Controls.Add(this.textBox5);
-            this.pContainer.Controls.Add(this.pictureBox1);
-            this.pContainer.Controls.Add(this.pbNombre);
-            this.pContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pContainer.Location = new System.Drawing.Point(0, 0);
-            this.pContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pContainer.Name = "pContainer";
-            this.pContainer.Size = new System.Drawing.Size(981, 703);
-            this.pContainer.TabIndex = 26;
+            this.pContainerP.Controls.Add(this.label5);
+            this.pContainerP.Controls.Add(this.btnBuscarP);
+            this.pContainerP.Controls.Add(this.btnGuardarP);
+            this.pContainerP.Controls.Add(this.btnAgregarP);
+            this.pContainerP.Controls.Add(this.btnEliminarP);
+            this.pContainerP.Controls.Add(this.btnModificarP);
+            this.pContainerP.Controls.Add(this.txtBuscarP);
+            this.pContainerP.Controls.Add(this.pictureBox10);
+            this.pContainerP.Controls.Add(this.pictureBox11);
+            this.pContainerP.Controls.Add(this.lblNombre5);
+            this.pContainerP.Controls.Add(this.txtComercializacion);
+            this.pContainerP.Controls.Add(this.pbNombre5);
+            this.pContainerP.Controls.Add(this.pictureBox9);
+            this.pContainerP.Controls.Add(this.lblNombre4);
+            this.pContainerP.Controls.Add(this.txtUnidades);
+            this.pContainerP.Controls.Add(this.pbNombre4);
+            this.pContainerP.Controls.Add(this.pictureBox7);
+            this.pContainerP.Controls.Add(this.lblNombre3);
+            this.pContainerP.Controls.Add(this.txtPrecio);
+            this.pContainerP.Controls.Add(this.pbNombre3);
+            this.pContainerP.Controls.Add(this.pictureBox5);
+            this.pContainerP.Controls.Add(this.lblNombre);
+            this.pContainerP.Controls.Add(this.txtNombreProv);
+            this.pContainerP.Controls.Add(this.pictureBox1);
+            this.pContainerP.Controls.Add(this.pbNombre);
+            this.pContainerP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pContainerP.Location = new System.Drawing.Point(0, 0);
+            this.pContainerP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pContainerP.Name = "pContainerP";
+            this.pContainerP.Size = new System.Drawing.Size(981, 703);
+            this.pContainerP.TabIndex = 26;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(100, 24);
+            this.label5.Location = new System.Drawing.Point(100, 34);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(729, 46);
             this.label5.TabIndex = 13;
             this.label5.Text = "Bienvenido a la ventana de Proveedores";
             // 
-            // botonRedondeado5
+            // btnBuscarP
             // 
-            this.botonRedondeado5.ColorBorde = System.Drawing.Color.Black;
-            this.botonRedondeado5.ColorDeFondo = System.Drawing.Color.Violet;
-            this.botonRedondeado5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonRedondeado5.GrosorBorde = 2;
-            this.botonRedondeado5.Location = new System.Drawing.Point(588, 107);
-            this.botonRedondeado5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.botonRedondeado5.Name = "botonRedondeado5";
-            this.botonRedondeado5.Radio = 20;
-            this.botonRedondeado5.Size = new System.Drawing.Size(123, 32);
-            this.botonRedondeado5.TabIndex = 44;
-            this.botonRedondeado5.Text = "Buscar";
-            this.botonRedondeado5.UseVisualStyleBackColor = true;
+            this.btnBuscarP.ColorBorde = System.Drawing.Color.Black;
+            this.btnBuscarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnBuscarP.Font = new System.Drawing.Font("Morning Rainbow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarP.GrosorBorde = 2;
+            this.btnBuscarP.Location = new System.Drawing.Point(583, 136);
+            this.btnBuscarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscarP.Name = "btnBuscarP";
+            this.btnBuscarP.Radio = 20;
+            this.btnBuscarP.Size = new System.Drawing.Size(123, 32);
+            this.btnBuscarP.TabIndex = 44;
+            this.btnBuscarP.Text = "Buscar";
+            this.btnBuscarP.UseVisualStyleBackColor = true;
             // 
-            // botonRedondeado4
+            // btnGuardarP
             // 
-            this.botonRedondeado4.ColorBorde = System.Drawing.Color.Black;
-            this.botonRedondeado4.ColorDeFondo = System.Drawing.Color.Violet;
-            this.botonRedondeado4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonRedondeado4.GrosorBorde = 2;
-            this.botonRedondeado4.Location = new System.Drawing.Point(417, 553);
-            this.botonRedondeado4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.botonRedondeado4.Name = "botonRedondeado4";
-            this.botonRedondeado4.Radio = 20;
-            this.botonRedondeado4.Size = new System.Drawing.Size(123, 32);
-            this.botonRedondeado4.TabIndex = 43;
-            this.botonRedondeado4.Text = "Guardar";
-            this.botonRedondeado4.UseVisualStyleBackColor = true;
+            this.btnGuardarP.ColorBorde = System.Drawing.Color.Black;
+            this.btnGuardarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnGuardarP.Font = new System.Drawing.Font("Morning Rainbow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarP.GrosorBorde = 2;
+            this.btnGuardarP.Location = new System.Drawing.Point(402, 522);
+            this.btnGuardarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardarP.Name = "btnGuardarP";
+            this.btnGuardarP.Radio = 20;
+            this.btnGuardarP.Size = new System.Drawing.Size(123, 32);
+            this.btnGuardarP.TabIndex = 43;
+            this.btnGuardarP.Text = "Guardar";
+            this.btnGuardarP.UseVisualStyleBackColor = true;
             // 
-            // botonRedondeado3
+            // btnAgregarP
             // 
-            this.botonRedondeado3.ColorBorde = System.Drawing.Color.Black;
-            this.botonRedondeado3.ColorDeFondo = System.Drawing.Color.Violet;
-            this.botonRedondeado3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonRedondeado3.GrosorBorde = 2;
-            this.botonRedondeado3.Location = new System.Drawing.Point(620, 491);
-            this.botonRedondeado3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.botonRedondeado3.Name = "botonRedondeado3";
-            this.botonRedondeado3.Radio = 20;
-            this.botonRedondeado3.Size = new System.Drawing.Size(123, 32);
-            this.botonRedondeado3.TabIndex = 42;
-            this.botonRedondeado3.Text = "Agregar";
-            this.botonRedondeado3.UseVisualStyleBackColor = true;
+            this.btnAgregarP.ColorBorde = System.Drawing.Color.Black;
+            this.btnAgregarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnAgregarP.Font = new System.Drawing.Font("Morning Rainbow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarP.GrosorBorde = 2;
+            this.btnAgregarP.Location = new System.Drawing.Point(605, 460);
+            this.btnAgregarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarP.Name = "btnAgregarP";
+            this.btnAgregarP.Radio = 20;
+            this.btnAgregarP.Size = new System.Drawing.Size(123, 32);
+            this.btnAgregarP.TabIndex = 42;
+            this.btnAgregarP.Text = "Agregar";
+            this.btnAgregarP.UseVisualStyleBackColor = true;
             // 
-            // botonRedondeado2
+            // btnEliminarP
             // 
-            this.botonRedondeado2.ColorBorde = System.Drawing.Color.Black;
-            this.botonRedondeado2.ColorDeFondo = System.Drawing.Color.Violet;
-            this.botonRedondeado2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonRedondeado2.GrosorBorde = 2;
-            this.botonRedondeado2.Location = new System.Drawing.Point(417, 491);
-            this.botonRedondeado2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.botonRedondeado2.Name = "botonRedondeado2";
-            this.botonRedondeado2.Radio = 20;
-            this.botonRedondeado2.Size = new System.Drawing.Size(123, 32);
-            this.botonRedondeado2.TabIndex = 41;
-            this.botonRedondeado2.Text = "Eliminar";
-            this.botonRedondeado2.UseVisualStyleBackColor = true;
+            this.btnEliminarP.ColorBorde = System.Drawing.Color.Black;
+            this.btnEliminarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnEliminarP.Font = new System.Drawing.Font("Morning Rainbow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarP.GrosorBorde = 2;
+            this.btnEliminarP.Location = new System.Drawing.Point(402, 460);
+            this.btnEliminarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminarP.Name = "btnEliminarP";
+            this.btnEliminarP.Radio = 20;
+            this.btnEliminarP.Size = new System.Drawing.Size(123, 32);
+            this.btnEliminarP.TabIndex = 41;
+            this.btnEliminarP.Text = "Eliminar";
+            this.btnEliminarP.UseVisualStyleBackColor = true;
             // 
-            // botonRedondeado1
+            // btnModificarP
             // 
-            this.botonRedondeado1.BackColor = System.Drawing.Color.MediumPurple;
-            this.botonRedondeado1.ColorBorde = System.Drawing.Color.Black;
-            this.botonRedondeado1.ColorDeFondo = System.Drawing.Color.Violet;
-            this.botonRedondeado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonRedondeado1.GrosorBorde = 2;
-            this.botonRedondeado1.Location = new System.Drawing.Point(225, 491);
-            this.botonRedondeado1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.botonRedondeado1.Name = "botonRedondeado1";
-            this.botonRedondeado1.Radio = 20;
-            this.botonRedondeado1.Size = new System.Drawing.Size(123, 32);
-            this.botonRedondeado1.TabIndex = 40;
-            this.botonRedondeado1.Text = "Modificar";
-            this.botonRedondeado1.UseVisualStyleBackColor = false;
+            this.btnModificarP.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnModificarP.ColorBorde = System.Drawing.Color.Black;
+            this.btnModificarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnModificarP.Font = new System.Drawing.Font("Morning Rainbow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarP.GrosorBorde = 2;
+            this.btnModificarP.Location = new System.Drawing.Point(210, 460);
+            this.btnModificarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificarP.Name = "btnModificarP";
+            this.btnModificarP.Radio = 20;
+            this.btnModificarP.Size = new System.Drawing.Size(123, 32);
+            this.btnModificarP.TabIndex = 40;
+            this.btnModificarP.Text = "Modificar";
+            this.btnModificarP.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtBuscarP
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Thistle;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(300, 116);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 23);
-            this.textBox1.TabIndex = 27;
-            this.textBox1.Tag = "Nombre";
+            this.txtBuscarP.BackColor = System.Drawing.Color.Thistle;
+            this.txtBuscarP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarP.Location = new System.Drawing.Point(293, 145);
+            this.txtBuscarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBuscarP.Name = "txtBuscarP";
+            this.txtBuscarP.Size = new System.Drawing.Size(269, 23);
+            this.txtBuscarP.TabIndex = 27;
+            this.txtBuscarP.Tag = "Nombre";
             // 
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Thistle;
-            this.pictureBox10.Location = new System.Drawing.Point(297, 104);
+            this.pictureBox10.Location = new System.Drawing.Point(291, 133);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(272, 39);
@@ -226,7 +226,7 @@
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.Black;
-            this.pictureBox11.Location = new System.Drawing.Point(294, 102);
+            this.pictureBox11.Location = new System.Drawing.Point(289, 131);
             this.pictureBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(276, 44);
@@ -244,23 +244,23 @@
             this.lblNombre5.Tag = "Nombre";
             this.lblNombre5.Text = "Comercialización";
             // 
-            // textBox9
+            // txtComercializacion
             // 
-            this.textBox9.BackColor = System.Drawing.Color.Thistle;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(517, 350);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(269, 22);
-            this.textBox9.TabIndex = 15;
-            this.textBox9.Tag = "Nombre";
+            this.txtComercializacion.BackColor = System.Drawing.Color.Thistle;
+            this.txtComercializacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtComercializacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComercializacion.Location = new System.Drawing.Point(517, 350);
+            this.txtComercializacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtComercializacion.Multiline = true;
+            this.txtComercializacion.Name = "txtComercializacion";
+            this.txtComercializacion.Size = new System.Drawing.Size(269, 22);
+            this.txtComercializacion.TabIndex = 15;
+            this.txtComercializacion.Tag = "Nombre";
             // 
             // pbNombre5
             // 
             this.pbNombre5.BackColor = System.Drawing.Color.Thistle;
-            this.pbNombre5.Location = new System.Drawing.Point(516, 338);
+            this.pbNombre5.Location = new System.Drawing.Point(515, 337);
             this.pbNombre5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbNombre5.Name = "pbNombre5";
             this.pbNombre5.Size = new System.Drawing.Size(272, 39);
@@ -289,23 +289,23 @@
             this.lblNombre4.Tag = "Nombre";
             this.lblNombre4.Text = "Unidades";
             // 
-            // textBox8
+            // txtUnidades
             // 
-            this.textBox8.BackColor = System.Drawing.Color.Thistle;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(518, 247);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(269, 22);
-            this.textBox8.TabIndex = 11;
-            this.textBox8.Tag = "Nombre";
+            this.txtUnidades.BackColor = System.Drawing.Color.Thistle;
+            this.txtUnidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUnidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnidades.Location = new System.Drawing.Point(518, 247);
+            this.txtUnidades.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUnidades.Multiline = true;
+            this.txtUnidades.Name = "txtUnidades";
+            this.txtUnidades.Size = new System.Drawing.Size(269, 22);
+            this.txtUnidades.TabIndex = 11;
+            this.txtUnidades.Tag = "Nombre";
             // 
             // pbNombre4
             // 
             this.pbNombre4.BackColor = System.Drawing.Color.Thistle;
-            this.pbNombre4.Location = new System.Drawing.Point(516, 235);
+            this.pbNombre4.Location = new System.Drawing.Point(516, 234);
             this.pbNombre4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbNombre4.Name = "pbNombre4";
             this.pbNombre4.Size = new System.Drawing.Size(272, 39);
@@ -334,23 +334,23 @@
             this.lblNombre3.Tag = "Nombre";
             this.lblNombre3.Text = "Precio";
             // 
-            // textBox7
+            // txtPrecio
             // 
-            this.textBox7.BackColor = System.Drawing.Color.Thistle;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(130, 351);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(269, 22);
-            this.textBox7.TabIndex = 7;
-            this.textBox7.Tag = "Nombre";
+            this.txtPrecio.BackColor = System.Drawing.Color.Thistle;
+            this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Location = new System.Drawing.Point(130, 351);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPrecio.Multiline = true;
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(269, 22);
+            this.txtPrecio.TabIndex = 7;
+            this.txtPrecio.Tag = "Nombre";
             // 
             // pbNombre3
             // 
             this.pbNombre3.BackColor = System.Drawing.Color.Thistle;
-            this.pbNombre3.Location = new System.Drawing.Point(129, 339);
+            this.pbNombre3.Location = new System.Drawing.Point(130, 339);
             this.pbNombre3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbNombre3.Name = "pbNombre3";
             this.pbNombre3.Size = new System.Drawing.Size(272, 39);
@@ -379,23 +379,23 @@
             this.lblNombre.Tag = "Nombre";
             this.lblNombre.Text = "Nombre Proveedor:";
             // 
-            // textBox5
+            // txtNombreProv
             // 
-            this.textBox5.BackColor = System.Drawing.Color.Thistle;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(133, 247);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(269, 22);
-            this.textBox5.TabIndex = 0;
-            this.textBox5.Tag = "Nombre";
+            this.txtNombreProv.BackColor = System.Drawing.Color.Thistle;
+            this.txtNombreProv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreProv.Location = new System.Drawing.Point(133, 247);
+            this.txtNombreProv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombreProv.Multiline = true;
+            this.txtNombreProv.Name = "txtNombreProv";
+            this.txtNombreProv.Size = new System.Drawing.Size(269, 22);
+            this.txtNombreProv.TabIndex = 0;
+            this.txtNombreProv.Tag = "Nombre";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Thistle;
-            this.pictureBox1.Location = new System.Drawing.Point(130, 235);
+            this.pictureBox1.Location = new System.Drawing.Point(131, 235);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(272, 39);
@@ -424,8 +424,8 @@
             this.Name = "Proveedores";
             this.Text = "Modificar";
             this.panelProveedores.ResumeLayout(false);
-            this.pContainer.ResumeLayout(false);
-            this.pContainer.PerformLayout();
+            this.pContainerP.ResumeLayout(false);
+            this.pContainerP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre5)).EndInit();
@@ -443,30 +443,30 @@
         #endregion
         private System.Windows.Forms.Panel panelProveedores;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel pContainer;
+        private System.Windows.Forms.Panel pContainerP;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtNombreProv;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pbNombre;
         private System.Windows.Forms.Label lblNombre5;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtComercializacion;
         private System.Windows.Forms.PictureBox pbNombre5;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label lblNombre4;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtUnidades;
         private System.Windows.Forms.PictureBox pbNombre4;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label lblNombre3;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.PictureBox pbNombre3;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBuscarP;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
-        private BotonRedondeado botonRedondeado5;
-        private BotonRedondeado botonRedondeado4;
-        private BotonRedondeado botonRedondeado3;
-        private BotonRedondeado botonRedondeado2;
-        private BotonRedondeado botonRedondeado1;
+        private BotonRedondeado btnBuscarP;
+        private BotonRedondeado btnGuardarP;
+        private BotonRedondeado btnAgregarP;
+        private BotonRedondeado btnEliminarP;
+        private BotonRedondeado btnModificarP;
     }
 }
