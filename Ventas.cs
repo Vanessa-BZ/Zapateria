@@ -49,9 +49,6 @@ namespace ConexionSQL
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
-                //icon current formulario hijo 
-               // iconFormularioHijoActual.IconChar = currentBtn.IconChar;
-                //iconFormularioHijoActual.IconColor = color;
             }
         }
 
@@ -67,50 +64,10 @@ namespace ConexionSQL
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-
-        /*private void txtEnter(object sender, EventArgs e)
-        {
-            TextBox txt = sender as TextBox;
-            foreach (Control ctrl in pContainer.Controls)
-            {
-                if (ctrl is PictureBox
-                    && ctrl.Name == " pb" + txt.Tag.ToString())
-                {
-                    txt.BackColor = Color.MediumPurple;
-                }
-                if (ctrl is Label &&
-                    ctrl.Name == "lbl" + txt.Tag.ToString())
-                {
-                    ctrl.ForeColor = Color.MediumPurple;
-                }
-            }
-        }
-        private void txtLeave(object sender, EventArgs e)
-        {
-            TextBox txt = sender as TextBox;
-            foreach (Control ctrl in pContainer.Controls)
-            {
-                if (ctrl is PictureBox
-                    && ctrl.Name == " pb" + txt.Tag.ToString())
-                {
-                    txt.BackColor = Color.Black;
-                }
-                if (ctrl is Label &&
-                    ctrl.Name == "lbl" + txt.Tag.ToString())
-                {
-                    ctrl.ForeColor = Color.Black;
-                }
-            }
-        }*/
         private void Reset()
         {
             DisableButtom();
             leftBorderBtn.Visible = false;
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
     }

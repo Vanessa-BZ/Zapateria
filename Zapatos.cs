@@ -14,7 +14,7 @@ namespace ConexionSQL
 {
     public partial class Zapatos : Form
     {
-        private Form FormularioZapatosActual;
+        
         private Panel leftBorderBtn;
         private IconButton currentBtn; 
 
@@ -49,9 +49,6 @@ namespace ConexionSQL
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
-                //icon current formulario hijo 
-                // iconFormularioHijoActual.IconChar = currentBtn.IconChar;
-                //iconFormularioHijoActual.IconColor = color;
             }
         }
 
@@ -67,22 +64,5 @@ namespace ConexionSQL
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-       /* private void AbrirFormularioZapatos(Form FormularioZapatos)
-        {
-            if (FormularioZapatosActual != null)
-            {
-                FormularioZapatosActual.Close();
-            }
-            FormularioZapatosActual = FormularioZapatos;
-            FormularioZapatos.TopLevel = false;
-            FormularioZapatos.FormBorderStyle = FormBorderStyle.None;
-            FormularioZapatos.Dock = DockStyle.Fill;
-            panelZapatos.Controls.Add(FormularioZapatos);
-            panelZapatos.Tag = FormularioZapatos;
-            FormularioZapatos.BringToFront();
-            FormularioZapatos.Show();
-
-        }*/
-       
     }
 }

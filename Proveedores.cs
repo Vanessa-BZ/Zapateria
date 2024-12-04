@@ -14,7 +14,6 @@ namespace ConexionSQL
 {
     public partial class Proveedores : Form
     {
-        //private Form FormularioProveedoresActual;
         private Panel leftBorderBtn;
         private IconButton currentBtn;
 
@@ -48,9 +47,6 @@ namespace ConexionSQL
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
-                //icon current formulario hijo 
-                // iconFormularioHijoActual.IconChar = currentBtn.IconChar;
-                //iconFormularioHijoActual.IconColor = color;
             }
         }
 
@@ -64,41 +60,6 @@ namespace ConexionSQL
                 currentBtn.IconColor = Color.White;
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            }
-        }
-        //txt con color al dar clic
-       private void txtEnter(object sender, EventArgs e)
-        {
-            TextBox txt = sender as TextBox;
-            foreach (Control ctrl in pContainer.Controls)
-            {
-                if (ctrl is PictureBox
-                    && ctrl.Name == " pb"+txt.Tag.ToString())
-                        {
-                    txt.BackColor = Color.MediumPurple;
-                }
-                if(ctrl is Label &&
-                    ctrl.Name=="lbl"+txt.Tag.ToString())
-                {
-                    ctrl.ForeColor = Color.MediumPurple;
-                }
-               }
-        }
-        private void txtLeave(object sender, EventArgs e)
-        {
-            TextBox txt = sender as TextBox;
-            foreach (Control ctrl in pContainer.Controls)
-            {
-                if (ctrl is PictureBox
-                    && ctrl.Name == " pb" + txt.Tag.ToString())
-                {
-                    txt.BackColor = Color.Black;
-                }
-                if (ctrl is Label &&
-                    ctrl.Name == "lbl" + txt.Tag.ToString())
-                {
-                    ctrl.ForeColor = Color.Black;
-                }
             }
         }
     }
