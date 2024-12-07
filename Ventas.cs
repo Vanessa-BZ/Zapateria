@@ -70,5 +70,40 @@ namespace ConexionSQL
             leftBorderBtn.Visible = false;
 
         }
+        Random id = new Random();
+        private void btnAgregarV_Click(object sender, EventArgs e)
+        {
+            int valor = 0;
+            valor = Convert.ToInt32(id.Next(300, 1000));
+            lbl_ID.Text = "V" + valor.ToString();
+            if (txtZapatos.Text != "" && txtFecha.Text != "" && txtTotal.Text != "")
+            {
+                dtw_Ventas.Rows.Add(lbl_ID.Text, txtZapatos.Text, txtFecha.Text, txtTotal.Text);
+            }
+            txtZapatos.Text = "";
+            txtFecha.Text = "";
+            txtTotal.Text = "";
+            MessageBox.Show($"Datos guardados");
+        }
+
+        private void btnModificarV_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminarV_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarV_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardarV_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

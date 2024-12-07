@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
+using System.IO;
+using System.Data.SqlClient;
 
 namespace ConexionSQL
 {
@@ -20,6 +22,8 @@ namespace ConexionSQL
         public Proveedores()
         {
             InitializeComponent();
+           
+            
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
 
@@ -30,6 +34,7 @@ namespace ConexionSQL
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
         }
+        SqlConnection Conexion = new SqlConnection("Data Source=; Initial Catalog= Inventario_Zapateria; Integrated Security = True");
         private void ActivateButtom(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -61,6 +66,43 @@ namespace ConexionSQL
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
                 currentBtn.ImageAlign = ContentAlignment.MiddleCenter;
             }
+        }
+        Random id = new Random();
+      
+        private void btnAgregarP_Click(object sender, EventArgs e)
+        {
+            int valor = 0;
+            valor = Convert.ToInt32(id.Next(300, 1000));
+            lbl_id.Text = "P" + valor.ToString();
+            if (txtNombreProv.Text!="" && txtPrecio.Text!="" && txtUnidades.Text!="")
+            {                
+                dtw_Proovedores.Rows.Add(lbl_id.Text, txtNombreProv.Text, txtPrecio.Text, txtUnidades.Text, CBXcomercio.Text);
+            }
+
+            txtNombreProv.Text = "";
+            txtPrecio.Text = "";
+            txtUnidades.Text = "";
+        }
+
+        private void btnModificarP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminarP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardarP_Click(object sender, EventArgs e)
+        {
+             SqlCommand Agregar = new SqlCommand("insert into Proovedores values @ID_Proovedor, @Nombre, @Precio, @unidades, @Comercializacion", Conexion);
+             Conexion.Open();
         }
     }
 }

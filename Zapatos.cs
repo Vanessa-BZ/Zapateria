@@ -64,5 +64,44 @@ namespace ConexionSQL
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
+
+        Random id = new Random();
+        private void btnAgregarZ_Click(object sender, EventArgs e)
+        {
+            int valor = 0;
+            valor = Convert.ToInt32(id.Next(300, 1000));
+            lbl_ID_venta.Text = "P" + valor.ToString();
+            if (txtCategoria.Text != "" && txtMedida.Text != "" && txtColor.Text != "" && txtColor.Text != "" && txtMarca.Text != "" && txtMaterial.Text != "")
+            {
+                dtw_Zapatos.Rows.Add(lbl_ID_venta.Text, txtCategoria.Text, txtMedida.Text, txtColor.Text, txtColor.Text, txtMarca.Text, txtMaterial.Text, cmb_IdProov.Text);
+            }
+
+            txtCategoria.Text = "";
+            txtMedida.Text = "";
+            txtColor.Text = "";
+            txtColor.Text = "";
+            txtMarca.Text = "";
+            txtMaterial.Text = "";
+        }
+
+        private void btnModificarZ_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminarZ_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarZ_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardarZ_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
