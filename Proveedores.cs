@@ -18,6 +18,9 @@ namespace ConexionSQL
         private IconButton currentBtn;
         private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");
         private Random id = new Random();
+        string dato;
+        int i;
+
 
         public Proveedores()
         {
@@ -69,12 +72,31 @@ namespace ConexionSQL
 
         private void Limpiar()
         {
-            txtNombreProv.Text = "";
-            txtPrecio.Text = "";
-            txtUnidades.Text = "";
+            txtNombreProv.Clear();
+            txtPrecio.Clear();
+            txtUnidades.Clear();
             CBXcomercio.SelectedIndex = -1;
-        }
 
+            btnModificarP.Enabled = false;
+            btnEliminarP.Enabled = false;
+        }
+        private void Busqueda (DataGridView d, int col)
+        {
+            for (int i = 0;  i < d.Rows.Count; i++)
+            {
+                dato = Convert.ToString(d.Rows[i].Cells[col].Value);
+                if (dato == txtBuscarP.Text.Trim())
+                {
+                    lbl_id.Text = Convert.ToString(d.Rows[i].Cells[0].Value);
+                    txtNombreProv.Text = Convert.ToString(d.Rows[i].Cells[1].Value);
+                    txtPrecio.Text = Convert.ToString(d.Rows[i].Cells[2].Value);
+                    txtUnidades.Text = Convert.ToString(d.Rows[i].Cells[3].Value);
+                    CBXcomercio.Text = Convert.ToString(d.Rows[i].Cells[4].Value);
+
+                    break;
+                }
+            }
+        }
         private void btnAgregarP_Click(object sender, EventArgs e)
         {
             string Nombre = txtNombreProv.Text;
@@ -82,7 +104,7 @@ namespace ConexionSQL
             string Unidades = txtUnidades.Text;
             string Comercio = CBXcomercio.Text;
 
-            if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(Precio) || string.IsNullOrEmpty(Unidades))
+            if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(Precio) || string.IsNullOrEmpty(Unidades) || string.IsNullOrEmpty(Comercio))
             {
                 MessageBox.Show("Campos incompletos");
                 return;
@@ -133,16 +155,45 @@ namespace ConexionSQL
 
         private void btnModificarP_Click(object sender, EventArgs e)
         {
-            // Lógica para modificar un registro (implementación pendiente)
+            string Nombre = txtNombreProv.Text;
+            string Precio = txtPrecio.Text;
+            string Unidades = txtUnidades.Text;
+            string Comercio = CBXcomercio.Text;
+
+            dtw_Proveedores[1, i].Value = txtNombreProv.Text;
+            dtw_Proveedores[2, i].Value = txtPrecio.Text;
+            dtw_Proveedores[3, i].Value = txtUnidades.Text;
+            dtw_Proveedores[4, i].Value = CBXcomercio.Text;
+
+            MessageBox.Show("Cambio Realizado");
+            Limpiar();
         }
 
         private void btnEliminarP_Click(object sender, EventArgs e)
         {
-            // Lógica para eliminar un registro (implementación pendiente)
+            dtw_Proveedores.Rows.RemoveAt(i);
+            MessageBox.Show("Registro eliminado");
+            Limpiar();
         }
 
         private void btnBuscarP_Click(object sender, EventArgs e)
         {
+            if(txtBuscarP.Text != "")
+            {
+                Busqueda(dtw_Proveedores, 0);
+                Busqueda(dtw_Proveedores, 1);
+                Busqueda(dtw_Proveedores, 2);
+                Busqueda(dtw_Proveedores, 3);
+                Busqueda(dtw_Proveedores, 4);
+
+                
+            }
+            else
+            {
+                MessageBox.Show("Error. Intentelo de nuevo :)");
+            }
+            txtBuscarP.Clear();
+
             btnModificarP.Enabled = true;
             btnEliminarP.Enabled = true;
         }
