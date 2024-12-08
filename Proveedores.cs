@@ -11,6 +11,7 @@ using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
 using System.IO;
 using System.Data.SqlClient;
+using System.Windows.Markup;
 
 namespace ConexionSQL
 {
@@ -22,8 +23,8 @@ namespace ConexionSQL
         public Proveedores()
         {
             InitializeComponent();
-           
-            
+
+
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
 
@@ -67,21 +68,38 @@ namespace ConexionSQL
                 currentBtn.ImageAlign = ContentAlignment.MiddleCenter;
             }
         }
+        SqlConnection conn = new SqlConnection("Data Source = DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog = Inventario_Zapatos; Integrated Security=True");
         Random id = new Random();
-      
-        private void btnAgregarP_Click(object sender, EventArgs e)
-        {
-            int valor = 0;
-            valor = Convert.ToInt32(id.Next(300, 1000));
-            lbl_id.Text = "P" + valor.ToString();
-            if (txtNombreProv.Text!="" && txtPrecio.Text!="" && txtUnidades.Text!="")
-            {                
-                dtw_Proovedores.Rows.Add(lbl_id.Text, txtNombreProv.Text, txtPrecio.Text, txtUnidades.Text, CBXcomercio.Text);
-            }
 
+        void Limpiar()
+        {
             txtNombreProv.Text = "";
             txtPrecio.Text = "";
             txtUnidades.Text = "";
+            CBXcomercio.SelectedIndex = -1;
+        }
+        private void btnAgregarP_Click(object sender, EventArgs e)
+        {
+            int valor = 0;
+            string Nombre, Precio, Unidades, Comercio;
+            Nombre = txtNombreProv.Text;
+            Precio = txtPrecio.Text;
+            Unidades = txtUnidades.Text;
+            Comercio = CBXcomercio.Text;
+
+            valor = Convert.ToInt32(id.Next(100, 999));
+            lbl_id.Text = "P" + valor.ToString();
+
+            if (txtNombreProv.Text == "" && txtPrecio.Text == "" && txtUnidades.Text == "")
+            {
+                MessageBox.Show("Campos incompletos");
+            }
+            else
+            {
+                dtw_Proovedores.Rows.Add(lbl_id.Text, Nombre, Precio, Unidades, Comercio);
+                MessageBox.Show("Datos guardados");
+            }
+            Limpiar();
         }
 
         private void btnModificarP_Click(object sender, EventArgs e)
@@ -96,13 +114,39 @@ namespace ConexionSQL
 
         private void btnBuscarP_Click(object sender, EventArgs e)
         {
-
+            btnModificarP.Enabled = true;
+            btnEliminarP.Enabled = true;
         }
 
         private void btnGuardarP_Click(object sender, EventArgs e)
         {
-             SqlCommand Agregar = new SqlCommand("insert into Proovedores values @ID_Proovedor, @Nombre, @Precio, @unidades, @Comercializacion", Conexion);
+             SqlCommand Agregar = new SqlCommand("insert into Proovedores values (@ID_Proovedor, @Nombre, @Precio, @unidades, @Comercializacion)", Conexion);
              Conexion.Open();
+
+            try
+            {
+                foreach (DataGridViewRow row in dtw_Proovedores.Rows)
+                {
+                    Agregar.Parameters.Clear();
+
+                    Agregar.Parameters.AddWithValue("@ID_Proovedor", Convert.ToString(row.Cells["Column1"].Value));
+                    Agregar.Parameters.AddWithValue("@Nombre_P", Convert.ToString(row.Cells["Column2"].Value));
+                    Agregar.Parameters.AddWithValue("@Precio", Convert.ToString(row.Cells["Column3"].Value));
+                    Agregar.Parameters.AddWithValue("@Unidades", Convert.ToString(row.Cells["Column4"].Value));
+                    Agregar.Parameters.AddWithValue("@Comercializacion", Convert.ToString(row.Cells["Column5"].Value));
+
+                    Agregar.ExecuteNonQuery();
+                }
+                MessageBox.Show("Guardado en la base de datos");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Agregar");
+            }
+            finally
+            {
+                Conexion.Close();
+            }
         }
     }
 }

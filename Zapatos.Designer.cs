@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panelZapatos = new System.Windows.Forms.Panel();
+            this.lbl_ID_venta = new System.Windows.Forms.Label();
+            this.cmb_IdProov = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -64,17 +65,15 @@
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.pbNombre1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.cmb_IdProov = new System.Windows.Forms.ComboBox();
-            this.lbl_ID_venta = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtw_Zapatos = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panelZapatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -90,8 +89,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtw_Zapatos)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtw_Zapatos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -147,6 +146,26 @@
             this.panelZapatos.Name = "panelZapatos";
             this.panelZapatos.Size = new System.Drawing.Size(813, 501);
             this.panelZapatos.TabIndex = 5;
+            // 
+            // lbl_ID_venta
+            // 
+            this.lbl_ID_venta.AutoSize = true;
+            this.lbl_ID_venta.Location = new System.Drawing.Point(24, 76);
+            this.lbl_ID_venta.Name = "lbl_ID_venta";
+            this.lbl_ID_venta.Size = new System.Drawing.Size(120, 13);
+            this.lbl_ID_venta.TabIndex = 83;
+            this.lbl_ID_venta.Text = "Label del ID de la venta";
+            // 
+            // cmb_IdProov
+            // 
+            this.cmb_IdProov.BackColor = System.Drawing.Color.Thistle;
+            this.cmb_IdProov.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_IdProov.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_IdProov.FormattingEnabled = true;
+            this.cmb_IdProov.Location = new System.Drawing.Point(109, 309);
+            this.cmb_IdProov.Name = "cmb_IdProov";
+            this.cmb_IdProov.Size = new System.Drawing.Size(192, 26);
+            this.cmb_IdProov.TabIndex = 82;
             // 
             // label3
             // 
@@ -535,25 +554,15 @@
             this.pictureBox3.TabIndex = 51;
             this.pictureBox3.TabStop = false;
             // 
-            // cmb_IdProov
+            // groupBox1
             // 
-            this.cmb_IdProov.BackColor = System.Drawing.Color.Thistle;
-            this.cmb_IdProov.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_IdProov.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_IdProov.FormattingEnabled = true;
-            this.cmb_IdProov.Location = new System.Drawing.Point(109, 309);
-            this.cmb_IdProov.Name = "cmb_IdProov";
-            this.cmb_IdProov.Size = new System.Drawing.Size(192, 26);
-            this.cmb_IdProov.TabIndex = 82;
-            // 
-            // lbl_ID_venta
-            // 
-            this.lbl_ID_venta.AutoSize = true;
-            this.lbl_ID_venta.Location = new System.Drawing.Point(24, 76);
-            this.lbl_ID_venta.Name = "lbl_ID_venta";
-            this.lbl_ID_venta.Size = new System.Drawing.Size(120, 13);
-            this.lbl_ID_venta.TabIndex = 83;
-            this.lbl_ID_venta.Text = "Label del ID de la venta";
+            this.groupBox1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.groupBox1.Controls.Add(this.dtw_Zapatos);
+            this.groupBox1.Location = new System.Drawing.Point(101, 355);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(462, 134);
+            this.groupBox1.TabIndex = 85;
+            this.groupBox1.TabStop = false;
             // 
             // dtw_Zapatos
             // 
@@ -567,54 +576,47 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumOrchid;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Violet;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.LavenderBlush;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtw_Zapatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtw_Zapatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtw_Zapatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
             this.Column1,
+            this.Column2,
+            this.Column3,
             this.Column4,
             this.Column5,
             this.Column6,
-            this.Column7,
-            this.Column3});
-            this.dtw_Zapatos.Location = new System.Drawing.Point(16, 13);
+            this.Column7});
+            this.dtw_Zapatos.Location = new System.Drawing.Point(8, 9);
             this.dtw_Zapatos.Name = "dtw_Zapatos";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Plum;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtw_Zapatos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtw_Zapatos.Size = new System.Drawing.Size(429, 111);
-            this.dtw_Zapatos.TabIndex = 84;
+            this.dtw_Zapatos.Size = new System.Drawing.Size(444, 118);
+            this.dtw_Zapatos.TabIndex = 86;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "No. Zapato";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Categoria";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // Column1
+            // Column3
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column1.HeaderText = "No. Zapato";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column1.Width = 85;
+            this.Column3.HeaderText = "Medida";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Color";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column5
             // 
@@ -636,23 +638,6 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             this.Column7.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Medida";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.LavenderBlush;
-            this.groupBox1.Controls.Add(this.dtw_Zapatos);
-            this.groupBox1.Location = new System.Drawing.Point(101, 355);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(462, 134);
-            this.groupBox1.TabIndex = 85;
-            this.groupBox1.TabStop = false;
             // 
             // Zapatos
             // 
@@ -681,8 +666,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtw_Zapatos)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtw_Zapatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -726,14 +711,14 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         public System.Windows.Forms.ComboBox cmb_IdProov;
         private System.Windows.Forms.Label lbl_ID_venta;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dtw_Zapatos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

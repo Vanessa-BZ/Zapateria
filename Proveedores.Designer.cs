@@ -309,6 +309,7 @@
             // 
             this.btnEliminarP.ColorBorde = System.Drawing.Color.Black;
             this.btnEliminarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnEliminarP.Enabled = false;
             this.btnEliminarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarP.GrosorBorde = 2;
             this.btnEliminarP.Location = new System.Drawing.Point(565, 242);
@@ -326,6 +327,7 @@
             this.btnModificarP.BackColor = System.Drawing.Color.MediumPurple;
             this.btnModificarP.ColorBorde = System.Drawing.Color.Black;
             this.btnModificarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnModificarP.Enabled = false;
             this.btnModificarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarP.GrosorBorde = 2;
             this.btnModificarP.Location = new System.Drawing.Point(565, 184);
