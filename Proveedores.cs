@@ -129,7 +129,7 @@ namespace ConexionSQL
                 {
                     Agregar.Parameters.Clear();
 
-                    Agregar.Parameters.AddWithValue("@ID_Proovedor", Convert.ToString(row.Cells["Column1"].Value));
+                    Agregar.Parameters.AddWithValue("@ID_Proveedor", Convert.ToString(row.Cells["Column1"].Value));
                     Agregar.Parameters.AddWithValue("@Nombre_P", Convert.ToString(row.Cells["Column2"].Value));
                     Agregar.Parameters.AddWithValue("@Precio", Convert.ToString(row.Cells["Column3"].Value));
                     Agregar.Parameters.AddWithValue("@Unidades", Convert.ToString(row.Cells["Column4"].Value));
