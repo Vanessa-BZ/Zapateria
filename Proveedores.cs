@@ -8,10 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
-using System.Runtime.InteropServices;
-using System.IO;
 using System.Data.SqlClient;
-using System.Windows.Markup;
 
 namespace ConexionSQL
 {
@@ -19,23 +16,23 @@ namespace ConexionSQL
     {
         private Panel leftBorderBtn;
         private IconButton currentBtn;
+        private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");
+        private Random id = new Random();
 
         public Proveedores()
         {
             InitializeComponent();
 
-
+            // Configuración inicial del formulario
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
 
-            //form
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-
         }
-        SqlConnection Conexion = new SqlConnection("Data Source=; Initial Catalog= Inventario_Zapateria; Integrated Security = True");
+
         private void ActivateButtom(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -48,7 +45,8 @@ namespace ConexionSQL
                 currentBtn.IconColor = color;
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentBtn.ImageAlign = ContentAlignment.MiddleCenter;
-                //borde de boton
+
+                // Borde del botón
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
@@ -68,85 +66,85 @@ namespace ConexionSQL
                 currentBtn.ImageAlign = ContentAlignment.MiddleCenter;
             }
         }
-        SqlConnection conn = new SqlConnection("Data Source = DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog = Inventario_Zapatos; Integrated Security=True");
-        Random id = new Random();
 
-        void Limpiar()
+        private void Limpiar()
         {
             txtNombreProv.Text = "";
             txtPrecio.Text = "";
             txtUnidades.Text = "";
             CBXcomercio.SelectedIndex = -1;
         }
+
         private void btnAgregarP_Click(object sender, EventArgs e)
         {
-            int valor = 0;
-            string Nombre, Precio, Unidades, Comercio;
-            Nombre = txtNombreProv.Text;
-            Precio = txtPrecio.Text;
-            Unidades = txtUnidades.Text;
-            Comercio = CBXcomercio.Text;
+            string Nombre = txtNombreProv.Text;
+            string Precio = txtPrecio.Text;
+            string Unidades = txtUnidades.Text;
+            string Comercio = CBXcomercio.Text;
 
-            valor = Convert.ToInt32(id.Next(100, 999));
-            lbl_id.Text = "P" + valor.ToString();
-
-            if (txtNombreProv.Text == "" && txtPrecio.Text == "" && txtUnidades.Text == "")
+            if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(Precio) || string.IsNullOrEmpty(Unidades))
             {
                 MessageBox.Show("Campos incompletos");
+                return;
             }
-            else
-            {
-                dtw_Proveedores.Rows.Add(lbl_id.Text, Nombre, Precio, Unidades, Comercio);
-                MessageBox.Show("Datos guardados");
-            }
+
+            int valor = id.Next(100, 999);
+            lbl_id.Text = "P" + valor.ToString();
+
+            dtw_Proveedores.Rows.Add(lbl_id.Text, Nombre, Precio, Unidades, Comercio);
+            MessageBox.Show("Datos agregados al listado temporal");
             Limpiar();
+        }
+
+        private void btnGuardarP_Click(object sender, EventArgs e)
+        {
+            SqlCommand Agregar = new SqlCommand(
+                "INSERT INTO Proveedores (ID_Proveedor, Nombre_P, Precio, Unidades, Comercializacion) VALUES (@ID_Proveedor, @Nombre_P, @Precio, @Unidades, @Comercializacion)",
+                Conexion);
+
+            Conexion.Open();
+
+            try
+            {
+                foreach (DataGridViewRow row in dtw_Proveedores.Rows)
+                {
+                    if (row.IsNewRow) continue; // Ignora la última fila vacía
+
+                    Agregar.Parameters.Clear();
+                    Agregar.Parameters.AddWithValue("@ID_Proveedor", Convert.ToString(row.Cells["Column1"].Value));
+                    Agregar.Parameters.AddWithValue("@Nombre_P", Convert.ToString(row.Cells["Column2"].Value));
+                    Agregar.Parameters.AddWithValue("@Precio", Convert.ToDecimal(row.Cells["Column3"].Value));
+                    Agregar.Parameters.AddWithValue("@Unidades", Convert.ToInt32(row.Cells["Column4"].Value));
+                    Agregar.Parameters.AddWithValue("@Comercializacion", Convert.ToString(row.Cells["Column5"].Value));
+
+                    Agregar.ExecuteNonQuery();
+                }
+                MessageBox.Show("Datos guardados en la base de datos");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar en la base de datos: {ex.Message}");
+            }
+            finally
+            {
+                Conexion.Close();
+            }
         }
 
         private void btnModificarP_Click(object sender, EventArgs e)
         {
-
+            // Lógica para modificar un registro (implementación pendiente)
         }
 
         private void btnEliminarP_Click(object sender, EventArgs e)
         {
-
+            // Lógica para eliminar un registro (implementación pendiente)
         }
 
         private void btnBuscarP_Click(object sender, EventArgs e)
         {
             btnModificarP.Enabled = true;
             btnEliminarP.Enabled = true;
-        }
-
-        private void btnGuardarP_Click(object sender, EventArgs e)
-        {
-             SqlCommand Agregar = new SqlCommand("insert into Proovedores values (@ID_Proovedor, @Nombre, @Precio, @unidades, @Comercializacion)", Conexion);
-             Conexion.Open();
-
-            try
-            {
-                foreach (DataGridViewRow row in dtw_Proveedores.Rows)
-                {
-                    Agregar.Parameters.Clear();
-
-                    Agregar.Parameters.AddWithValue("@ID_Proveedor", Convert.ToString(row.Cells["Column1"].Value));
-                    Agregar.Parameters.AddWithValue("@Nombre_P", Convert.ToString(row.Cells["Column2"].Value));
-                    Agregar.Parameters.AddWithValue("@Precio", Convert.ToString(row.Cells["Column3"].Value));
-                    Agregar.Parameters.AddWithValue("@Unidades", Convert.ToString(row.Cells["Column4"].Value));
-                    Agregar.Parameters.AddWithValue("@Comercializacion", Convert.ToString(row.Cells["Column5"].Value));
-
-                    Agregar.ExecuteNonQuery();
-                }
-                MessageBox.Show("Guardado en la base de datos");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al Agregar");
-            }
-            finally
-            {
-                Conexion.Close();
-            }
         }
     }
 }
