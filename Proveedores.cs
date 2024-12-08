@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
-using System.Data.SqlClient;
 
 namespace ConexionSQL
 {
@@ -33,6 +31,20 @@ namespace ConexionSQL
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            // Cargar datos de la base de datos al iniciar el formulario
+            CargarDatos();
+        }
+
+        // Método para cargar los datos de la base de datos en el DataGridView
+        private void CargarDatos()
+        {
+            string query = "SELECT * FROM Proveedores";
+            SqlDataAdapter da = new SqlDataAdapter(query, Conexion);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            dtw_Proveedores.DataSource = dt;
         }
 
         private void ActivateButtom(object senderBtn, Color color)
@@ -80,21 +92,28 @@ namespace ConexionSQL
             btnEliminarP.Enabled = false;
         }
 
+        // Método modificado para hacer la búsqueda en la base de datos
         private void Busqueda(DataGridView d, int col)
         {
-            for (int i = 0; i < d.Rows.Count; i++)
+            string query = "SELECT * FROM Proveedores WHERE ID_Proveedor = @ID_Proveedor";
+            SqlCommand cmd = new SqlCommand(query, Conexion);
+            cmd.Parameters.AddWithValue("@ID_Proveedor", txtBuscarP.Text.Trim());
+
+            Conexion.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
             {
-                dato = Convert.ToString(d.Rows[i].Cells[col].Value);
-                if (dato == txtBuscarP.Text.Trim())
-                {
-                    lbl_id.Text = Convert.ToString(d.Rows[i].Cells[0].Value);
-                    txtNombreProv.Text = Convert.ToString(d.Rows[i].Cells[1].Value);
-                    txtPrecio.Text = Convert.ToString(d.Rows[i].Cells[2].Value);
-                    txtUnidades.Text = Convert.ToString(d.Rows[i].Cells[3].Value);
-                    CBXcomercio.Text = Convert.ToString(d.Rows[i].Cells[4].Value);
-                    break;
-                }
+                lbl_id.Text = reader["ID_Proveedor"].ToString();
+                txtNombreProv.Text = reader["Nombre_P"].ToString();
+                txtPrecio.Text = reader["Precio"].ToString();
+                txtUnidades.Text = reader["Unidades"].ToString();
+                CBXcomercio.Text = reader["Comercializacion"].ToString();
             }
+            else
+            {
+                MessageBox.Show("Proveedor no encontrado.");
+            }
+            Conexion.Close();
         }
 
         private void btnAgregarP_Click(object sender, EventArgs e)
@@ -179,7 +198,7 @@ namespace ConexionSQL
                 Conexion.Close();
             }
 
-            dtw_Proveedores.Rows[i].SetValues(lbl_id.Text, txtNombreProv.Text, txtPrecio.Text, txtUnidades.Text, CBXcomercio.Text);
+            CargarDatos(); // Recarga los datos después de modificar
             Limpiar();
         }
 
@@ -205,7 +224,7 @@ namespace ConexionSQL
                 Conexion.Close();
             }
 
-            dtw_Proveedores.Rows.RemoveAt(i);
+            CargarDatos(); // Recarga los datos después de eliminar
             Limpiar();
         }
 
@@ -214,10 +233,6 @@ namespace ConexionSQL
             if (txtBuscarP.Text != "")
             {
                 Busqueda(dtw_Proveedores, 0);
-                Busqueda(dtw_Proveedores, 1);
-                Busqueda(dtw_Proveedores, 2);
-                Busqueda(dtw_Proveedores, 3);
-                Busqueda(dtw_Proveedores, 4);
             }
             else
             {
