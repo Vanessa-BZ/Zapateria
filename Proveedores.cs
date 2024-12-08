@@ -21,7 +21,6 @@ namespace ConexionSQL
         string dato;
         int i;
 
-
         public Proveedores()
         {
             InitializeComponent();
@@ -80,9 +79,10 @@ namespace ConexionSQL
             btnModificarP.Enabled = false;
             btnEliminarP.Enabled = false;
         }
-        private void Busqueda (DataGridView d, int col)
+
+        private void Busqueda(DataGridView d, int col)
         {
-            for (int i = 0;  i < d.Rows.Count; i++)
+            for (int i = 0; i < d.Rows.Count; i++)
             {
                 dato = Convert.ToString(d.Rows[i].Cells[col].Value);
                 if (dato == txtBuscarP.Text.Trim())
@@ -92,11 +92,11 @@ namespace ConexionSQL
                     txtPrecio.Text = Convert.ToString(d.Rows[i].Cells[2].Value);
                     txtUnidades.Text = Convert.ToString(d.Rows[i].Cells[3].Value);
                     CBXcomercio.Text = Convert.ToString(d.Rows[i].Cells[4].Value);
-
                     break;
                 }
             }
         }
+
         private void btnAgregarP_Click(object sender, EventArgs e)
         {
             string Nombre = txtNombreProv.Text;
@@ -155,38 +155,69 @@ namespace ConexionSQL
 
         private void btnModificarP_Click(object sender, EventArgs e)
         {
-            string Nombre = txtNombreProv.Text;
-            string Precio = txtPrecio.Text;
-            string Unidades = txtUnidades.Text;
-            string Comercio = CBXcomercio.Text;
+            string query = "UPDATE Proveedores SET Nombre_P = @Nombre_P, Precio = @Precio, Unidades = @Unidades, Comercializacion = @Comercializacion WHERE ID_Proveedor = @ID_Proveedor";
+            SqlCommand cmd = new SqlCommand(query, Conexion);
 
-            dtw_Proveedores[1, i].Value = txtNombreProv.Text;
-            dtw_Proveedores[2, i].Value = txtPrecio.Text;
-            dtw_Proveedores[3, i].Value = txtUnidades.Text;
-            dtw_Proveedores[4, i].Value = CBXcomercio.Text;
+            cmd.Parameters.AddWithValue("@ID_Proveedor", lbl_id.Text);
+            cmd.Parameters.AddWithValue("@Nombre_P", txtNombreProv.Text);
+            cmd.Parameters.AddWithValue("@Precio", txtPrecio.Text);
+            cmd.Parameters.AddWithValue("@Unidades", txtUnidades.Text);
+            cmd.Parameters.AddWithValue("@Comercializacion", CBXcomercio.Text);
 
-            MessageBox.Show("Cambio Realizado");
+            Conexion.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Registro modificado en la base de datos");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al modificar: {ex.Message}");
+            }
+            finally
+            {
+                Conexion.Close();
+            }
+
+            dtw_Proveedores.Rows[i].SetValues(lbl_id.Text, txtNombreProv.Text, txtPrecio.Text, txtUnidades.Text, CBXcomercio.Text);
             Limpiar();
         }
 
         private void btnEliminarP_Click(object sender, EventArgs e)
         {
+            string query = "DELETE FROM Proveedores WHERE ID_Proveedor = @ID_Proveedor";
+            SqlCommand cmd = new SqlCommand(query, Conexion);
+
+            cmd.Parameters.AddWithValue("@ID_Proveedor", lbl_id.Text);
+
+            Conexion.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Registro eliminado de la base de datos");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al eliminar: {ex.Message}");
+            }
+            finally
+            {
+                Conexion.Close();
+            }
+
             dtw_Proveedores.Rows.RemoveAt(i);
-            MessageBox.Show("Registro eliminado");
             Limpiar();
         }
 
         private void btnBuscarP_Click(object sender, EventArgs e)
         {
-            if(txtBuscarP.Text != "")
+            if (txtBuscarP.Text != "")
             {
                 Busqueda(dtw_Proveedores, 0);
                 Busqueda(dtw_Proveedores, 1);
                 Busqueda(dtw_Proveedores, 2);
                 Busqueda(dtw_Proveedores, 3);
                 Busqueda(dtw_Proveedores, 4);
-
-                
             }
             else
             {
