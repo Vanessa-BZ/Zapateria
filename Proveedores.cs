@@ -96,7 +96,7 @@ namespace ConexionSQL
             }
             else
             {
-                dtw_Proovedores.Rows.Add(lbl_id.Text, Nombre, Precio, Unidades, Comercio);
+                dtw_Proveedores.Rows.Add(lbl_id.Text, Nombre, Precio, Unidades, Comercio);
                 MessageBox.Show("Datos guardados");
             }
             Limpiar();
@@ -125,7 +125,7 @@ namespace ConexionSQL
 
             try
             {
-                foreach (DataGridViewRow row in dtw_Proovedores.Rows)
+                foreach (DataGridViewRow row in dtw_Proveedores.Rows)
                 {
                     Agregar.Parameters.Clear();
 
