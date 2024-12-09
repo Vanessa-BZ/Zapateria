@@ -275,9 +275,9 @@
             this.label1.Location = new System.Drawing.Point(280, 153);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 16);
+            this.label1.Size = new System.Drawing.Size(125, 16);
             this.label1.TabIndex = 105;
-            this.label1.Text = "Ingrese No. de Venta";
+            this.label1.Text = "Ingrese ID de Venta";
             // 
             // groupBox1
             // 
