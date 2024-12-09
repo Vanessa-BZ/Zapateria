@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FontAwesome.Sharp;
-using System.Runtime.InteropServices;
 
 namespace ConexionSQL
 {
@@ -17,7 +12,8 @@ namespace ConexionSQL
         private Form FormularioVentasActual;
         private Panel leftBorderBtn;
         private IconButton currentBtn;
-
+        private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");
+        private Random id = new Random();
         public Ventas()
         {
             InitializeComponent();
@@ -30,7 +26,17 @@ namespace ConexionSQL
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
-            
+            CargarDatos();
+
+        }
+        private void CargarDatos()
+        {
+            string query = "SELECT * FROM Ventas";
+            SqlDataAdapter da = new SqlDataAdapter(query, Conexion);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            dtw_Ventas.DataSource = dt;
         }
         private void ActivateButtom(object senderBtn, Color color)
         {
@@ -70,38 +76,155 @@ namespace ConexionSQL
             leftBorderBtn.Visible = false;
 
         }
-        Random id = new Random();
+        private void Limpiar()
+        {
+            txtZapatos.Clear();
+            txtFecha.Clear();
+            txtTotal.Clear();
+
+            btnModificarV.Enabled = false;
+            btnEliminarV.Enabled = false;
+        }
+        private void Busqueda(DataGridView d, int col)
+        {
+            string query = "SELECT * FROM Ventas WHERE ID_Venta = @ID_Venta";
+            SqlCommand cmd = new SqlCommand(query, Conexion);
+            cmd.Parameters.AddWithValue("@ID_Proveedor", txtBuscarV.Text.Trim());
+
+            Conexion.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                lbl_ID.Text = reader["ID_Venta"].ToString();
+                txtZapatos.Text = reader["ID_Zapato"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Registro de venta no encontrado.");
+            }
+            Conexion.Close();
+        }
         private void btnAgregarV_Click(object sender, EventArgs e)
         {
-            int valor = 0;
-            valor = Convert.ToInt32(id.Next(300, 1000));
-            lbl_ID.Text = "V" + valor.ToString();
-            if (txtZapatos.Text != "" && txtFecha.Text != "" && txtTotal.Text != "")
+            string Zapatos = txtZapatos.Text;
+            string Fecha = txtFecha.Text;
+            string Total = txtTotal.Text;
+
+            if (string.IsNullOrEmpty(Zapatos) || string.IsNullOrEmpty(Fecha) || string.IsNullOrEmpty(Total))
             {
-                dtw_Ventas.Rows.Add(lbl_ID.Text, txtZapatos.Text, txtFecha.Text, txtTotal.Text);
+                MessageBox.Show("Campos incompletos");
+                return;
             }
-            txtZapatos.Text = "";
-            txtFecha.Text = "";
-            txtTotal.Text = "";
-            MessageBox.Show($"Datos guardados");
+
+            // Generar un ID único para el nuevo proveedor
+            int valor = id.Next(100, 999);
+            lbl_ID.Text = "V" + valor.ToString();
+
+            // Preparar la consulta para insertar el nuevo proveedor en la base de datos
+            SqlCommand cmd = new SqlCommand(
+                "INSERT INTO Ventas (ID_Venta, Zapato, Fecha, Total) VALUES (@ID_Venta, @ID_Zapato, @Fecha, @Total)",
+                Conexion);
+
+            // Asignar parámetros a la consulta
+            cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
+            cmd.Parameters.AddWithValue("@ID_Zapato", Zapatos);
+            cmd.Parameters.AddWithValue("@Fecha", Fecha);
+            cmd.Parameters.AddWithValue("@Total", Total);
+
+            // Ejecutar la consulta para insertar los datos
+            Conexion.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Venta guardada correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al registrar la venta: {ex.Message}");
+            }
+            finally
+            {
+                Conexion.Close();
+            }
+
+            // Recargar los datos en el DataGridView para mostrar la nueva venta
+            CargarDatos(); // Este método recarga todas las ventas
+            Limpiar(); // Limpiar los campos de texto
         }
 
         private void btnModificarV_Click(object sender, EventArgs e)
         {
+            string query = "UPDATE Ventas SET Zapato = @ID_Zapato, Fecha = @Fecha, Total = @Total WHERE ID_Venta = @ID_Venta";
+            SqlCommand cmd = new SqlCommand(query, Conexion);
 
+            cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
+            cmd.Parameters.AddWithValue("@ID_Zapato", txtZapatos.Text);
+            cmd.Parameters.AddWithValue("@Fecha", txtFecha.Text);
+            cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
+
+            Conexion.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Cambio realizado en la base de datos");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al modificar: {ex.Message}");
+            }
+            finally
+            {
+                Conexion.Close();
+            }
+
+            CargarDatos(); // Recarga los datos después de modificar
+            Limpiar();
         }
 
         private void btnEliminarV_Click(object sender, EventArgs e)
         {
+            string query = "DELETE FROM Ventas WHERE Venta = @ID_Venta";
+            SqlCommand cmd = new SqlCommand(query, Conexion);
 
+            cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
+
+            Conexion.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Registro eliminado de la base de datos");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al eliminar: {ex.Message}");
+            }
+            finally
+            {
+                Conexion.Close();
+            }
+
+            CargarDatos(); // Recarga los datos después de eliminar
+            Limpiar();
         }
 
         private void btnBuscarV_Click(object sender, EventArgs e)
         {
+            if (txtBuscarV.Text != "")
+            {
+                Busqueda(dtw_Ventas, 0);
+            }
+            else
+            {
+                MessageBox.Show("Error. Intentelo de nuevo :)");
+            }
 
+            txtBuscarV.Clear();
+
+            btnModificarV.Enabled = true;
+            btnEliminarV.Enabled = true;
         }
 
-        private void btnGuardarV_Click(object sender, EventArgs e)
+        private void Ventas_Load(object sender, EventArgs e)
         {
 
         }

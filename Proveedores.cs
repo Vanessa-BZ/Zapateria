@@ -16,8 +16,6 @@ namespace ConexionSQL
         private IconButton currentBtn;
         private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");
         private Random id = new Random();
-        string dato;
-        int i;
 
         public Proveedores()
         {
@@ -105,9 +103,6 @@ namespace ConexionSQL
             {
                 lbl_id.Text = reader["ID_Proveedor"].ToString();
                 txtNombreProv.Text = reader["Nombre_P"].ToString();
-                txtPrecio.Text = reader["Precio"].ToString();
-                txtUnidades.Text = reader["Unidades"].ToString();
-                CBXcomercio.Text = reader["Comercializacion"].ToString();
             }
             else
             {
@@ -135,7 +130,7 @@ namespace ConexionSQL
 
             // Preparar la consulta para insertar el nuevo proveedor en la base de datos
             SqlCommand cmd = new SqlCommand(
-                "INSERT INTO Proveedores (ID_Proveedor, Nombre_P, Precio, Unidades, Comercializacion) VALUES (@ID_Proveedor, @Nombre_P, @Precio, @Unidades, @Comercializacion)",
+                "INSERT INTO Proveedores (ID_Proveedor, Nombre, Precio, Unidades, Comercializacion) VALUES (@ID_Proveedor, @Nombre_P, @Precio, @Unidades, @Comercializacion)",
                 Conexion);
 
             // Asignar parámetros a la consulta
@@ -166,44 +161,9 @@ namespace ConexionSQL
             Limpiar(); // Limpiar los campos de texto
         }
 
-        private void btnGuardarP_Click(object sender, EventArgs e)
-        {
-            SqlCommand Agregar = new SqlCommand(
-                "INSERT INTO Proveedores (ID_Proveedor, Nombre_P, Precio, Unidades, Comercializacion) VALUES (@ID_Proveedor, @Nombre_P, @Precio, @Unidades, @Comercializacion)",
-                Conexion);
-
-            Conexion.Open();
-
-            try
-            {
-                foreach (DataGridViewRow row in dtw_Proveedores.Rows)
-                {
-                    if (row.IsNewRow) continue; // Ignora la última fila vacía
-
-                    Agregar.Parameters.Clear();
-                    Agregar.Parameters.AddWithValue("@ID_Proveedor", Convert.ToString(row.Cells["Column1"].Value));
-                    Agregar.Parameters.AddWithValue("@Nombre_P", Convert.ToString(row.Cells["Column2"].Value));
-                    Agregar.Parameters.AddWithValue("@Precio", Convert.ToDecimal(row.Cells["Column3"].Value));
-                    Agregar.Parameters.AddWithValue("@Unidades", Convert.ToInt32(row.Cells["Column4"].Value));
-                    Agregar.Parameters.AddWithValue("@Comercializacion", Convert.ToString(row.Cells["Column5"].Value));
-
-                    Agregar.ExecuteNonQuery();
-                }
-                MessageBox.Show("Datos guardados en la base de datos");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al guardar en la base de datos: {ex.Message}");
-            }
-            finally
-            {
-                Conexion.Close();
-            }
-        }
-
         private void btnModificarP_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE Proveedores SET Nombre_P = @Nombre_P, Precio = @Precio, Unidades = @Unidades, Comercializacion = @Comercializacion WHERE ID_Proveedor = @ID_Proveedor";
+            string query = "UPDATE Proveedores SET Nombre = @Nombre_P, Precio = @Precio, Unidades = @Unidades, Comercializacion = @Comercializacion WHERE ID_Proveedor = @ID_Proveedor";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
             cmd.Parameters.AddWithValue("@ID_Proveedor", lbl_id.Text);
@@ -262,6 +222,7 @@ namespace ConexionSQL
             if (txtBuscarP.Text != "")
             {
                 Busqueda(dtw_Proveedores, 0);
+                Busqueda(dtw_Proveedores, 1);
             }
             else
             {

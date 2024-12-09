@@ -31,8 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panelZapatos = new System.Windows.Forms.Panel();
-            this.lbl_ID_venta = new System.Windows.Forms.Label();
-            this.cmb_IdProov = new System.Windows.Forms.ComboBox();
+            this.lbl_ID = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -42,7 +41,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBuscarZ = new BotonRedondeado();
-            this.btnGuardarZ = new BotonRedondeado();
             this.btnAgregarZ = new BotonRedondeado();
             this.btnEliminarZ = new BotonRedondeado();
             this.btnModificarZ = new BotonRedondeado();
@@ -67,13 +65,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtw_Zapatos = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtProveedor = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panelZapatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -105,8 +98,9 @@
             // 
             // panelZapatos
             // 
-            this.panelZapatos.Controls.Add(this.lbl_ID_venta);
-            this.panelZapatos.Controls.Add(this.cmb_IdProov);
+            this.panelZapatos.Controls.Add(this.label4);
+            this.panelZapatos.Controls.Add(this.txtProveedor);
+            this.panelZapatos.Controls.Add(this.lbl_ID);
             this.panelZapatos.Controls.Add(this.label3);
             this.panelZapatos.Controls.Add(this.pictureBox6);
             this.panelZapatos.Controls.Add(this.pictureBox8);
@@ -116,7 +110,6 @@
             this.panelZapatos.Controls.Add(this.pictureBox4);
             this.panelZapatos.Controls.Add(this.label5);
             this.panelZapatos.Controls.Add(this.btnBuscarZ);
-            this.panelZapatos.Controls.Add(this.btnGuardarZ);
             this.panelZapatos.Controls.Add(this.btnAgregarZ);
             this.panelZapatos.Controls.Add(this.btnEliminarZ);
             this.panelZapatos.Controls.Add(this.btnModificarZ);
@@ -147,25 +140,14 @@
             this.panelZapatos.Size = new System.Drawing.Size(813, 501);
             this.panelZapatos.TabIndex = 5;
             // 
-            // lbl_ID_venta
+            // lbl_ID
             // 
-            this.lbl_ID_venta.AutoSize = true;
-            this.lbl_ID_venta.Location = new System.Drawing.Point(24, 76);
-            this.lbl_ID_venta.Name = "lbl_ID_venta";
-            this.lbl_ID_venta.Size = new System.Drawing.Size(120, 13);
-            this.lbl_ID_venta.TabIndex = 83;
-            this.lbl_ID_venta.Text = "Label del ID de la venta";
-            // 
-            // cmb_IdProov
-            // 
-            this.cmb_IdProov.BackColor = System.Drawing.Color.Thistle;
-            this.cmb_IdProov.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_IdProov.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_IdProov.FormattingEnabled = true;
-            this.cmb_IdProov.Location = new System.Drawing.Point(109, 309);
-            this.cmb_IdProov.Name = "cmb_IdProov";
-            this.cmb_IdProov.Size = new System.Drawing.Size(192, 26);
-            this.cmb_IdProov.TabIndex = 82;
+            this.lbl_ID.AutoSize = true;
+            this.lbl_ID.Location = new System.Drawing.Point(12, 87);
+            this.lbl_ID.Name = "lbl_ID";
+            this.lbl_ID.Size = new System.Drawing.Size(118, 13);
+            this.lbl_ID.TabIndex = 83;
+            this.lbl_ID.Text = "Label del ID del Zapato";
             // 
             // label3
             // 
@@ -272,29 +254,13 @@
             this.btnBuscarZ.UseVisualStyleBackColor = true;
             this.btnBuscarZ.Click += new System.EventHandler(this.btnBuscarZ_Click);
             // 
-            // btnGuardarZ
-            // 
-            this.btnGuardarZ.ColorBorde = System.Drawing.Color.Black;
-            this.btnGuardarZ.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnGuardarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarZ.GrosorBorde = 2;
-            this.btnGuardarZ.Location = new System.Drawing.Point(698, 365);
-            this.btnGuardarZ.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGuardarZ.Name = "btnGuardarZ";
-            this.btnGuardarZ.Radio = 20;
-            this.btnGuardarZ.Size = new System.Drawing.Size(92, 26);
-            this.btnGuardarZ.TabIndex = 72;
-            this.btnGuardarZ.Text = "Guardar";
-            this.btnGuardarZ.UseVisualStyleBackColor = true;
-            this.btnGuardarZ.Click += new System.EventHandler(this.btnGuardarZ_Click);
-            // 
             // btnAgregarZ
             // 
             this.btnAgregarZ.ColorBorde = System.Drawing.Color.Black;
             this.btnAgregarZ.ColorDeFondo = System.Drawing.Color.Violet;
             this.btnAgregarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarZ.GrosorBorde = 2;
-            this.btnAgregarZ.Location = new System.Drawing.Point(698, 150);
+            this.btnAgregarZ.Location = new System.Drawing.Point(618, 180);
             this.btnAgregarZ.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarZ.Name = "btnAgregarZ";
             this.btnAgregarZ.Radio = 20;
@@ -310,7 +276,7 @@
             this.btnEliminarZ.ColorDeFondo = System.Drawing.Color.Violet;
             this.btnEliminarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarZ.GrosorBorde = 2;
-            this.btnEliminarZ.Location = new System.Drawing.Point(698, 194);
+            this.btnEliminarZ.Location = new System.Drawing.Point(618, 224);
             this.btnEliminarZ.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarZ.Name = "btnEliminarZ";
             this.btnEliminarZ.Radio = 20;
@@ -327,7 +293,7 @@
             this.btnModificarZ.ColorDeFondo = System.Drawing.Color.Violet;
             this.btnModificarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarZ.GrosorBorde = 2;
-            this.btnModificarZ.Location = new System.Drawing.Point(698, 245);
+            this.btnModificarZ.Location = new System.Drawing.Point(618, 275);
             this.btnModificarZ.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarZ.Name = "btnModificarZ";
             this.btnModificarZ.Radio = 20;
@@ -581,63 +547,32 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtw_Zapatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtw_Zapatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtw_Zapatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
             this.dtw_Zapatos.Location = new System.Drawing.Point(8, 9);
             this.dtw_Zapatos.Name = "dtw_Zapatos";
             this.dtw_Zapatos.Size = new System.Drawing.Size(444, 118);
             this.dtw_Zapatos.TabIndex = 86;
             // 
-            // Column1
+            // txtProveedor
             // 
-            this.Column1.HeaderText = "No. Zapato";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.txtProveedor.BackColor = System.Drawing.Color.Plum;
+            this.txtProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProveedor.Location = new System.Drawing.Point(106, 315);
+            this.txtProveedor.Margin = new System.Windows.Forms.Padding(2);
+            this.txtProveedor.Multiline = true;
+            this.txtProveedor.Name = "txtProveedor";
+            this.txtProveedor.Size = new System.Drawing.Size(202, 18);
+            this.txtProveedor.TabIndex = 86;
+            this.txtProveedor.Tag = "Nombre";
             // 
-            // Column2
+            // label4
             // 
-            this.Column2.HeaderText = "Categoria";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Medida";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Color";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Marca";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Visible = false;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Material";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Proovedor";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Visible = false;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(189, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(176, 13);
+            this.label4.TabIndex = 87;
+            this.label4.Text = "Ingrese No. de Zapatos o Categoria";
             // 
             // Zapatos
             // 
@@ -679,7 +614,6 @@
         private System.Windows.Forms.Panel panelZapatos;
         private System.Windows.Forms.Label label5;
         private BotonRedondeado btnBuscarZ;
-        private BotonRedondeado btnGuardarZ;
         private BotonRedondeado btnAgregarZ;
         private BotonRedondeado btnEliminarZ;
         private BotonRedondeado btnModificarZ;
@@ -709,16 +643,10 @@
         private System.Windows.Forms.TextBox txtMaterial;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
-        public System.Windows.Forms.ComboBox cmb_IdProov;
-        private System.Windows.Forms.Label lbl_ID_venta;
+        private System.Windows.Forms.Label lbl_ID;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dtw_Zapatos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.TextBox txtProveedor;
+        private System.Windows.Forms.Label label4;
     }
 }

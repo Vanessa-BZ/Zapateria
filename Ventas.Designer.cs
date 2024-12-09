@@ -45,16 +45,12 @@
             this.pbNombre1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnBuscarV = new BotonRedondeado();
-            this.btnGuardarV = new BotonRedondeado();
             this.btnAgregarV = new BotonRedondeado();
             this.btnEliminarV = new BotonRedondeado();
             this.btnModificarV = new BotonRedondeado();
             this.dtw_Ventas = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_ID = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre5)).BeginInit();
@@ -113,7 +109,7 @@
             // 
             this.lblNombre5.AutoSize = true;
             this.lblNombre5.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre5.Location = new System.Drawing.Point(387, 168);
+            this.lblNombre5.Location = new System.Drawing.Point(385, 196);
             this.lblNombre5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre5.Name = "lblNombre5";
             this.lblNombre5.Size = new System.Drawing.Size(41, 25);
@@ -126,7 +122,7 @@
             this.txtTotal.BackColor = System.Drawing.Color.MediumOrchid;
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(382, 192);
+            this.txtTotal.Location = new System.Drawing.Point(380, 222);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtTotal.Multiline = true;
             this.txtTotal.Name = "txtTotal";
@@ -137,7 +133,7 @@
             // pbNombre5
             // 
             this.pbNombre5.BackColor = System.Drawing.Color.MediumOrchid;
-            this.pbNombre5.Location = new System.Drawing.Point(381, 182);
+            this.pbNombre5.Location = new System.Drawing.Point(379, 212);
             this.pbNombre5.Margin = new System.Windows.Forms.Padding(2);
             this.pbNombre5.Name = "pbNombre5";
             this.pbNombre5.Size = new System.Drawing.Size(204, 32);
@@ -148,7 +144,7 @@
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Black;
-            this.pictureBox9.Location = new System.Drawing.Point(380, 180);
+            this.pictureBox9.Location = new System.Drawing.Point(378, 210);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(207, 36);
@@ -159,7 +155,7 @@
             // 
             this.lblNombre3.AutoSize = true;
             this.lblNombre3.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre3.Location = new System.Drawing.Point(98, 206);
+            this.lblNombre3.Location = new System.Drawing.Point(96, 234);
             this.lblNombre3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre3.Name = "lblNombre3";
             this.lblNombre3.Size = new System.Drawing.Size(44, 25);
@@ -172,7 +168,7 @@
             this.txtFecha.BackColor = System.Drawing.Color.MediumOrchid;
             this.txtFecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFecha.Location = new System.Drawing.Point(93, 230);
+            this.txtFecha.Location = new System.Drawing.Point(91, 260);
             this.txtFecha.Margin = new System.Windows.Forms.Padding(2);
             this.txtFecha.Multiline = true;
             this.txtFecha.Name = "txtFecha";
@@ -183,7 +179,7 @@
             // pbNombre3
             // 
             this.pbNombre3.BackColor = System.Drawing.Color.MediumOrchid;
-            this.pbNombre3.Location = new System.Drawing.Point(92, 219);
+            this.pbNombre3.Location = new System.Drawing.Point(90, 249);
             this.pbNombre3.Margin = new System.Windows.Forms.Padding(2);
             this.pbNombre3.Name = "pbNombre3";
             this.pbNombre3.Size = new System.Drawing.Size(204, 32);
@@ -194,7 +190,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Black;
-            this.pictureBox5.Location = new System.Drawing.Point(90, 218);
+            this.pictureBox5.Location = new System.Drawing.Point(88, 248);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(207, 36);
@@ -205,7 +201,7 @@
             // 
             this.lblNombre2.AutoSize = true;
             this.lblNombre2.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre2.Location = new System.Drawing.Point(100, 127);
+            this.lblNombre2.Location = new System.Drawing.Point(98, 155);
             this.lblNombre2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre2.Name = "lblNombre2";
             this.lblNombre2.Size = new System.Drawing.Size(57, 25);
@@ -218,7 +214,7 @@
             this.txtZapatos.BackColor = System.Drawing.Color.MediumOrchid;
             this.txtZapatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtZapatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtZapatos.Location = new System.Drawing.Point(95, 151);
+            this.txtZapatos.Location = new System.Drawing.Point(93, 181);
             this.txtZapatos.Margin = new System.Windows.Forms.Padding(2);
             this.txtZapatos.Multiline = true;
             this.txtZapatos.Name = "txtZapatos";
@@ -229,7 +225,7 @@
             // pbNombre1
             // 
             this.pbNombre1.BackColor = System.Drawing.Color.MediumOrchid;
-            this.pbNombre1.Location = new System.Drawing.Point(94, 141);
+            this.pbNombre1.Location = new System.Drawing.Point(92, 171);
             this.pbNombre1.Margin = new System.Windows.Forms.Padding(2);
             this.pbNombre1.Name = "pbNombre1";
             this.pbNombre1.Size = new System.Drawing.Size(204, 32);
@@ -240,7 +236,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Black;
-            this.pictureBox3.Location = new System.Drawing.Point(92, 140);
+            this.pictureBox3.Location = new System.Drawing.Point(90, 170);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(207, 36);
@@ -263,29 +259,13 @@
             this.btnBuscarV.UseVisualStyleBackColor = true;
             this.btnBuscarV.Click += new System.EventHandler(this.btnBuscarV_Click);
             // 
-            // btnGuardarV
-            // 
-            this.btnGuardarV.ColorBorde = System.Drawing.Color.Black;
-            this.btnGuardarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
-            this.btnGuardarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarV.GrosorBorde = 2;
-            this.btnGuardarV.Location = new System.Drawing.Point(297, 443);
-            this.btnGuardarV.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGuardarV.Name = "btnGuardarV";
-            this.btnGuardarV.Radio = 20;
-            this.btnGuardarV.Size = new System.Drawing.Size(92, 28);
-            this.btnGuardarV.TabIndex = 101;
-            this.btnGuardarV.Text = "Guardar";
-            this.btnGuardarV.UseVisualStyleBackColor = true;
-            this.btnGuardarV.Click += new System.EventHandler(this.btnGuardarV_Click);
-            // 
             // btnAgregarV
             // 
             this.btnAgregarV.ColorBorde = System.Drawing.Color.Black;
             this.btnAgregarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
             this.btnAgregarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarV.GrosorBorde = 2;
-            this.btnAgregarV.Location = new System.Drawing.Point(450, 382);
+            this.btnAgregarV.Location = new System.Drawing.Point(450, 427);
             this.btnAgregarV.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarV.Name = "btnAgregarV";
             this.btnAgregarV.Radio = 20;
@@ -301,7 +281,7 @@
             this.btnEliminarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
             this.btnEliminarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarV.GrosorBorde = 2;
-            this.btnEliminarV.Location = new System.Drawing.Point(297, 382);
+            this.btnEliminarV.Location = new System.Drawing.Point(297, 427);
             this.btnEliminarV.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarV.Name = "btnEliminarV";
             this.btnEliminarV.Radio = 20;
@@ -318,7 +298,7 @@
             this.btnModificarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
             this.btnModificarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarV.GrosorBorde = 2;
-            this.btnModificarV.Location = new System.Drawing.Point(153, 382);
+            this.btnModificarV.Location = new System.Drawing.Point(153, 427);
             this.btnModificarV.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarV.Name = "btnModificarV";
             this.btnModificarV.Radio = 20;
@@ -331,43 +311,11 @@
             // dtw_Ventas
             // 
             this.dtw_Ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtw_Ventas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
-            this.dtw_Ventas.Location = new System.Drawing.Point(52, 286);
+            this.dtw_Ventas.Location = new System.Drawing.Point(38, 323);
             this.dtw_Ventas.Name = "dtw_Ventas";
             this.dtw_Ventas.Size = new System.Drawing.Size(43, 42);
             this.dtw_Ventas.TabIndex = 103;
             this.dtw_Ventas.Visible = false;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "No. Venta";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Zapatos";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Fecha";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Visible = false;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Total";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Visible = false;
             // 
             // lbl_ID
             // 
@@ -378,17 +326,26 @@
             this.lbl_ID.TabIndex = 104;
             this.lbl_ID.Text = "Label del ID";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(210, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 13);
+            this.label1.TabIndex = 105;
+            this.label1.Text = "Ingrese No. de Venta o Zapatos";
+            // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumOrchid;
             this.ClientSize = new System.Drawing.Size(705, 490);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_ID);
             this.Controls.Add(this.dtw_Ventas);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnBuscarV);
-            this.Controls.Add(this.btnGuardarV);
             this.Controls.Add(this.btnAgregarV);
             this.Controls.Add(this.btnEliminarV);
             this.Controls.Add(this.btnModificarV);
@@ -410,6 +367,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Ventas";
             this.Text = "Agregar";
+            this.Load += new System.EventHandler(this.Ventas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre5)).EndInit();
@@ -428,7 +386,6 @@
 
         private System.Windows.Forms.Label label5;
         private BotonRedondeado btnBuscarV;
-        private BotonRedondeado btnGuardarV;
         private BotonRedondeado btnAgregarV;
         private BotonRedondeado btnEliminarV;
         private BotonRedondeado btnModificarV;
@@ -448,10 +405,7 @@
         private System.Windows.Forms.PictureBox pbNombre1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.DataGridView dtw_Ventas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label lbl_ID;
+        private System.Windows.Forms.Label label1;
     }
 }
