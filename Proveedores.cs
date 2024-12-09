@@ -130,7 +130,7 @@ namespace ConexionSQL
 
             // Preparar la consulta para insertar el nuevo proveedor en la base de datos
             SqlCommand cmd = new SqlCommand(
-                "INSERT INTO Proveedores (ID_Proveedor, Nombre, Precio, Unidades, Comercializacion) VALUES (@ID_Proveedor, @Nombre_P, @Precio, @Unidades, @Comercializacion)",
+                "INSERT INTO Proveedores (ID_Proveedor, Nombre_P, Precio, Unidades, Comercializacion) VALUES (@ID_Proveedor, @Nombre_P, @Precio, @Unidades, @Comercializacion)",
                 Conexion);
 
             // Asignar parámetros a la consulta
@@ -163,10 +163,10 @@ namespace ConexionSQL
 
         private void btnModificarP_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE Proveedores SET Nombre = @Nombre_P, Precio = @Precio, Unidades = @Unidades, Comercializacion = @Comercializacion WHERE ID_Proveedor = @ID_Proveedor";
+            string query = "UPDATE Proveedores SET Nombre_P = @Nombre_P, Precio = @Precio, Unidades = @Unidades, Comercializacion = @Comercializacion WHERE ID_Proveedor = @ID_Proveedor";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
-            cmd.Parameters.AddWithValue("@ID_Proveedor", lbl_id.Text);
+            //cmd.Parameters.AddWithValue("@ID_Proveedor", lbl_id.Text);
             cmd.Parameters.AddWithValue("@Nombre_P", txtNombreProv.Text);
             cmd.Parameters.AddWithValue("@Precio", txtPrecio.Text);
             cmd.Parameters.AddWithValue("@Unidades", txtUnidades.Text);

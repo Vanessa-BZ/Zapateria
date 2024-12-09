@@ -98,7 +98,7 @@ namespace ConexionSQL
         {
             string query = "SELECT * FROM Zapatos WHERE ID_Zapato = @ID_Zapato";
             SqlCommand cmd = new SqlCommand(query, Conexion);
-            cmd.Parameters.AddWithValue("@ID_Proveedor", txtBuscarZ.Text.Trim());
+            cmd.Parameters.AddWithValue("@ID_Zapato", txtBuscarZ.Text.Trim());
 
             Conexion.Open();
             SqlDataReader reader = cmd.ExecuteReader();
@@ -134,7 +134,7 @@ namespace ConexionSQL
 
             // Preparar la consulta para insertar el nuevo proveedor en la base de datos
             SqlCommand cmd = new SqlCommand(
-                "INSERT INTO Zpatos (No.Zapato, Categoria, Medida, Color, Marca, Material, Proveedor) VALUES (@ID_Zapatos, @Categoria, @Precio, @Medida, @Color, @Marca, @Material, @ID_Proveedor)",
+                "INSERT INTO Zpatos (ID_Zapato, Categoria, Medida, Color, Marca, Material, ID_Proveedor) VALUES (@ID_Zapatos, @Categoria, @Precio, @Medida, @Color, @Marca, @Material, @ID_Proveedor)",
                 Conexion);
 
             // Asignar parámetros a la consulta
@@ -169,10 +169,10 @@ namespace ConexionSQL
 
         private void btnModificarZ_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE Zapatos SET Categoria = @Categoria, Medida = @Medida, Color = @Color, Marca = @Marca, Material = @Material, Proovedor = @ID_Proveedor WHERE ID_Zapato = @ID_Zapato";
+            string query = "UPDATE Zapatos SET Categoria = @Categoria, Medida = @Medida, Color = @Color, Marca = @Marca, Material = @Material, ID_Proovedor = @ID_Proveedor WHERE ID_Zapato = @ID_Zapato";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
-            cmd.Parameters.AddWithValue("@ID_Zapato", lbl_ID.Text);
+            //cmd.Parameters.AddWithValue("@ID_Zapato", lbl_ID.Text);
             cmd.Parameters.AddWithValue("@Categoria", txtCategoria.Text);
             cmd.Parameters.AddWithValue("@Medida", txtMedida.Text);
             cmd.Parameters.AddWithValue("@Color", txtColor.Text);

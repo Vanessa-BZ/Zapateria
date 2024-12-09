@@ -51,6 +51,7 @@
             this.dtw_Ventas = new System.Windows.Forms.DataGridView();
             this.lbl_ID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre5)).BeginInit();
@@ -60,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtw_Ventas)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
@@ -310,12 +312,16 @@
             // 
             // dtw_Ventas
             // 
+            this.dtw_Ventas.AllowUserToAddRows = false;
+            this.dtw_Ventas.AllowUserToDeleteRows = false;
+            this.dtw_Ventas.AllowUserToResizeColumns = false;
+            this.dtw_Ventas.AllowUserToResizeRows = false;
+            this.dtw_Ventas.BackgroundColor = System.Drawing.Color.MediumOrchid;
             this.dtw_Ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtw_Ventas.Location = new System.Drawing.Point(38, 323);
+            this.dtw_Ventas.Location = new System.Drawing.Point(9, 9);
             this.dtw_Ventas.Name = "dtw_Ventas";
-            this.dtw_Ventas.Size = new System.Drawing.Size(43, 42);
+            this.dtw_Ventas.Size = new System.Drawing.Size(502, 94);
             this.dtw_Ventas.TabIndex = 103;
-            this.dtw_Ventas.Visible = false;
             // 
             // lbl_ID
             // 
@@ -335,15 +341,25 @@
             this.label1.TabIndex = 105;
             this.label1.Text = "Ingrese No. de Venta o Zapatos";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.groupBox1.Controls.Add(this.dtw_Ventas);
+            this.groupBox1.Location = new System.Drawing.Point(77, 303);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(520, 110);
+            this.groupBox1.TabIndex = 106;
+            this.groupBox1.TabStop = false;
+            // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumOrchid;
             this.ClientSize = new System.Drawing.Size(705, 490);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_ID);
-            this.Controls.Add(this.dtw_Ventas);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnBuscarV);
             this.Controls.Add(this.btnAgregarV);
@@ -377,6 +393,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtw_Ventas)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,5 +424,6 @@
         private System.Windows.Forms.DataGridView dtw_Ventas;
         private System.Windows.Forms.Label lbl_ID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

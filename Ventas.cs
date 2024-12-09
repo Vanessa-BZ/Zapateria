@@ -89,7 +89,7 @@ namespace ConexionSQL
         {
             string query = "SELECT * FROM Ventas WHERE ID_Venta = @ID_Venta";
             SqlCommand cmd = new SqlCommand(query, Conexion);
-            cmd.Parameters.AddWithValue("@ID_Proveedor", txtBuscarV.Text.Trim());
+            cmd.Parameters.AddWithValue("@ID_Ventas", txtBuscarV.Text.Trim());
 
             Conexion.Open();
             SqlDataReader reader = cmd.ExecuteReader();
@@ -157,7 +157,7 @@ namespace ConexionSQL
             string query = "UPDATE Ventas SET Zapato = @ID_Zapato, Fecha = @Fecha, Total = @Total WHERE ID_Venta = @ID_Venta";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
-            cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
+            //cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
             cmd.Parameters.AddWithValue("@ID_Zapato", txtZapatos.Text);
             cmd.Parameters.AddWithValue("@Fecha", txtFecha.Text);
             cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
@@ -183,7 +183,7 @@ namespace ConexionSQL
 
         private void btnEliminarV_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM Ventas WHERE Venta = @ID_Venta";
+            string query = "DELETE FROM Ventas WHERE ID_Venta = @ID_Venta";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
             cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
