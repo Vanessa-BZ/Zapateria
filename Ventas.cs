@@ -89,7 +89,7 @@ namespace ConexionSQL
         {
             string query = "SELECT * FROM Ventas WHERE ID_Venta = @ID_Venta";
             SqlCommand cmd = new SqlCommand(query, Conexion);
-            cmd.Parameters.AddWithValue("@ID_Ventas", txtBuscarV.Text.Trim());
+            cmd.Parameters.AddWithValue("@ID_Venta", txtBuscarV.Text.Trim());
 
             Conexion.Open();
             SqlDataReader reader = cmd.ExecuteReader();

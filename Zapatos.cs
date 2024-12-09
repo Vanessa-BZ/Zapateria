@@ -17,7 +17,6 @@ namespace ConexionSQL
 {
     public partial class Zapatos : Form
     {
-        
         private Panel leftBorderBtn;
         private IconButton currentBtn;
         private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");
@@ -28,7 +27,6 @@ namespace ConexionSQL
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
-            
 
             //form
             this.Text = string.Empty;
@@ -37,8 +35,8 @@ namespace ConexionSQL
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             CargarDatos();
-
         }
+
         private void CargarDatos()
         {
             string query = "SELECT * FROM Zapatos";
@@ -48,6 +46,7 @@ namespace ConexionSQL
 
             dtw_Zapatos.DataSource = dt;
         }
+
         private void ActivateButtom(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -81,7 +80,6 @@ namespace ConexionSQL
             }
         }
 
-
         void Limpiar()
         {
             txtCategoria.Clear();
@@ -94,7 +92,8 @@ namespace ConexionSQL
             btnEliminarZ.Enabled = false;
             btnModificarZ.Enabled = false;
         }
-        private void Busqueda(DataGridView d, int col)
+
+        private void Busqueda(int col)
         {
             string query = "SELECT * FROM Zapatos WHERE ID_Zapato = @ID_Zapato";
             SqlCommand cmd = new SqlCommand(query, Conexion);
@@ -110,7 +109,7 @@ namespace ConexionSQL
                 txtColor.Text = reader["Color"].ToString();
                 txtMarca.Text = reader["Marca"].ToString();
                 txtMaterial.Text = reader["Material"].ToString();
-                txtProveedor.Text = reader["ID_Zapato"].ToString();
+                txtProveedor.Text = reader["ID_Proveedor"].ToString(); // Corregido: ID_Proveedor en vez de ID_Zapato
             }
             else
             {
@@ -118,6 +117,7 @@ namespace ConexionSQL
             }
             Conexion.Close();
         }
+
         private void btnAgregarZ_Click(object sender, EventArgs e)
         {
             string Categoria = txtCategoria.Text;
@@ -133,13 +133,13 @@ namespace ConexionSQL
                 return;
             }
 
-            // Generar un ID único para el nuevo proveedor
+            // Generar un ID único para el nuevo zapato
             int valor = id.Next(100, 999);
             lbl_ID.Text = "Z" + valor.ToString();
 
-            // Preparar la consulta para insertar el nuevo proveedor en la base de datos
+            // Preparar la consulta para insertar el nuevo zapato en la base de datos
             SqlCommand cmd = new SqlCommand(
-                "INSERT INTO Zpatos (ID_Zapato, Categoria, Medida, Color, Marca, Material, ID_Proveedor) VALUES (@ID_Zapato, @Categoria, @Precio, @Medida, @Color, @Marca, @Material, @ID_Proveedor)",
+                "INSERT INTO Zapatos (ID_Zapato, Categoria, Medida, Color, Marca, Material, ID_Proveedor) VALUES (@ID_Zapato, @Categoria, @Medida, @Color, @Marca, @Material, @ID_Proveedor)",
                 Conexion);
 
             // Asignar parámetros a la consulta
@@ -156,25 +156,25 @@ namespace ConexionSQL
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Zapatos agregados correctamente.");
+                MessageBox.Show("Zapato agregado correctamente.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al agregar los Zapatos: {ex.Message}");
+                MessageBox.Show($"Error al agregar el zapato: {ex.Message}");
             }
             finally
             {
                 Conexion.Close();
             }
 
-            // Recargar los datos en el DataGridView para mostrar el nuevo proveedor
-            CargarDatos(); // Este método recarga todos los proveedores
-            Limpiar(); // Limpiar los campos de texto
+            // Recargar los datos en el DataGridView para mostrar el nuevo zapato
+            CargarDatos();
+            Limpiar();
         }
 
         private void btnModificarZ_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE Zapatos SET Categoria = @Categoria, Medida = @Medida, Color = @Color, Marca = @Marca, Material = @Material, ID_Proovedor = @ID_Proveedor WHERE ID_Zapato = @ID_Zapato";
+            string query = "UPDATE Zapatos SET Categoria = @Categoria, Medida = @Medida, Color = @Color, Marca = @Marca, Material = @Material, ID_Proveedor = @ID_Proveedor WHERE ID_Zapato = @ID_Zapato";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
             cmd.Parameters.AddWithValue("@ID_Zapato", lbl_ID.Text);
@@ -206,7 +206,7 @@ namespace ConexionSQL
 
         private void btnEliminarZ_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM Zapatos WHERE ID_Zapatos = @ID_Zapatos";
+            string query = "DELETE FROM Zapatos WHERE ID_Zapato = @ID_Zapato";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
             cmd.Parameters.AddWithValue("@ID_Zapato", lbl_ID.Text);
@@ -234,8 +234,7 @@ namespace ConexionSQL
         {
             if (txtBuscarZ.Text != "")
             {
-                Busqueda(dtw_Zapatos, 0);
-                Busqueda(dtw_Zapatos, 1);
+                Busqueda(0); // 0: columna que corresponde al ID_Zapato
             }
             else
             {

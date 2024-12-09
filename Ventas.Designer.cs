@@ -44,14 +44,14 @@
             this.txtZapatos = new System.Windows.Forms.TextBox();
             this.pbNombre1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnBuscarV = new BotonRedondeado();
-            this.btnAgregarV = new BotonRedondeado();
-            this.btnEliminarV = new BotonRedondeado();
-            this.btnModificarV = new BotonRedondeado();
             this.dtw_Ventas = new System.Windows.Forms.DataGridView();
             this.lbl_ID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarV = new BotonRedondeado();
+            this.btnAgregarV = new BotonRedondeado();
+            this.btnEliminarV = new BotonRedondeado();
+            this.btnModificarV = new BotonRedondeado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre5)).BeginInit();
@@ -68,9 +68,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(126, 36);
+            this.label5.Location = new System.Drawing.Point(168, 44);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(493, 37);
+            this.label5.Size = new System.Drawing.Size(635, 46);
             this.label5.TabIndex = 89;
             this.label5.Text = "Bienvenido a la ventana de Ventas";
             // 
@@ -79,20 +80,20 @@
             this.txtBuscarV.BackColor = System.Drawing.Color.MediumOrchid;
             this.txtBuscarV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarV.Location = new System.Drawing.Point(209, 98);
-            this.txtBuscarV.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBuscarV.Location = new System.Drawing.Point(279, 121);
+            this.txtBuscarV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscarV.Name = "txtBuscarV";
-            this.txtBuscarV.Size = new System.Drawing.Size(202, 19);
+            this.txtBuscarV.Size = new System.Drawing.Size(269, 23);
             this.txtBuscarV.TabIndex = 95;
             this.txtBuscarV.Tag = "Nombre";
             // 
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.MediumOrchid;
-            this.pictureBox10.Location = new System.Drawing.Point(208, 88);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox10.Location = new System.Drawing.Point(277, 108);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(204, 32);
+            this.pictureBox10.Size = new System.Drawing.Size(272, 39);
             this.pictureBox10.TabIndex = 96;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Tag = "Nombre";
@@ -100,10 +101,10 @@
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.Black;
-            this.pictureBox11.Location = new System.Drawing.Point(207, 86);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox11.Location = new System.Drawing.Point(276, 106);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(207, 36);
+            this.pictureBox11.Size = new System.Drawing.Size(276, 44);
             this.pictureBox11.TabIndex = 97;
             this.pictureBox11.TabStop = false;
             // 
@@ -111,10 +112,9 @@
             // 
             this.lblNombre5.AutoSize = true;
             this.lblNombre5.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre5.Location = new System.Drawing.Point(385, 196);
-            this.lblNombre5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombre5.Location = new System.Drawing.Point(513, 241);
             this.lblNombre5.Name = "lblNombre5";
-            this.lblNombre5.Size = new System.Drawing.Size(41, 25);
+            this.lblNombre5.Size = new System.Drawing.Size(48, 29);
             this.lblNombre5.TabIndex = 94;
             this.lblNombre5.Tag = "Nombre";
             this.lblNombre5.Text = "Total";
@@ -124,21 +124,21 @@
             this.txtTotal.BackColor = System.Drawing.Color.MediumOrchid;
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(380, 222);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTotal.Location = new System.Drawing.Point(507, 273);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTotal.Multiline = true;
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(202, 18);
+            this.txtTotal.Size = new System.Drawing.Size(269, 22);
             this.txtTotal.TabIndex = 91;
             this.txtTotal.Tag = "Nombre";
             // 
             // pbNombre5
             // 
             this.pbNombre5.BackColor = System.Drawing.Color.MediumOrchid;
-            this.pbNombre5.Location = new System.Drawing.Point(379, 212);
-            this.pbNombre5.Margin = new System.Windows.Forms.Padding(2);
+            this.pbNombre5.Location = new System.Drawing.Point(505, 261);
+            this.pbNombre5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbNombre5.Name = "pbNombre5";
-            this.pbNombre5.Size = new System.Drawing.Size(204, 32);
+            this.pbNombre5.Size = new System.Drawing.Size(272, 39);
             this.pbNombre5.TabIndex = 92;
             this.pbNombre5.TabStop = false;
             this.pbNombre5.Tag = "Nombre";
@@ -146,10 +146,10 @@
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Black;
-            this.pictureBox9.Location = new System.Drawing.Point(378, 210);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox9.Location = new System.Drawing.Point(504, 258);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(207, 36);
+            this.pictureBox9.Size = new System.Drawing.Size(276, 44);
             this.pictureBox9.TabIndex = 93;
             this.pictureBox9.TabStop = false;
             // 
@@ -157,10 +157,9 @@
             // 
             this.lblNombre3.AutoSize = true;
             this.lblNombre3.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre3.Location = new System.Drawing.Point(96, 234);
-            this.lblNombre3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombre3.Location = new System.Drawing.Point(128, 288);
             this.lblNombre3.Name = "lblNombre3";
-            this.lblNombre3.Size = new System.Drawing.Size(44, 25);
+            this.lblNombre3.Size = new System.Drawing.Size(50, 29);
             this.lblNombre3.TabIndex = 85;
             this.lblNombre3.Tag = "Nombre";
             this.lblNombre3.Text = "Fecha";
@@ -170,21 +169,21 @@
             this.txtFecha.BackColor = System.Drawing.Color.MediumOrchid;
             this.txtFecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFecha.Location = new System.Drawing.Point(91, 260);
-            this.txtFecha.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFecha.Location = new System.Drawing.Point(121, 320);
+            this.txtFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFecha.Multiline = true;
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(202, 18);
+            this.txtFecha.Size = new System.Drawing.Size(269, 22);
             this.txtFecha.TabIndex = 82;
             this.txtFecha.Tag = "Nombre";
             // 
             // pbNombre3
             // 
             this.pbNombre3.BackColor = System.Drawing.Color.MediumOrchid;
-            this.pbNombre3.Location = new System.Drawing.Point(90, 249);
-            this.pbNombre3.Margin = new System.Windows.Forms.Padding(2);
+            this.pbNombre3.Location = new System.Drawing.Point(120, 306);
+            this.pbNombre3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbNombre3.Name = "pbNombre3";
-            this.pbNombre3.Size = new System.Drawing.Size(204, 32);
+            this.pbNombre3.Size = new System.Drawing.Size(272, 39);
             this.pbNombre3.TabIndex = 83;
             this.pbNombre3.TabStop = false;
             this.pbNombre3.Tag = "Nombre";
@@ -192,10 +191,10 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Black;
-            this.pictureBox5.Location = new System.Drawing.Point(88, 248);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Location = new System.Drawing.Point(117, 305);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(207, 36);
+            this.pictureBox5.Size = new System.Drawing.Size(276, 44);
             this.pictureBox5.TabIndex = 84;
             this.pictureBox5.TabStop = false;
             // 
@@ -203,10 +202,9 @@
             // 
             this.lblNombre2.AutoSize = true;
             this.lblNombre2.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre2.Location = new System.Drawing.Point(98, 155);
-            this.lblNombre2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombre2.Location = new System.Drawing.Point(131, 191);
             this.lblNombre2.Name = "lblNombre2";
-            this.lblNombre2.Size = new System.Drawing.Size(57, 25);
+            this.lblNombre2.Size = new System.Drawing.Size(64, 29);
             this.lblNombre2.TabIndex = 81;
             this.lblNombre2.Tag = "Nombre";
             this.lblNombre2.Text = "Zapatos";
@@ -216,21 +214,21 @@
             this.txtZapatos.BackColor = System.Drawing.Color.MediumOrchid;
             this.txtZapatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtZapatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtZapatos.Location = new System.Drawing.Point(93, 181);
-            this.txtZapatos.Margin = new System.Windows.Forms.Padding(2);
+            this.txtZapatos.Location = new System.Drawing.Point(124, 223);
+            this.txtZapatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtZapatos.Multiline = true;
             this.txtZapatos.Name = "txtZapatos";
-            this.txtZapatos.Size = new System.Drawing.Size(202, 18);
+            this.txtZapatos.Size = new System.Drawing.Size(269, 22);
             this.txtZapatos.TabIndex = 78;
             this.txtZapatos.Tag = "Nombre";
             // 
             // pbNombre1
             // 
             this.pbNombre1.BackColor = System.Drawing.Color.MediumOrchid;
-            this.pbNombre1.Location = new System.Drawing.Point(92, 171);
-            this.pbNombre1.Margin = new System.Windows.Forms.Padding(2);
+            this.pbNombre1.Location = new System.Drawing.Point(123, 210);
+            this.pbNombre1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbNombre1.Name = "pbNombre1";
-            this.pbNombre1.Size = new System.Drawing.Size(204, 32);
+            this.pbNombre1.Size = new System.Drawing.Size(272, 39);
             this.pbNombre1.TabIndex = 79;
             this.pbNombre1.TabStop = false;
             this.pbNombre1.Tag = "Nombre";
@@ -238,12 +236,60 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Black;
-            this.pictureBox3.Location = new System.Drawing.Point(90, 170);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Location = new System.Drawing.Point(120, 209);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(207, 36);
+            this.pictureBox3.Size = new System.Drawing.Size(276, 44);
             this.pictureBox3.TabIndex = 80;
             this.pictureBox3.TabStop = false;
+            // 
+            // dtw_Ventas
+            // 
+            this.dtw_Ventas.AllowUserToAddRows = false;
+            this.dtw_Ventas.AllowUserToDeleteRows = false;
+            this.dtw_Ventas.AllowUserToResizeColumns = false;
+            this.dtw_Ventas.AllowUserToResizeRows = false;
+            this.dtw_Ventas.BackgroundColor = System.Drawing.Color.MediumOrchid;
+            this.dtw_Ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtw_Ventas.Location = new System.Drawing.Point(12, 11);
+            this.dtw_Ventas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtw_Ventas.Name = "dtw_Ventas";
+            this.dtw_Ventas.RowHeadersWidth = 51;
+            this.dtw_Ventas.Size = new System.Drawing.Size(669, 116);
+            this.dtw_Ventas.TabIndex = 103;
+            // 
+            // lbl_ID
+            // 
+            this.lbl_ID.AutoSize = true;
+            this.lbl_ID.Location = new System.Drawing.Point(65, 74);
+            this.lbl_ID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_ID.Name = "lbl_ID";
+            this.lbl_ID.Size = new System.Drawing.Size(79, 16);
+            this.lbl_ID.TabIndex = 104;
+            this.lbl_ID.Text = "Label del ID";
+            this.lbl_ID.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(280, 153);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 16);
+            this.label1.TabIndex = 105;
+            this.label1.Text = "Ingrese No. de Venta";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.groupBox1.Controls.Add(this.dtw_Ventas);
+            this.groupBox1.Location = new System.Drawing.Point(103, 373);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(693, 135);
+            this.groupBox1.TabIndex = 106;
+            this.groupBox1.TabStop = false;
             // 
             // btnBuscarV
             // 
@@ -251,11 +297,11 @@
             this.btnBuscarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
             this.btnBuscarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarV.GrosorBorde = 2;
-            this.btnBuscarV.Location = new System.Drawing.Point(425, 87);
-            this.btnBuscarV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscarV.Location = new System.Drawing.Point(567, 107);
+            this.btnBuscarV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarV.Name = "btnBuscarV";
             this.btnBuscarV.Radio = 20;
-            this.btnBuscarV.Size = new System.Drawing.Size(92, 28);
+            this.btnBuscarV.Size = new System.Drawing.Size(123, 34);
             this.btnBuscarV.TabIndex = 102;
             this.btnBuscarV.Text = "Buscar";
             this.btnBuscarV.UseVisualStyleBackColor = true;
@@ -267,11 +313,11 @@
             this.btnAgregarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
             this.btnAgregarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarV.GrosorBorde = 2;
-            this.btnAgregarV.Location = new System.Drawing.Point(450, 427);
-            this.btnAgregarV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregarV.Location = new System.Drawing.Point(600, 526);
+            this.btnAgregarV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarV.Name = "btnAgregarV";
             this.btnAgregarV.Radio = 20;
-            this.btnAgregarV.Size = new System.Drawing.Size(92, 27);
+            this.btnAgregarV.Size = new System.Drawing.Size(123, 33);
             this.btnAgregarV.TabIndex = 100;
             this.btnAgregarV.Text = "Agregar";
             this.btnAgregarV.UseVisualStyleBackColor = true;
@@ -283,11 +329,11 @@
             this.btnEliminarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
             this.btnEliminarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarV.GrosorBorde = 2;
-            this.btnEliminarV.Location = new System.Drawing.Point(297, 427);
-            this.btnEliminarV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarV.Location = new System.Drawing.Point(396, 526);
+            this.btnEliminarV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarV.Name = "btnEliminarV";
             this.btnEliminarV.Radio = 20;
-            this.btnEliminarV.Size = new System.Drawing.Size(92, 27);
+            this.btnEliminarV.Size = new System.Drawing.Size(123, 33);
             this.btnEliminarV.TabIndex = 99;
             this.btnEliminarV.Text = "Eliminar";
             this.btnEliminarV.UseVisualStyleBackColor = true;
@@ -300,63 +346,22 @@
             this.btnModificarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
             this.btnModificarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarV.GrosorBorde = 2;
-            this.btnModificarV.Location = new System.Drawing.Point(153, 427);
-            this.btnModificarV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificarV.Location = new System.Drawing.Point(204, 526);
+            this.btnModificarV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificarV.Name = "btnModificarV";
             this.btnModificarV.Radio = 20;
-            this.btnModificarV.Size = new System.Drawing.Size(92, 27);
+            this.btnModificarV.Size = new System.Drawing.Size(123, 33);
             this.btnModificarV.TabIndex = 98;
             this.btnModificarV.Text = "Modificar";
             this.btnModificarV.UseVisualStyleBackColor = false;
             this.btnModificarV.Click += new System.EventHandler(this.btnModificarV_Click);
             // 
-            // dtw_Ventas
-            // 
-            this.dtw_Ventas.AllowUserToAddRows = false;
-            this.dtw_Ventas.AllowUserToDeleteRows = false;
-            this.dtw_Ventas.AllowUserToResizeColumns = false;
-            this.dtw_Ventas.AllowUserToResizeRows = false;
-            this.dtw_Ventas.BackgroundColor = System.Drawing.Color.MediumOrchid;
-            this.dtw_Ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtw_Ventas.Location = new System.Drawing.Point(9, 9);
-            this.dtw_Ventas.Name = "dtw_Ventas";
-            this.dtw_Ventas.Size = new System.Drawing.Size(502, 94);
-            this.dtw_Ventas.TabIndex = 103;
-            // 
-            // lbl_ID
-            // 
-            this.lbl_ID.AutoSize = true;
-            this.lbl_ID.Location = new System.Drawing.Point(49, 60);
-            this.lbl_ID.Name = "lbl_ID";
-            this.lbl_ID.Size = new System.Drawing.Size(64, 13);
-            this.lbl_ID.TabIndex = 104;
-            this.lbl_ID.Text = "Label del ID";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(210, 124);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 13);
-            this.label1.TabIndex = 105;
-            this.label1.Text = "Ingrese No. de Venta o Zapatos";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.LavenderBlush;
-            this.groupBox1.Controls.Add(this.dtw_Ventas);
-            this.groupBox1.Location = new System.Drawing.Point(77, 303);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(520, 110);
-            this.groupBox1.TabIndex = 106;
-            this.groupBox1.TabStop = false;
-            // 
             // Ventas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumOrchid;
-            this.ClientSize = new System.Drawing.Size(705, 490);
+            this.ClientSize = new System.Drawing.Size(940, 603);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_ID);
@@ -380,7 +385,7 @@
             this.Controls.Add(this.txtZapatos);
             this.Controls.Add(this.pbNombre1);
             this.Controls.Add(this.pictureBox3);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Ventas";
             this.Text = "Agregar";
             this.Load += new System.EventHandler(this.Ventas_Load);
