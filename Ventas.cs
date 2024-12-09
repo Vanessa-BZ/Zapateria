@@ -14,6 +14,7 @@ namespace ConexionSQL
         private IconButton currentBtn;
         private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");
         private Random id = new Random();
+
         public Ventas()
         {
             InitializeComponent();
@@ -27,8 +28,8 @@ namespace ConexionSQL
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             CargarDatos();
-
         }
+
         private void CargarDatos()
         {
             string query = "SELECT * FROM Ventas";
@@ -38,6 +39,7 @@ namespace ConexionSQL
 
             dtw_Ventas.DataSource = dt;
         }
+
         private void ActivateButtom(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -70,12 +72,13 @@ namespace ConexionSQL
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
+
         private void Reset()
         {
             DisableButtom();
             leftBorderBtn.Visible = false;
-
         }
+
         private void Limpiar()
         {
             txtZapatos.Clear();
@@ -85,6 +88,7 @@ namespace ConexionSQL
             btnModificarV.Enabled = false;
             btnEliminarV.Enabled = false;
         }
+
         private void Busqueda(DataGridView d, int col)
         {
             string query = "SELECT * FROM Ventas WHERE ID_Venta = @ID_Venta";
@@ -106,6 +110,7 @@ namespace ConexionSQL
             }
             Conexion.Close();
         }
+
         private void btnAgregarV_Click(object sender, EventArgs e)
         {
             string Zapatos = txtZapatos.Text;
@@ -115,6 +120,14 @@ namespace ConexionSQL
             if (string.IsNullOrEmpty(Zapatos) || string.IsNullOrEmpty(Fecha) || string.IsNullOrEmpty(Total))
             {
                 MessageBox.Show("Campos incompletos");
+                return;
+            }
+
+            // Intentar convertir la fecha a un formato válido
+            DateTime fechaVenta;
+            if (!DateTime.TryParse(Fecha, out fechaVenta))
+            {
+                MessageBox.Show("Fecha no válida. Por favor ingrese una fecha válida.");
                 return;
             }
 
@@ -130,7 +143,7 @@ namespace ConexionSQL
             // Asignar parámetros a la consulta
             cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
             cmd.Parameters.AddWithValue("@ID_Zapato", Zapatos);
-            cmd.Parameters.AddWithValue("@Fecha", Fecha);
+            cmd.Parameters.AddWithValue("@Fecha", fechaVenta);  // Usar la variable fechaVenta
             cmd.Parameters.AddWithValue("@Total", Total);
 
             // Ejecutar la consulta para insertar los datos
@@ -156,12 +169,20 @@ namespace ConexionSQL
 
         private void btnModificarV_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE Ventas SET Zapato = @ID_Zapato, Fecha = @Fecha, Total = @Total WHERE ID_Venta = @ID_Venta";
+            string query = "UPDATE Ventas SET ID_Zapato = @ID_Zapato, Fecha = @Fecha, Total = @Total WHERE ID_Venta = @ID_Venta";
             SqlCommand cmd = new SqlCommand(query, Conexion);
+
+            // Intentar convertir la fecha a un formato válido
+            DateTime fechaVenta;
+            if (!DateTime.TryParse(txtFecha.Text, out fechaVenta))
+            {
+                MessageBox.Show("Fecha no válida. Por favor ingrese una fecha válida.");
+                return;
+            }
 
             cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
             cmd.Parameters.AddWithValue("@ID_Zapato", txtZapatos.Text);
-            cmd.Parameters.AddWithValue("@Fecha", txtFecha.Text);
+            cmd.Parameters.AddWithValue("@Fecha", fechaVenta);  // Usar la variable fechaVenta
             cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
 
             Conexion.Open();
@@ -229,7 +250,6 @@ namespace ConexionSQL
 
         private void Ventas_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
