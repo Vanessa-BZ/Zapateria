@@ -97,6 +97,8 @@ namespace ConexionSQL
             {
                 lbl_ID.Text = reader["ID_Venta"].ToString();
                 txtZapatos.Text = reader["ID_Zapato"].ToString();
+                txtFecha.Text = reader["Fecha"].ToString();
+                txtTotal.Text = reader["Total"].ToString();
             }
             else
             {
@@ -122,7 +124,7 @@ namespace ConexionSQL
 
             // Preparar la consulta para insertar el nuevo proveedor en la base de datos
             SqlCommand cmd = new SqlCommand(
-                "INSERT INTO Ventas (ID_Venta, Zapato, Fecha, Total) VALUES (@ID_Venta, @ID_Zapato, @Fecha, @Total)",
+                "INSERT INTO Ventas (ID_Venta, ID_Zapato, Fecha, Total) VALUES (@ID_Venta, @ID_Zapato, @Fecha, @Total)",
                 Conexion);
 
             // Asignar parámetros a la consulta
@@ -157,7 +159,7 @@ namespace ConexionSQL
             string query = "UPDATE Ventas SET Zapato = @ID_Zapato, Fecha = @Fecha, Total = @Total WHERE ID_Venta = @ID_Venta";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
-            //cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
+            cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
             cmd.Parameters.AddWithValue("@ID_Zapato", txtZapatos.Text);
             cmd.Parameters.AddWithValue("@Fecha", txtFecha.Text);
             cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
@@ -212,6 +214,7 @@ namespace ConexionSQL
             if (txtBuscarV.Text != "")
             {
                 Busqueda(dtw_Ventas, 0);
+                Busqueda(dtw_Ventas, 1);
             }
             else
             {

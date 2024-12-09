@@ -106,6 +106,11 @@ namespace ConexionSQL
             {
                 lbl_ID.Text = reader["ID_Zapato"].ToString();
                 txtCategoria.Text = reader["Categoria"].ToString();
+                txtMedida.Text = reader["Medida"].ToString();
+                txtColor.Text = reader["Color"].ToString();
+                txtMarca.Text = reader["Marca"].ToString();
+                txtMaterial.Text = reader["Material"].ToString();
+                txtProveedor.Text = reader["ID_Zapato"].ToString();
             }
             else
             {
@@ -134,7 +139,7 @@ namespace ConexionSQL
 
             // Preparar la consulta para insertar el nuevo proveedor en la base de datos
             SqlCommand cmd = new SqlCommand(
-                "INSERT INTO Zpatos (ID_Zapato, Categoria, Medida, Color, Marca, Material, ID_Proveedor) VALUES (@ID_Zapatos, @Categoria, @Precio, @Medida, @Color, @Marca, @Material, @ID_Proveedor)",
+                "INSERT INTO Zpatos (ID_Zapato, Categoria, Medida, Color, Marca, Material, ID_Proveedor) VALUES (@ID_Zapato, @Categoria, @Precio, @Medida, @Color, @Marca, @Material, @ID_Proveedor)",
                 Conexion);
 
             // Asignar parámetros a la consulta
@@ -172,7 +177,7 @@ namespace ConexionSQL
             string query = "UPDATE Zapatos SET Categoria = @Categoria, Medida = @Medida, Color = @Color, Marca = @Marca, Material = @Material, ID_Proovedor = @ID_Proveedor WHERE ID_Zapato = @ID_Zapato";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
-            //cmd.Parameters.AddWithValue("@ID_Zapato", lbl_ID.Text);
+            cmd.Parameters.AddWithValue("@ID_Zapato", lbl_ID.Text);
             cmd.Parameters.AddWithValue("@Categoria", txtCategoria.Text);
             cmd.Parameters.AddWithValue("@Medida", txtMedida.Text);
             cmd.Parameters.AddWithValue("@Color", txtColor.Text);

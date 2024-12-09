@@ -103,6 +103,9 @@ namespace ConexionSQL
             {
                 lbl_id.Text = reader["ID_Proveedor"].ToString();
                 txtNombreProv.Text = reader["Nombre_P"].ToString();
+                txtPrecio.Text = reader["Precio"].ToString();
+                txtUnidades.Text = reader["Unidades"].ToString();
+                CBXcomercio.Text = reader["Comercializacion"].ToString();
             }
             else
             {
@@ -166,7 +169,7 @@ namespace ConexionSQL
             string query = "UPDATE Proveedores SET Nombre_P = @Nombre_P, Precio = @Precio, Unidades = @Unidades, Comercializacion = @Comercializacion WHERE ID_Proveedor = @ID_Proveedor";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
-            //cmd.Parameters.AddWithValue("@ID_Proveedor", lbl_id.Text);
+            cmd.Parameters.AddWithValue("@ID_Proveedor", lbl_id.Text);
             cmd.Parameters.AddWithValue("@Nombre_P", txtNombreProv.Text);
             cmd.Parameters.AddWithValue("@Precio", txtPrecio.Text);
             cmd.Parameters.AddWithValue("@Unidades", txtUnidades.Text);
