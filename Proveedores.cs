@@ -129,12 +129,41 @@ namespace ConexionSQL
                 return;
             }
 
+            // Generar un ID único para el nuevo proveedor
             int valor = id.Next(100, 999);
             lbl_id.Text = "P" + valor.ToString();
 
-            dtw_Proveedores.Rows.Add(lbl_id.Text, Nombre, Precio, Unidades, Comercio);
-            MessageBox.Show("Datos agregados al listado temporal");
-            Limpiar();
+            // Preparar la consulta para insertar el nuevo proveedor en la base de datos
+            SqlCommand cmd = new SqlCommand(
+                "INSERT INTO Proveedores (ID_Proveedor, Nombre_P, Precio, Unidades, Comercializacion) VALUES (@ID_Proveedor, @Nombre_P, @Precio, @Unidades, @Comercializacion)",
+                Conexion);
+
+            // Asignar parámetros a la consulta
+            cmd.Parameters.AddWithValue("@ID_Proveedor", lbl_id.Text);
+            cmd.Parameters.AddWithValue("@Nombre_P", Nombre);
+            cmd.Parameters.AddWithValue("@Precio", Precio);
+            cmd.Parameters.AddWithValue("@Unidades", Unidades);
+            cmd.Parameters.AddWithValue("@Comercializacion", Comercio);
+
+            // Ejecutar la consulta para insertar los datos
+            Conexion.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Proveedor agregado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al agregar el proveedor: {ex.Message}");
+            }
+            finally
+            {
+                Conexion.Close();
+            }
+
+            // Recargar los datos en el DataGridView para mostrar el nuevo proveedor
+            CargarDatos(); // Este método recarga todos los proveedores
+            Limpiar(); // Limpiar los campos de texto
         }
 
         private void btnGuardarP_Click(object sender, EventArgs e)
