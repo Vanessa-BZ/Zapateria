@@ -35,12 +35,18 @@
             this.pContainerP = new System.Windows.Forms.Panel();
             this.btnPrimerP = new FontAwesome.Sharp.IconButton();
             this.btnUltimoP = new FontAwesome.Sharp.IconButton();
+            this.btnLimpiarP = new BotonRedondeado();
+            this.dtw_Proveedores = new System.Windows.Forms.DataGridView();
             this.btnSiguienteP = new FontAwesome.Sharp.IconButton();
             this.btnAtrasP = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
             this.CBXcomercio = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnBuscarP = new BotonRedondeado();
+            this.btnAgregarP = new BotonRedondeado();
+            this.btnEliminarP = new BotonRedondeado();
+            this.btnModificarP = new BotonRedondeado();
             this.txtBuscarP = new System.Windows.Forms.TextBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -59,14 +65,9 @@
             this.txtNombreProv = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbNombre = new System.Windows.Forms.PictureBox();
-            this.dtw_Proveedores = new System.Windows.Forms.DataGridView();
-            this.btnLimpiarP = new BotonRedondeado();
-            this.btnBuscarP = new BotonRedondeado();
-            this.btnAgregarP = new BotonRedondeado();
-            this.btnEliminarP = new BotonRedondeado();
-            this.btnModificarP = new BotonRedondeado();
             this.panelProveedores.SuspendLayout();
             this.pContainerP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtw_Proveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre5)).BeginInit();
@@ -77,7 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtw_Proveedores)).BeginInit();
             this.SuspendLayout();
             // 
             // panelProveedores
@@ -140,7 +140,7 @@
             this.btnPrimerP.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnPrimerP.IconSize = 30;
             this.btnPrimerP.Location = new System.Drawing.Point(151, 444);
-            this.btnPrimerP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrimerP.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrimerP.Name = "btnPrimerP";
             this.btnPrimerP.Size = new System.Drawing.Size(100, 28);
             this.btnPrimerP.TabIndex = 93;
@@ -164,6 +164,64 @@
             this.btnUltimoP.TabIndex = 91;
             this.btnUltimoP.UseVisualStyleBackColor = true;
             this.btnUltimoP.Click += new System.EventHandler(this.btnUltimoP_Click);
+            // 
+            // btnLimpiarP
+            // 
+            this.btnLimpiarP.ColorBorde = System.Drawing.Color.Black;
+            this.btnLimpiarP.ColorDeFondo = System.Drawing.Color.LightPink;
+            this.btnLimpiarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarP.GrosorBorde = 2;
+            this.btnLimpiarP.Location = new System.Drawing.Point(753, 393);
+            this.btnLimpiarP.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpiarP.Name = "btnLimpiarP";
+            this.btnLimpiarP.Radio = 20;
+            this.btnLimpiarP.Size = new System.Drawing.Size(123, 36);
+            this.btnLimpiarP.TabIndex = 92;
+            this.btnLimpiarP.Text = "Limpiar";
+            this.btnLimpiarP.UseVisualStyleBackColor = true;
+            this.btnLimpiarP.Visible = false;
+            this.btnLimpiarP.Click += new System.EventHandler(this.btnLimpiarP_Click);
+            // 
+            // dtw_Proveedores
+            // 
+            this.dtw_Proveedores.AllowUserToAddRows = false;
+            this.dtw_Proveedores.AllowUserToDeleteRows = false;
+            this.dtw_Proveedores.AllowUserToResizeColumns = false;
+            this.dtw_Proveedores.AllowUserToResizeRows = false;
+            this.dtw_Proveedores.BackgroundColor = System.Drawing.Color.Thistle;
+            this.dtw_Proveedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Plum;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtw_Proveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtw_Proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Plum;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtw_Proveedores.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtw_Proveedores.Location = new System.Drawing.Point(151, 514);
+            this.dtw_Proveedores.Margin = new System.Windows.Forms.Padding(4);
+            this.dtw_Proveedores.Name = "dtw_Proveedores";
+            this.dtw_Proveedores.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Plum;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtw_Proveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtw_Proveedores.RowHeadersWidth = 51;
+            this.dtw_Proveedores.Size = new System.Drawing.Size(537, 183);
+            this.dtw_Proveedores.TabIndex = 0;
             // 
             // btnSiguienteP
             // 
@@ -222,7 +280,6 @@
             this.lbl_id.Size = new System.Drawing.Size(79, 16);
             this.lbl_id.TabIndex = 47;
             this.lbl_id.Text = "Label del ID";
-            this.lbl_id.Visible = false;
             // 
             // CBXcomercio
             // 
@@ -234,7 +291,7 @@
             "Nacional",
             "Internacional"});
             this.CBXcomercio.Location = new System.Drawing.Point(461, 326);
-            this.CBXcomercio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CBXcomercio.Margin = new System.Windows.Forms.Padding(4);
             this.CBXcomercio.MaxDropDownItems = 2;
             this.CBXcomercio.Name = "CBXcomercio";
             this.CBXcomercio.Size = new System.Drawing.Size(255, 28);
@@ -251,6 +308,73 @@
             this.label5.Size = new System.Drawing.Size(731, 42);
             this.label5.TabIndex = 13;
             this.label5.Text = "Bienvenido a la ventana de Proveedores";
+            // 
+            // btnBuscarP
+            // 
+            this.btnBuscarP.ColorBorde = System.Drawing.Color.Black;
+            this.btnBuscarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnBuscarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarP.GrosorBorde = 2;
+            this.btnBuscarP.Location = new System.Drawing.Point(621, 90);
+            this.btnBuscarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscarP.Name = "btnBuscarP";
+            this.btnBuscarP.Radio = 20;
+            this.btnBuscarP.Size = new System.Drawing.Size(123, 32);
+            this.btnBuscarP.TabIndex = 44;
+            this.btnBuscarP.Text = "&Buscar";
+            this.btnBuscarP.UseVisualStyleBackColor = true;
+            this.btnBuscarP.Click += new System.EventHandler(this.btnBuscarP_Click);
+            // 
+            // btnAgregarP
+            // 
+            this.btnAgregarP.ColorBorde = System.Drawing.Color.Black;
+            this.btnAgregarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnAgregarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarP.GrosorBorde = 2;
+            this.btnAgregarP.Location = new System.Drawing.Point(753, 188);
+            this.btnAgregarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarP.Name = "btnAgregarP";
+            this.btnAgregarP.Radio = 20;
+            this.btnAgregarP.Size = new System.Drawing.Size(123, 32);
+            this.btnAgregarP.TabIndex = 42;
+            this.btnAgregarP.Text = "Agregar";
+            this.btnAgregarP.UseVisualStyleBackColor = true;
+            this.btnAgregarP.Click += new System.EventHandler(this.btnAgregarP_Click);
+            // 
+            // btnEliminarP
+            // 
+            this.btnEliminarP.ColorBorde = System.Drawing.Color.Black;
+            this.btnEliminarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnEliminarP.Enabled = false;
+            this.btnEliminarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarP.GrosorBorde = 2;
+            this.btnEliminarP.Location = new System.Drawing.Point(753, 322);
+            this.btnEliminarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminarP.Name = "btnEliminarP";
+            this.btnEliminarP.Radio = 20;
+            this.btnEliminarP.Size = new System.Drawing.Size(123, 32);
+            this.btnEliminarP.TabIndex = 41;
+            this.btnEliminarP.Text = "Eliminar";
+            this.btnEliminarP.UseVisualStyleBackColor = true;
+            this.btnEliminarP.Click += new System.EventHandler(this.btnEliminarP_Click);
+            // 
+            // btnModificarP
+            // 
+            this.btnModificarP.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnModificarP.ColorBorde = System.Drawing.Color.Black;
+            this.btnModificarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnModificarP.Enabled = false;
+            this.btnModificarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarP.GrosorBorde = 2;
+            this.btnModificarP.Location = new System.Drawing.Point(753, 250);
+            this.btnModificarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificarP.Name = "btnModificarP";
+            this.btnModificarP.Radio = 20;
+            this.btnModificarP.Size = new System.Drawing.Size(123, 32);
+            this.btnModificarP.TabIndex = 40;
+            this.btnModificarP.Text = "Modificar";
+            this.btnModificarP.UseVisualStyleBackColor = false;
+            this.btnModificarP.Click += new System.EventHandler(this.btnModificarP_Click);
             // 
             // txtBuscarP
             // 
@@ -453,131 +577,6 @@
             this.pbNombre.TabIndex = 1;
             this.pbNombre.TabStop = false;
             // 
-            // dtw_Proveedores
-            // 
-            this.dtw_Proveedores.AllowUserToAddRows = false;
-            this.dtw_Proveedores.AllowUserToDeleteRows = false;
-            this.dtw_Proveedores.AllowUserToResizeColumns = false;
-            this.dtw_Proveedores.AllowUserToResizeRows = false;
-            this.dtw_Proveedores.BackgroundColor = System.Drawing.Color.Thistle;
-            this.dtw_Proveedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Plum;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtw_Proveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtw_Proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Plum;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtw_Proveedores.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtw_Proveedores.Location = new System.Drawing.Point(151, 514);
-            this.dtw_Proveedores.Margin = new System.Windows.Forms.Padding(4);
-            this.dtw_Proveedores.Name = "dtw_Proveedores";
-            this.dtw_Proveedores.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Plum;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtw_Proveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dtw_Proveedores.RowHeadersWidth = 51;
-            this.dtw_Proveedores.Size = new System.Drawing.Size(537, 183);
-            this.dtw_Proveedores.TabIndex = 0;
-            // 
-            // btnLimpiarP
-            // 
-            this.btnLimpiarP.ColorBorde = System.Drawing.Color.Black;
-            this.btnLimpiarP.ColorDeFondo = System.Drawing.Color.LightPink;
-            this.btnLimpiarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarP.GrosorBorde = 2;
-            this.btnLimpiarP.Location = new System.Drawing.Point(753, 393);
-            this.btnLimpiarP.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLimpiarP.Name = "btnLimpiarP";
-            this.btnLimpiarP.Radio = 20;
-            this.btnLimpiarP.Size = new System.Drawing.Size(123, 36);
-            this.btnLimpiarP.TabIndex = 92;
-            this.btnLimpiarP.Text = "Limpiar";
-            this.btnLimpiarP.UseVisualStyleBackColor = true;
-            this.btnLimpiarP.Visible = false;
-            this.btnLimpiarP.Click += new System.EventHandler(this.btnLimpiarP_Click);
-            // 
-            // btnBuscarP
-            // 
-            this.btnBuscarP.ColorBorde = System.Drawing.Color.Black;
-            this.btnBuscarP.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnBuscarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarP.GrosorBorde = 2;
-            this.btnBuscarP.Location = new System.Drawing.Point(621, 90);
-            this.btnBuscarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBuscarP.Name = "btnBuscarP";
-            this.btnBuscarP.Radio = 20;
-            this.btnBuscarP.Size = new System.Drawing.Size(123, 32);
-            this.btnBuscarP.TabIndex = 44;
-            this.btnBuscarP.Text = "&Buscar";
-            this.btnBuscarP.UseVisualStyleBackColor = true;
-            this.btnBuscarP.Click += new System.EventHandler(this.btnBuscarP_Click);
-            // 
-            // btnAgregarP
-            // 
-            this.btnAgregarP.ColorBorde = System.Drawing.Color.Black;
-            this.btnAgregarP.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnAgregarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarP.GrosorBorde = 2;
-            this.btnAgregarP.Location = new System.Drawing.Point(753, 188);
-            this.btnAgregarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAgregarP.Name = "btnAgregarP";
-            this.btnAgregarP.Radio = 20;
-            this.btnAgregarP.Size = new System.Drawing.Size(123, 32);
-            this.btnAgregarP.TabIndex = 42;
-            this.btnAgregarP.Text = "Agregar";
-            this.btnAgregarP.UseVisualStyleBackColor = true;
-            this.btnAgregarP.Click += new System.EventHandler(this.btnAgregarP_Click);
-            // 
-            // btnEliminarP
-            // 
-            this.btnEliminarP.ColorBorde = System.Drawing.Color.Black;
-            this.btnEliminarP.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnEliminarP.Enabled = false;
-            this.btnEliminarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarP.GrosorBorde = 2;
-            this.btnEliminarP.Location = new System.Drawing.Point(753, 322);
-            this.btnEliminarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEliminarP.Name = "btnEliminarP";
-            this.btnEliminarP.Radio = 20;
-            this.btnEliminarP.Size = new System.Drawing.Size(123, 32);
-            this.btnEliminarP.TabIndex = 41;
-            this.btnEliminarP.Text = "Eliminar";
-            this.btnEliminarP.UseVisualStyleBackColor = true;
-            this.btnEliminarP.Click += new System.EventHandler(this.btnEliminarP_Click);
-            // 
-            // btnModificarP
-            // 
-            this.btnModificarP.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnModificarP.ColorBorde = System.Drawing.Color.Black;
-            this.btnModificarP.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnModificarP.Enabled = false;
-            this.btnModificarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarP.GrosorBorde = 2;
-            this.btnModificarP.Location = new System.Drawing.Point(753, 250);
-            this.btnModificarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnModificarP.Name = "btnModificarP";
-            this.btnModificarP.Radio = 20;
-            this.btnModificarP.Size = new System.Drawing.Size(123, 32);
-            this.btnModificarP.TabIndex = 40;
-            this.btnModificarP.Text = "Modificar";
-            this.btnModificarP.UseVisualStyleBackColor = false;
-            this.btnModificarP.Click += new System.EventHandler(this.btnModificarP_Click);
-            // 
             // Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -591,6 +590,7 @@
             this.panelProveedores.ResumeLayout(false);
             this.pContainerP.ResumeLayout(false);
             this.pContainerP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtw_Proveedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre5)).EndInit();
@@ -601,7 +601,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtw_Proveedores)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -257,7 +257,7 @@
             this.dtw_Ventas.BackgroundColor = System.Drawing.Color.MediumOrchid;
             this.dtw_Ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtw_Ventas.Location = new System.Drawing.Point(12, 11);
-            this.dtw_Ventas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtw_Ventas.Margin = new System.Windows.Forms.Padding(4);
             this.dtw_Ventas.Name = "dtw_Ventas";
             this.dtw_Ventas.RowHeadersWidth = 51;
             this.dtw_Ventas.Size = new System.Drawing.Size(669, 116);
@@ -272,7 +272,6 @@
             this.lbl_ID.Size = new System.Drawing.Size(79, 16);
             this.lbl_ID.TabIndex = 104;
             this.lbl_ID.Text = "Label del ID";
-            this.lbl_ID.Visible = false;
             // 
             // label1
             // 
@@ -289,9 +288,9 @@
             this.groupBox1.BackColor = System.Drawing.Color.LavenderBlush;
             this.groupBox1.Controls.Add(this.dtw_Ventas);
             this.groupBox1.Location = new System.Drawing.Point(109, 633);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(693, 135);
             this.groupBox1.TabIndex = 106;
             this.groupBox1.TabStop = false;
@@ -406,7 +405,7 @@
             this.btnLimpiarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarV.GrosorBorde = 2;
             this.btnLimpiarV.Location = new System.Drawing.Point(787, 405);
-            this.btnLimpiarV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiarV.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarV.Name = "btnLimpiarV";
             this.btnLimpiarV.Radio = 20;
             this.btnLimpiarV.Size = new System.Drawing.Size(123, 32);
@@ -424,7 +423,7 @@
             this.btnPrimerV.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnPrimerV.IconSize = 30;
             this.btnPrimerV.Location = new System.Drawing.Point(204, 417);
-            this.btnPrimerV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrimerV.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrimerV.Name = "btnPrimerV";
             this.btnPrimerV.Size = new System.Drawing.Size(100, 28);
             this.btnPrimerV.TabIndex = 110;

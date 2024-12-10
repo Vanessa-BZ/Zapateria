@@ -292,7 +292,6 @@
             this.lbl_ID.Size = new System.Drawing.Size(147, 16);
             this.lbl_ID.TabIndex = 83;
             this.lbl_ID.Text = "Label del ID del Zapato";
-            this.lbl_ID.Visible = false;
             // 
             // label3
             // 

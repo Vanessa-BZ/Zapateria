@@ -78,7 +78,7 @@
             this.btnZapatos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnZapatos.IconSize = 40;
             this.btnZapatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnZapatos.Location = new System.Drawing.Point(0, 378);
+            this.btnZapatos.Location = new System.Drawing.Point(0, 296);
             this.btnZapatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnZapatos.Name = "btnZapatos";
             this.btnZapatos.Padding = new System.Windows.Forms.Padding(11, 0, 11, 0);
@@ -102,7 +102,7 @@
             this.btnProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProveedores.IconSize = 40;
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(0, 296);
+            this.btnProveedores.Location = new System.Drawing.Point(0, 214);
             this.btnProveedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Padding = new System.Windows.Forms.Padding(11, 0, 11, 0);
@@ -116,7 +116,6 @@
             // 
             // btnVentas
             // 
-            this.btnVentas.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnVentas.FlatAppearance.BorderSize = 0;
             this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,7 +125,7 @@
             this.btnVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnVentas.IconSize = 40;
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 214);
+            this.btnVentas.Location = new System.Drawing.Point(0, 382);
             this.btnVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Padding = new System.Windows.Forms.Padding(11, 0, 11, 0);
