@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace ConexionSQL
 {
@@ -12,10 +13,11 @@ namespace ConexionSQL
         private Form FormularioVentasActual;
         private Panel leftBorderBtn;
         private IconButton currentBtn;
-        private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True"); //Salma
-        //private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True"); //Vanessita
+        //private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True"); //Salma
+        private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True"); //Vanessita
         private Random id = new Random();
         private int currentIndex = 0;
+
 
         public Ventas()
         {
@@ -86,6 +88,7 @@ namespace ConexionSQL
             txtZapatos.Clear();
             txtFecha.Clear();
             txtTotal.Clear();
+            txtBuscarV.Clear();
 
             btnModificarV.Enabled = false;
             btnEliminarV.Enabled = false;
@@ -93,20 +96,81 @@ namespace ConexionSQL
 
         private void Busqueda(DataGridView d, int col)
         {
-            string query = "SELECT * FROM Ventas WHERE Fecha = @Fecha";
-            SqlCommand cmd = new SqlCommand(query, Conexion);
-            cmd.Parameters.AddWithValue("@Fecha", txtBuscarV.Text.Trim());
+            string query = "";
+            DateTime fechaVenta;
 
-            Conexion.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
+            // Formatos de fecha que aceptamos (puedes agregar más si es necesario)
+            string[] formatosFecha = {
+        "dd/MM/yyyy", "yyyy/MM/dd", "dd-MM-yyyy", "yyyy-MM-dd", "MM/dd/yyyy", "MM-dd-yyyy"
+    };
+
+            // Intentar parsear la fecha con diferentes formatos
+            bool esFechaValida = DateTime.TryParseExact(txtBuscarV.Text.Trim(), formatosFecha,
+                                                         System.Globalization.CultureInfo.InvariantCulture,
+                                                         System.Globalization.DateTimeStyles.None, out fechaVenta);
+
+            // Si el valor ingresado es una fecha válida
+            if (!string.IsNullOrEmpty(txtBuscarV.Text.Trim()) && esFechaValida)
             {
-                lbl_ID.Text = reader["ID_Venta"].ToString();
-                txtZapatos.Text = reader["ID_Zapato"].ToString();
-                txtFecha.Text = reader["Fecha"].ToString();
-                txtTotal.Text = reader["Total"].ToString();
+                query = "SELECT * FROM Ventas WHERE Fecha = @Fecha";
             }
-            Conexion.Close();
+            // Si el valor ingresado es un número (por ejemplo, Total), buscamos por Total
+            else if (!string.IsNullOrEmpty(txtBuscarV.Text.Trim()) && txtBuscarV.Text.Trim().All(char.IsDigit))
+            {
+                query = "SELECT * FROM Ventas WHERE Total = @Total";
+            }
+            else
+            {
+                MessageBox.Show("Por favor ingrese una fecha válida.");
+                return;
+            }
+
+            SqlCommand cmd = new SqlCommand(query, Conexion);
+
+            // Si es una fecha válida, agregamos el parámetro correspondiente
+            if (esFechaValida)
+            {
+                cmd.Parameters.AddWithValue("@Fecha", fechaVenta.ToString("yyyy-MM-dd"));  // Convertir a formato SQL
+            }
+            else
+            {
+                // Si es un número, buscamos por Total
+                cmd.Parameters.AddWithValue("@Total", txtBuscarV.Text.Trim());
+            }
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dtw_Ventas.DataSource = dt;
+
+            // Si se encuentran resultados, mostramos el primer registro
+            if (dt.Rows.Count > 0)
+            {
+                CargarPrimerRegistro(0); // Mostrar el primer resultado encontrado
+                btnModificarV.Enabled = true;
+                btnEliminarV.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron registros.");
+                Limpiar();
+            }
+        }
+
+        private void CargarPrimerRegistro(int index)
+        {
+            // Verifica si hay filas en el DataGridView
+            if (dtw_Ventas.Rows.Count > 0)
+            {
+                // Obtiene la fila correspondiente al índice
+                DataGridViewRow row = dtw_Ventas.Rows[index];
+
+                // Carga los datos de la fila en los TextBox
+                lbl_ID.Text = row.Cells["ID_Venta"].Value.ToString();
+                txtZapatos.Text = row.Cells["ID_Zapato"].Value.ToString();
+                txtFecha.Text = row.Cells["Fecha"].Value.ToString();
+                txtTotal.Text = row.Cells["Total"].Value.ToString();
+            }
         }
 
         private void btnAgregarV_Click(object sender, EventArgs e)
@@ -121,7 +185,6 @@ namespace ConexionSQL
                 return;
             }
 
-            // Intentar convertir la fecha a un formato válido
             DateTime fechaVenta;
             if (!DateTime.TryParse(Fecha, out fechaVenta))
             {
@@ -133,18 +196,15 @@ namespace ConexionSQL
             int valor = id.Next(100, 999);
             lbl_ID.Text = "V" + valor.ToString();
 
-            // Preparar la consulta para insertar la venta
             SqlCommand cmd = new SqlCommand(
                 "INSERT INTO Ventas (ID_Venta, ID_Zapato, Fecha, Total) VALUES (@ID_Venta, @ID_Zapato, @Fecha, @Total)",
                 Conexion);
 
-            // Asignar parámetros
             cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
             cmd.Parameters.AddWithValue("@ID_Zapato", Zapatos);
             cmd.Parameters.AddWithValue("@Fecha", fechaVenta);
             cmd.Parameters.AddWithValue("@Total", Total);
 
-            // Ejecutar consulta
             Conexion.Open();
             try
             {
@@ -160,7 +220,6 @@ namespace ConexionSQL
                 Conexion.Close();
             }
 
-            // Recargar datos
             CargarDatos();
             Limpiar();
         }
@@ -170,7 +229,6 @@ namespace ConexionSQL
             string query = "UPDATE Ventas SET ID_Zapato = @ID_Zapato, Fecha = @Fecha, Total = @Total WHERE ID_Venta = @ID_Venta";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
-            // Intentar convertir la fecha a un formato válido
             DateTime fechaVenta;
             if (!DateTime.TryParse(txtFecha.Text, out fechaVenta))
             {
@@ -178,13 +236,11 @@ namespace ConexionSQL
                 return;
             }
 
-            // Asignar parámetros
             cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
             cmd.Parameters.AddWithValue("@ID_Zapato", txtZapatos.Text);
             cmd.Parameters.AddWithValue("@Fecha", fechaVenta);
             cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
 
-            // Ejecutar consulta
             Conexion.Open();
             try
             {
@@ -200,7 +256,6 @@ namespace ConexionSQL
                 Conexion.Close();
             }
 
-            // Recargar datos
             CargarDatos();
             Limpiar();
         }
@@ -210,10 +265,8 @@ namespace ConexionSQL
             string query = "DELETE FROM Ventas WHERE ID_Venta = @ID_Venta";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
-            // Asignar parámetro
             cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
 
-            // Ejecutar consulta
             Conexion.Open();
             try
             {
@@ -229,7 +282,6 @@ namespace ConexionSQL
                 Conexion.Close();
             }
 
-            // Recargar datos
             CargarDatos();
             Limpiar();
         }
@@ -238,53 +290,22 @@ namespace ConexionSQL
         {
             if (txtBuscarV.Text != "")
             {
-                // Realiza la búsqueda
                 Busqueda(dtw_Ventas, 0);
-                MessageBox.Show("Busqueda exitosa :)");
-
-                // Desactiva el botón de agregar para evitar duplicados
                 btnAgregarV.Enabled = false;
-
-                // Activa los botones de modificar y eliminar
-                btnModificarV.Enabled = true;
-                btnEliminarV.Enabled = true;
-
-                // Asegura que el primer registro se cargue en los TextBox
-                CargarPrimerRegistro(currentIndex);
+                btnLimpiarV.Enabled = true;  // Activar el botón de limpiar
+                btnLimpiarV.Visible = true;
             }
             else
             {
-                MessageBox.Show("Error. Intentelo de nuevo :)");
+                MessageBox.Show("Ingrese un término de búsqueda");
             }
-
-            // Limpiar el campo de búsqueda
-            txtBuscarV.Clear();
-            btnLimpiarV.Visible = true;
-        }
-
-        private void CargarPrimerRegistro(int index)
-        {
-            // Verifica si hay filas en el DataGridView
-            if (dtw_Ventas.Rows.Count > 0)
-            {
-                // Obtiene la primera fila del DataGridView
-                DataGridViewRow row = dtw_Ventas.Rows[index];
-
-                // Carga los datos de la primera fila en los TextBox
-                lbl_ID.Text = row.Cells["ID_Venta"].ToString();
-                txtZapatos.Text = row.Cells["ID_Venta"].Value.ToString();
-                txtFecha.Text = row.Cells["Fecha"].Value.ToString();
-                txtTotal.Text = row.Cells["Total"].Value.ToString();
-            }
-        }
-        private void Ventas_Load(object sender, EventArgs e)
-        {
         }
 
         private void btnLimpiarV_Click(object sender, EventArgs e)
         {
             Limpiar();
             btnAgregarV.Enabled = true;
+            btnLimpiarV.Enabled = false;  // Desactivar el botón de limpiar
         }
 
         private void btnAtrasP_Click(object sender, EventArgs e)
@@ -293,13 +314,6 @@ namespace ConexionSQL
             {
                 currentIndex--;
                 CargarPrimerRegistro(currentIndex);
-
-                // Enable/Disable navigation buttons
-                btnAtrasP.Enabled = true;
-            }
-            else
-            {
-                btnAtrasP.Enabled = false;
             }
         }
 
@@ -309,15 +323,8 @@ namespace ConexionSQL
             {
                 currentIndex++;
                 CargarPrimerRegistro(currentIndex);
-
-                btnAtrasP.Enabled = true;
-            }
-            else
-            {
-                btnSiguienteP.Enabled = false;
             }
         }
-
         private void btnUltimoV_Click(object sender, EventArgs e)
         {
             currentIndex = dtw_Ventas.Rows.Count - 1;
@@ -335,10 +342,18 @@ namespace ConexionSQL
             btnAtrasP.Enabled = false;
             btnSiguienteP.Enabled = true;
         }
+
+
+        private void Ventas_Load(object sender, EventArgs e)
+        {
+            //Cargar la lista de ventas en el DataGridView
+            CargarDatos();
+            btnLimpiarV.Visible = false;  // Asegúrate de que el botón sea visible
+            btnLimpiarV.Enabled = false;  // Inicialmente desactivar el botón de limpiar
+        
+    }
     }
 }
-
-
 
 
 

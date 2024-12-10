@@ -1,9 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using System.Runtime.InteropServices;
+using System.Data.SqlClient;
+using System.Text.RegularExpressions;
+using System.Windows.Media.Media3D;
 
 namespace ConexionSQL
 {
@@ -11,8 +19,8 @@ namespace ConexionSQL
     {
         private Panel leftBorderBtn;
         private IconButton currentBtn;
-        private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Salma
-        //private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Vanessita
+        //private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Salma
+        private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Vanessita
         private Random id = new Random();
         private int currentIndex = 0;
 
@@ -32,6 +40,7 @@ namespace ConexionSQL
 
             // Cargar datos de la base de datos al iniciar el formulario
             CargarDatos();
+
         }
 
         // Método para cargar los datos de la base de datos en el DataGridView
@@ -58,7 +67,7 @@ namespace ConexionSQL
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentBtn.ImageAlign = ContentAlignment.MiddleCenter;
 
-                // Borde del botón
+                // Bor de del botón
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
@@ -105,7 +114,18 @@ namespace ConexionSQL
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            dtw_Proveedores.DataSource = dt;
+            // Verifica si se encontraron registros
+            if (dt.Rows.Count > 0)
+            {
+                d.DataSource = dt;
+                currentIndex = 0; // Reinicia el índice
+                CargarPrimerRegistro(currentIndex); // Carga el primer registro encontrado
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron registros.");
+                Limpiar(); // Limpia los campos si no hay registros
+            }
         }
 
         private void btnAgregarP_Click(object sender, EventArgs e)
@@ -160,6 +180,12 @@ namespace ConexionSQL
 
         private void btnModificarP_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(lbl_id.Text))
+            {
+                MessageBox.Show("Por favor seleccione un proveedor para modificar.");
+                return;
+            }
+
             string query = "UPDATE Proveedores SET Nombre_P = @Nombre_P, Precio = @Precio, Unidades = @Unidades, Comercializacion = @Comercializacion WHERE ID_Proveedor = @ID_Proveedor";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
@@ -172,8 +198,15 @@ namespace ConexionSQL
             Conexion.Open();
             try
             {
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Registro modificado en la base de datos");
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Registro modificado en la base de datos");
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el registro para modificar.");
+                }
             }
             catch (Exception ex)
             {
@@ -184,12 +217,18 @@ namespace ConexionSQL
                 Conexion.Close();
             }
 
-            CargarDatos(); // Recarga los datos después de modificar
+            CargarDatos();
             Limpiar();
         }
 
         private void btnEliminarP_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(lbl_id.Text))
+            {
+                MessageBox.Show("Por favor seleccione un proveedor para eliminar.");
+                return;
+            }
+
             string query = "DELETE FROM Proveedores WHERE ID_Proveedor = @ID_Proveedor";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
@@ -198,8 +237,17 @@ namespace ConexionSQL
             Conexion.Open();
             try
             {
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Registro eliminado de la base de datos");
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Registro eliminado de la base de datos");
+                    CargarDatos(); // Recargar datos después de eliminar
+                    Limpiar(); // Limpiar campos
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el registro para eliminar.");
+                }
             }
             catch (Exception ex)
             {
@@ -209,9 +257,6 @@ namespace ConexionSQL
             {
                 Conexion.Close();
             }
-
-            CargarDatos(); // Recarga los datos después de eliminar
-            Limpiar();
         }
 
         private void btnBuscarP_Click(object sender, EventArgs e)
@@ -246,15 +291,27 @@ namespace ConexionSQL
             // Verifica si hay filas en el DataGridView
             if (dtw_Proveedores.Rows.Count > 0)
             {
-                // Obtiene la primera fila del DataGridView
-                DataGridViewRow row = dtw_Proveedores.Rows[index];
+                // Validar el índice antes de acceder a la fila
+                if (index >= 0 && index < dtw_Proveedores.Rows.Count)
+                {
+                    // Obtiene la fila del DataGridView
+                    DataGridViewRow row = dtw_Proveedores.Rows[index];
 
-                // Carga los datos de la primera fila en los TextBox
-                lbl_id.Text = row.Cells["ID_Proveedor"].ToString();
-                txtNombreProv.Text = row.Cells["Nombre_P"].Value.ToString();
-                txtPrecio.Text = row.Cells["Precio"].Value.ToString();
-                txtUnidades.Text = row.Cells["Unidades"].Value.ToString();
-                CBXcomercio.Text = row.Cells["Comercializacion"].Value.ToString();
+                    // Carga los datos de la fila en los TextBox
+                    lbl_id.Text = row.Cells["ID_Proveedor"].Value.ToString();
+                    txtNombreProv.Text = row.Cells["Nombre_P"].Value.ToString();
+                    txtPrecio.Text = row.Cells["Precio"].Value.ToString();
+                    txtUnidades.Text = row.Cells["Unidades"].Value.ToString();
+                    CBXcomercio.Text = row.Cells["Comercializacion"].Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Índice inválido.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("El DataGridView está vacío.");
             }
         }
 
@@ -287,7 +344,7 @@ namespace ConexionSQL
                 currentIndex++;
                 CargarPrimerRegistro(currentIndex);
 
-                btnAtrasP.Enabled = true;                
+                btnAtrasP.Enabled = true;
             }
             else
             {

@@ -19,8 +19,8 @@ namespace ConexionSQL
     {
         private Panel leftBorderBtn;
         private IconButton currentBtn;
-        private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Salma
-        //private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Vanessita
+       // private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Salma
+        private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Vanessita
         private Random id = new Random();
         private int currentIndex = 0;  // Índice del registro actual en los resultados
 
@@ -70,23 +70,46 @@ namespace ConexionSQL
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            dtw_Zapatos.DataSource = dt;
+            // Verifica si se encontraron registros
+            if (dt.Rows.Count > 0)
+            {
+                d.DataSource = dt;  // Actualiza el DataGridView con los resultados de la búsqueda
+                currentIndex = 0;  // Reinicia el índice
+                MostrarRegistro(currentIndex); // Carga el primer registro encontrado
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron registros.");
+                Limpiar(); // Limpia los campos si no hay registros
+            }
         }
 
         private void MostrarRegistro(int index)
         {
             if (dtw_Zapatos.Rows.Count > 0)
             {
+              
+                if(index >= 0 && index < dtw_Zapatos.Rows.Count)
+                { 
                 // Obtiene la primera fila del DataGridView
                 DataGridViewRow row = dtw_Zapatos.Rows[index];
 
-                lbl_ID.Text = row.Cells["ID_Zapato"].ToString();
+                lbl_ID.Text = row.Cells["ID_Zapato"].Value.ToString();
                 txtCategoria.Text = row.Cells["Categoria"].Value.ToString();
                 txtMedida.Text = row.Cells["Medida"].Value.ToString();
                 txtColor.Text = row.Cells["Color"].Value.ToString();
                 txtMarca.Text = row.Cells["Marca"].Value.ToString();
                 txtMaterial.Text = row.Cells["Material"].Value.ToString();
                 txtProveedor.Text = row.Cells["ID_Proveedor"].Value.ToString();
+            }
+                else
+                {
+                    MessageBox.Show("Índice inválido.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("El DataGridView está vacío.");
             }
         }
 
@@ -156,12 +179,18 @@ namespace ConexionSQL
             cmd.Parameters.AddWithValue("@Marca", txtMarca.Text);
             cmd.Parameters.AddWithValue("@Material", txtMaterial.Text);
             cmd.Parameters.AddWithValue("@ID_Proveedor", txtProveedor.Text);
-
             Conexion.Open();
             try
             {
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Registro modificado en la base de datos");
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Registro modificado en la base de datos");
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el registro para modificar.");
+                }
             }
             catch (Exception ex)
             {
@@ -172,7 +201,7 @@ namespace ConexionSQL
                 Conexion.Close();
             }
 
-            CargarDatos(); // Recargar los datos después de modificar
+            CargarDatos();
             Limpiar();
         }
 
@@ -182,12 +211,20 @@ namespace ConexionSQL
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
             cmd.Parameters.AddWithValue("@ID_Zapato", lbl_ID.Text);
-
             Conexion.Open();
             try
             {
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Registro eliminado de la base de datos");
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Registro eliminado de la base de datos");
+                    CargarDatos(); // Recargar datos después de eliminar
+                    Limpiar(); // Limpiar campos
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el registro para eliminar.");
+                }
             }
             catch (Exception ex)
             {
@@ -197,9 +234,6 @@ namespace ConexionSQL
             {
                 Conexion.Close();
             }
-
-            CargarDatos(); // Recargar los datos después de eliminar
-            Limpiar();
         }
 
         private void btnBuscarZ_Click(object sender, EventArgs e)
@@ -227,6 +261,35 @@ namespace ConexionSQL
             // Limpiar el campo de búsqueda
             txtBuscarZ.Clear();
             btnLimpiarZ.Visible = true;
+        }
+        private void CargarPrimerRegistro(int index)
+        {
+            // Verifica si hay filas en el DataGridView
+            if (dtw_Zapatos.Rows.Count > 0)
+            {
+                // Validar el índice antes de acceder a la fila
+                if (index >= 0 && index < dtw_Zapatos.Rows.Count)
+                {
+                    // Obtiene la fila del DataGridView
+                    DataGridViewRow row = dtw_Zapatos.Rows[index];
+
+                    // Carga los datos de la fila en los TextBox
+                    txtCategoria.Text = row.Cells["Categoria"].Value.ToString();
+                    txtMedida.Text = row.Cells["Medida"].Value.ToString();
+                    txtColor.Text = row.Cells["Color"].Value.ToString();
+                    txtMarca.Text = row.Cells["Marca"].Value.ToString();
+                    txtMaterial.Text = row.Cells["Material"].Value.ToString();
+                    txtProveedor.Text = row.Cells["ID_Proveedor"].Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Índice inválido.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("El DataGridView está vacío.");
+            }
         }
 
         private void Limpiar()
