@@ -12,8 +12,10 @@ namespace ConexionSQL
         private Form FormularioVentasActual;
         private Panel leftBorderBtn;
         private IconButton currentBtn;
-        private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");
+        private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True"); //Salma
+        //private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True"); //Vanessita
         private Random id = new Random();
+        private int currentIndex = 0;
 
         public Ventas()
         {
@@ -91,9 +93,9 @@ namespace ConexionSQL
 
         private void Busqueda(DataGridView d, int col)
         {
-            string query = "SELECT * FROM Ventas WHERE ID_Venta = @ID_Venta";
+            string query = "SELECT * FROM Ventas WHERE Fecha = @Fecha";
             SqlCommand cmd = new SqlCommand(query, Conexion);
-            cmd.Parameters.AddWithValue("@ID_Venta", txtBuscarV.Text.Trim());
+            cmd.Parameters.AddWithValue("@Fecha", txtBuscarV.Text.Trim());
 
             Conexion.Open();
             SqlDataReader reader = cmd.ExecuteReader();
@@ -103,10 +105,6 @@ namespace ConexionSQL
                 txtZapatos.Text = reader["ID_Zapato"].ToString();
                 txtFecha.Text = reader["Fecha"].ToString();
                 txtTotal.Text = reader["Total"].ToString();
-            }
-            else
-            {
-                MessageBox.Show("Registro de venta no encontrado.");
             }
             Conexion.Close();
         }
@@ -238,54 +236,104 @@ namespace ConexionSQL
 
         private void btnBuscarV_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtBuscarV.Text))
+            if (txtBuscarV.Text != "")
             {
-                // Limpiar la conexión antes de realizar la búsqueda
-                Conexion.Close();
-                Conexion.Open();
+                // Realiza la búsqueda
+                Busqueda(dtw_Ventas, 0);
+                MessageBox.Show("Busqueda exitosa :)");
 
-                // Consulta para buscar por Fecha o Total, sin incluir ID_Venta o ID_Zapato
-                string query = "SELECT * FROM Ventas WHERE Fecha LIKE @Buscar OR Total LIKE @Buscar";
-                SqlCommand cmd = new SqlCommand(query, Conexion);
-                cmd.Parameters.AddWithValue("@Buscar", "%" + txtBuscarV.Text.Trim() + "%");
+                // Desactiva el botón de agregar para evitar duplicados
+                btnAgregarV.Enabled = false;
 
-                // Crear el DataTable para almacenar los resultados filtrados
-                DataTable dt = new DataTable();
+                // Activa los botones de modificar y eliminar
+                btnModificarV.Enabled = true;
+                btnEliminarV.Enabled = true;
 
-                // Usar SqlDataAdapter para llenar el DataTable con los resultados de la búsqueda
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-
-                // Verificar si hay resultados
-                if (dt.Rows.Count > 0)
-                {
-                    // Asignar los valores del primer registro a los TextBox
-                    DataRow row = dt.Rows[0]; // Obtener el primer registro
-                    lbl_ID.Text = row["ID_Venta"].ToString();
-                    txtZapatos.Text = row["ID_Zapato"].ToString();
-                    txtFecha.Text = row["Fecha"].ToString();
-                    txtTotal.Text = row["Total"].ToString();
-
-                    // Deshabilitar el botón de agregar después de realizar la búsqueda
-                    btnAgregarV.Enabled = false;
-                    btnModificarV.Enabled = true;
-                    btnEliminarV.Enabled = true;
-                }
-                else
-                {
-                    MessageBox.Show("No se encontró ninguna venta con los datos proporcionados.");
-                }
-
-                Conexion.Close();
+                // Asegura que el primer registro se cargue en los TextBox
+                CargarPrimerRegistro(currentIndex);
             }
             else
             {
-                MessageBox.Show("Debe ingresar un valor para buscar.");
+                MessageBox.Show("Error. Intentelo de nuevo :)");
+            }
+
+            // Limpiar el campo de búsqueda
+            txtBuscarV.Clear();
+            btnLimpiarV.Visible = true;
+        }
+
+        private void CargarPrimerRegistro(int index)
+        {
+            // Verifica si hay filas en el DataGridView
+            if (dtw_Ventas.Rows.Count > 0)
+            {
+                // Obtiene la primera fila del DataGridView
+                DataGridViewRow row = dtw_Ventas.Rows[index];
+
+                // Carga los datos de la primera fila en los TextBox
+                lbl_ID.Text = row.Cells["ID_Venta"].ToString();
+                txtZapatos.Text = row.Cells["ID_Venta"].Value.ToString();
+                txtFecha.Text = row.Cells["Fecha"].Value.ToString();
+                txtTotal.Text = row.Cells["Total"].Value.ToString();
+            }
+        }
+        private void Ventas_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btnLimpiarV_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            btnAgregarV.Enabled = true;
+        }
+
+        private void btnAtrasP_Click(object sender, EventArgs e)
+        {
+            if (currentIndex > 0)
+            {
+                currentIndex--;
+                CargarPrimerRegistro(currentIndex);
+
+                // Enable/Disable navigation buttons
+                btnAtrasP.Enabled = true;
+            }
+            else
+            {
+                btnAtrasP.Enabled = false;
             }
         }
 
-        private void Ventas_Load(object sender, EventArgs e)
+        private void btnSiguienteP_Click(object sender, EventArgs e)
         {
+            if (currentIndex < dtw_Ventas.Rows.Count - 1)
+            {
+                currentIndex++;
+                CargarPrimerRegistro(currentIndex);
+
+                btnAtrasP.Enabled = true;
+            }
+            else
+            {
+                btnSiguienteP.Enabled = false;
+            }
+        }
+
+        private void btnUltimoV_Click(object sender, EventArgs e)
+        {
+            currentIndex = dtw_Ventas.Rows.Count - 1;
+            CargarPrimerRegistro(currentIndex);
+
+            btnSiguienteP.Enabled = false;
+            btnAtrasP.Enabled = true;
+        }
+
+        private void btnPrimerV_Click(object sender, EventArgs e)
+        {
+            currentIndex = 0;
+            CargarPrimerRegistro(currentIndex);
+
+            btnAtrasP.Enabled = false;
+            btnSiguienteP.Enabled = true;
         }
     }
 }

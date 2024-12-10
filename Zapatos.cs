@@ -19,10 +19,10 @@ namespace ConexionSQL
     {
         private Panel leftBorderBtn;
         private IconButton currentBtn;
-        private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");
+        private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Salma
+        //private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Vanessita
         private Random id = new Random();
-        private List<DataRow> searchResults = new List<DataRow>();  // Lista para almacenar los resultados de la búsqueda
-        private int currentIndex = -1;  // Índice del registro actual en los resultados
+        private int currentIndex = 0;  // Índice del registro actual en los resultados
 
         public Zapatos()
         {
@@ -53,80 +53,40 @@ namespace ConexionSQL
             dtw_Zapatos.DataSource = dt;  // Cargar los datos en el DataGridView
         }
 
-        private void Busqueda()
+        private void Busqueda(DataGridView d, int col)
         {
-            string searchText = txtBuscarZ.Text.Trim();
-            string query = "SELECT * FROM Zapatos WHERE Categoria LIKE @SearchText OR Marca LIKE @SearchText OR ID_Proveedor LIKE @SearchText OR Medida LIKE @SearchText OR Color LIKE @SearchText OR Material LIKE @SearchText";
-
+            string query = "SELECT * FROM Zapatos WHERE ID_Zapato LIKE @ID_Zapato OR Categoria LIKE @Categoria OR Medida LIKE @Medida OR Color LIKE @Color OR Marca LIKE @Marca OR Material LIKE @Material OR ID_Proveedor LIKE @ID_Proveedor";
             SqlCommand cmd = new SqlCommand(query, Conexion);
-            cmd.Parameters.AddWithValue("@SearchText", "%" + searchText + "%");
 
-            Conexion.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-            searchResults.Clear(); // Limpiar resultados anteriores
-            while (reader.Read())
-            {
-                // Agregar cada fila encontrada a la lista de resultados
-                DataRow row = ((DataTable)dtw_Zapatos.DataSource).NewRow();
-                row["ID_Zapato"] = reader["ID_Zapato"];
-                row["Categoria"] = reader["Categoria"];
-                row["Medida"] = reader["Medida"];
-                row["Color"] = reader["Color"];
-                row["Marca"] = reader["Marca"];
-                row["Material"] = reader["Material"];
-                row["ID_Proveedor"] = reader["ID_Proveedor"];
-                searchResults.Add(row);
-            }
+            cmd.Parameters.AddWithValue("@ID_Zapato", "%" + lbl_ID.Text.Trim() + "%");
+            cmd.Parameters.AddWithValue("@Categoria", "%" + txtCategoria.Text.Trim() + "%");
+            cmd.Parameters.AddWithValue("@Medida", "%" + txtMedida.Text.Trim() + "%");
+            cmd.Parameters.AddWithValue("@Color", "%" + txtColor.Text.Trim() + "%");
+            cmd.Parameters.AddWithValue("@Marca", "%" + txtMarca.Text.Trim() + "%");
+            cmd.Parameters.AddWithValue("@Material", "%" + txtMaterial.Text.Trim() + "%");
+            cmd.Parameters.AddWithValue("@ID_Proveedor", "%" + txtProveedor.Text.Trim() + "%");
 
-            if (searchResults.Count > 0)
-            {
-                currentIndex = 0; // Iniciar en el primer registro
-                MostrarRegistro();
-                btnModificarZ.Enabled = true;
-                btnEliminarZ.Enabled = true;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
-                // Desactivar el botón de agregar
-                btnAgregarZ.Enabled = false;
-
-                // Actualizar el DataGridView con los resultados de la búsqueda
-                DataTable searchResultsTable = new DataTable();
-                searchResultsTable.Columns.Add("ID_Zapato");
-                searchResultsTable.Columns.Add("Categoria");
-                searchResultsTable.Columns.Add("Medida");
-                searchResultsTable.Columns.Add("Color");
-                searchResultsTable.Columns.Add("Marca");
-                searchResultsTable.Columns.Add("Material");
-                searchResultsTable.Columns.Add("ID_Proveedor");
-
-                foreach (var row in searchResults)
-                {
-                    searchResultsTable.Rows.Add(row.ItemArray);
-                }
-
-                dtw_Zapatos.DataSource = searchResultsTable;  // Actualizar el DataGridView con los resultados de búsqueda
-            }
-            else
-            {
-                MessageBox.Show("Registro no encontrado.");
-                Limpiar();  // Limpiar los campos de texto si no se encuentra el registro
-                btnModificarZ.Enabled = false;
-                btnEliminarZ.Enabled = false;
-            }
-            Conexion.Close();
+            dtw_Zapatos.DataSource = dt;
         }
 
-        private void MostrarRegistro()
+        private void MostrarRegistro(int index)
         {
-            if (currentIndex >= 0 && currentIndex < searchResults.Count)
+            if (dtw_Zapatos.Rows.Count > 0)
             {
-                var row = searchResults[currentIndex];
-                lbl_ID.Text = row["ID_Zapato"].ToString();
-                txtCategoria.Text = row["Categoria"].ToString();
-                txtMedida.Text = row["Medida"].ToString();
-                txtColor.Text = row["Color"].ToString();
-                txtMarca.Text = row["Marca"].ToString();
-                txtMaterial.Text = row["Material"].ToString();
-                txtProveedor.Text = row["ID_Proveedor"].ToString();
+                // Obtiene la primera fila del DataGridView
+                DataGridViewRow row = dtw_Zapatos.Rows[index];
+
+                lbl_ID.Text = row.Cells["ID_Zapato"].ToString();
+                txtCategoria.Text = row.Cells["Categoria"].Value.ToString();
+                txtMedida.Text = row.Cells["Medida"].Value.ToString();
+                txtColor.Text = row.Cells["Color"].Value.ToString();
+                txtMarca.Text = row.Cells["Marca"].Value.ToString();
+                txtMaterial.Text = row.Cells["Material"].Value.ToString();
+                txtProveedor.Text = row.Cells["ID_Proveedor"].Value.ToString();
             }
         }
 
@@ -246,13 +206,27 @@ namespace ConexionSQL
         {
             if (txtBuscarZ.Text != "")
             {
-                Busqueda(); // Realiza la búsqueda cuando el campo no esté vacío
+                // Realiza la búsqueda
+                Busqueda(dtw_Zapatos, 0);
+
+                // Desactiva el botón de agregar para evitar duplicados
+                btnAgregarZ.Enabled = false;
+
+                // Activa los botones de modificar y eliminar
+                btnModificarZ.Enabled = true;
+                btnEliminarZ.Enabled = true;
+
+                // Asegura que el primer registro se cargue en los TextBox
+                MostrarRegistro(currentIndex);
             }
             else
             {
                 MessageBox.Show("Error. Intentelo de nuevo :)");
             }
-            txtBuscarZ.Clear();  // Limpiar el cuadro de búsqueda después de buscar
+
+            // Limpiar el campo de búsqueda
+            txtBuscarZ.Clear();
+            btnLimpiarZ.Visible = true;
         }
 
         private void Limpiar()
@@ -264,6 +238,61 @@ namespace ConexionSQL
             txtMaterial.Clear();
             txtProveedor.Clear();
             lbl_ID.Text = "";
+        }
+
+        private void btnLimpiarZ_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            btnAgregarZ.Enabled = true;
+        }
+
+        private void btnAtrasZ_Click(object sender, EventArgs e)
+        {
+            if (currentIndex > 0)
+            {
+                currentIndex--;
+                MostrarRegistro(currentIndex);
+
+                // Enable/Disable navigation buttons
+                btnAtrasZ.Enabled = true;
+            }
+            else
+            {
+                btnAtrasZ.Enabled = false;
+            }
+        }
+
+        private void btnSiguienteZ_Click(object sender, EventArgs e)
+        {
+            if (currentIndex < dtw_Zapatos.Rows.Count - 1)
+            {
+                currentIndex++;
+                MostrarRegistro(currentIndex);
+
+                btnAtrasZ.Enabled = true;
+            }
+            else
+            {
+                btnSiguienteZ.Enabled = false;
+            }
+        }
+
+        private void btnUltimoZ_Click(object sender, EventArgs e)
+        {
+            currentIndex = dtw_Zapatos.Rows.Count - 1;
+            MostrarRegistro(currentIndex);
+
+            btnSiguienteZ.Enabled = false;
+            btnAtrasZ.Enabled = true;
+        }
+
+        private void btnPrimerZ_Click(object sender, EventArgs e)
+        {
+            currentIndex = 0;
+            MostrarRegistro(currentIndex);
+
+            btnAtrasZ.Enabled = false;
+            btnSiguienteZ.Enabled = true;
         }
     }
 }

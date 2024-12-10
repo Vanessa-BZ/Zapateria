@@ -11,8 +11,11 @@ namespace ConexionSQL
     {
         private Panel leftBorderBtn;
         private IconButton currentBtn;
-        private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");
+        private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Salma
+        //private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Vanessita
         private Random id = new Random();
+        private int currentIndex = 0;
+
 
         public Proveedores()
         {
@@ -226,7 +229,7 @@ namespace ConexionSQL
                 btnEliminarP.Enabled = true;
 
                 // Asegura que el primer registro se cargue en los TextBox
-                CargarPrimerRegistro();
+                CargarPrimerRegistro(currentIndex);
             }
             else
             {
@@ -235,23 +238,79 @@ namespace ConexionSQL
 
             // Limpiar el campo de búsqueda
             txtBuscarP.Clear();
+            btnLimpiarP.Visible = true;
         }
 
-        private void CargarPrimerRegistro()
+        private void CargarPrimerRegistro(int index)
         {
             // Verifica si hay filas en el DataGridView
             if (dtw_Proveedores.Rows.Count > 0)
             {
                 // Obtiene la primera fila del DataGridView
-                DataGridViewRow row = dtw_Proveedores.Rows[0];
+                DataGridViewRow row = dtw_Proveedores.Rows[index];
 
                 // Carga los datos de la primera fila en los TextBox
-                lbl_id.Text = row.Cells["ID_Proveedor"].Value.ToString();
+                lbl_id.Text = row.Cells["ID_Proveedor"].ToString();
                 txtNombreProv.Text = row.Cells["Nombre_P"].Value.ToString();
                 txtPrecio.Text = row.Cells["Precio"].Value.ToString();
                 txtUnidades.Text = row.Cells["Unidades"].Value.ToString();
                 CBXcomercio.Text = row.Cells["Comercializacion"].Value.ToString();
             }
+        }
+
+        private void btnLimpiarP_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            btnAgregarP.Enabled = true;
+        }
+
+        private void btnAtrasP_Click(object sender, EventArgs e)
+        {
+            if (currentIndex > 0)
+            {
+                currentIndex--;
+                CargarPrimerRegistro(currentIndex);
+
+                // Enable/Disable navigation buttons
+                btnAtrasP.Enabled = true;
+            }
+            else
+            {
+                btnAtrasP.Enabled = false;
+            }
+        }
+
+        private void btnSiguienteP_Click(object sender, EventArgs e)
+        {
+            if (currentIndex < dtw_Proveedores.Rows.Count - 1)
+            {
+                currentIndex++;
+                CargarPrimerRegistro(currentIndex);
+
+                btnAtrasP.Enabled = true;                
+            }
+            else
+            {
+                btnSiguienteP.Enabled = false;
+            }
+        }
+
+        private void btnUltimoP_Click(object sender, EventArgs e)
+        {
+            currentIndex = dtw_Proveedores.Rows.Count - 1;
+            CargarPrimerRegistro(currentIndex);
+
+            btnSiguienteP.Enabled = false;
+            btnAtrasP.Enabled = true;
+        }
+
+        private void btnPrimerP_Click(object sender, EventArgs e)
+        {
+            currentIndex = 0;
+            CargarPrimerRegistro(currentIndex);
+
+            btnAtrasP.Enabled = false;
+            btnSiguienteP.Enabled = true;
         }
     }
 }
