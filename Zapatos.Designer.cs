@@ -156,7 +156,7 @@
             this.btnPrimerZ.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnPrimerZ.IconSize = 30;
             this.btnPrimerZ.Location = new System.Drawing.Point(235, 468);
-            this.btnPrimerZ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrimerZ.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrimerZ.Name = "btnPrimerZ";
             this.btnPrimerZ.Size = new System.Drawing.Size(100, 28);
             this.btnPrimerZ.TabIndex = 94;
@@ -198,8 +198,8 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtw_Zapatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtw_Zapatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtw_Zapatos.Location = new System.Drawing.Point(281, 573);
-            this.dtw_Zapatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtw_Zapatos.Location = new System.Drawing.Point(271, 595);
+            this.dtw_Zapatos.Margin = new System.Windows.Forms.Padding(4);
             this.dtw_Zapatos.Name = "dtw_Zapatos";
             this.dtw_Zapatos.RowHeadersWidth = 51;
             this.dtw_Zapatos.Size = new System.Drawing.Size(521, 164);
@@ -212,7 +212,7 @@
             this.btnLimpiarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarZ.GrosorBorde = 2;
             this.btnLimpiarZ.Location = new System.Drawing.Point(824, 388);
-            this.btnLimpiarZ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiarZ.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarZ.Name = "btnLimpiarZ";
             this.btnLimpiarZ.Radio = 20;
             this.btnLimpiarZ.Size = new System.Drawing.Size(123, 33);

@@ -53,18 +53,20 @@ namespace ConexionSQL
             dtw_Zapatos.DataSource = dt;  // Cargar los datos en el DataGridView
         }
 
-        private void Busqueda(DataGridView d, int col)
+        private void Busqueda(DataGridView d)
         {
             string query = "SELECT * FROM Zapatos WHERE ID_Zapato LIKE @ID_Zapato OR Categoria LIKE @Categoria OR Medida LIKE @Medida OR Color LIKE @Color OR Marca LIKE @Marca OR Material LIKE @Material OR ID_Proveedor LIKE @ID_Proveedor";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
-            cmd.Parameters.AddWithValue("@ID_Zapato", "%" + lbl_ID.Text.Trim() + "%");
-            cmd.Parameters.AddWithValue("@Categoria", "%" + txtCategoria.Text.Trim() + "%");
-            cmd.Parameters.AddWithValue("@Medida", "%" + txtMedida.Text.Trim() + "%");
-            cmd.Parameters.AddWithValue("@Color", "%" + txtColor.Text.Trim() + "%");
-            cmd.Parameters.AddWithValue("@Marca", "%" + txtMarca.Text.Trim() + "%");
-            cmd.Parameters.AddWithValue("@Material", "%" + txtMaterial.Text.Trim() + "%");
-            cmd.Parameters.AddWithValue("@ID_Proveedor", "%" + txtProveedor.Text.Trim() + "%");
+            // Usar el campo de búsqueda
+            string searchTerm = txtBuscarZ.Text.Trim();
+            cmd.Parameters.AddWithValue("@ID_Zapato", "%" + searchTerm + "%");
+            cmd.Parameters.AddWithValue("@Categoria", "%" + searchTerm + "%");
+            cmd.Parameters.AddWithValue("@Medida", "%" + searchTerm + "%");
+            cmd.Parameters.AddWithValue("@Color", "%" + searchTerm + "%");
+            cmd.Parameters.AddWithValue("@Marca", "%" + searchTerm + "%");
+            cmd.Parameters.AddWithValue("@Material", "%" + searchTerm + "%");
+            cmd.Parameters.AddWithValue("@ID_Proveedor", "%" + searchTerm + "%");
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -76,6 +78,10 @@ namespace ConexionSQL
                 d.DataSource = dt;  // Actualiza el DataGridView con los resultados de la búsqueda
                 currentIndex = 0;  // Reinicia el índice
                 MostrarRegistro(currentIndex); // Carga el primer registro encontrado
+
+                // Habilitar/deshabilitar botones de navegación
+                btnAtrasZ.Enabled = false; // Deshabilitar botón "Atras" en el primer registro
+                btnSiguienteZ.Enabled = dt.Rows.Count > 1; // Habilitar botón "Siguiente" si hay más de un registro
             }
             else
             {
@@ -83,7 +89,6 @@ namespace ConexionSQL
                 Limpiar(); // Limpia los campos si no hay registros
             }
         }
-
         private void MostrarRegistro(int index)
         {
             if (dtw_Zapatos.Rows.Count > 0)
@@ -238,10 +243,10 @@ namespace ConexionSQL
 
         private void btnBuscarZ_Click(object sender, EventArgs e)
         {
-            if (txtBuscarZ.Text != "")
+            if (!string.IsNullOrWhiteSpace(txtBuscarZ.Text))
             {
                 // Realiza la búsqueda
-                Busqueda(dtw_Zapatos, 0);
+                Busqueda(dtw_Zapatos);
 
                 // Desactiva el botón de agregar para evitar duplicados
                 btnAgregarZ.Enabled = false;
@@ -262,6 +267,7 @@ namespace ConexionSQL
             txtBuscarZ.Clear();
             btnLimpiarZ.Visible = true;
         }
+
         private void CargarPrimerRegistro(int index)
         {
             // Verifica si hay filas en el DataGridView
@@ -317,11 +323,8 @@ namespace ConexionSQL
                 MostrarRegistro(currentIndex);
 
                 // Enable/Disable navigation buttons
-                btnAtrasZ.Enabled = true;
-            }
-            else
-            {
-                btnAtrasZ.Enabled = false;
+                btnSiguienteZ.Enabled = true; // Siempre habilitar "Siguiente" si hay más registros
+                btnAtrasZ.Enabled = currentIndex > 0; // Deshabilitar si estamos en el primer registro
             }
         }
 
@@ -332,21 +335,19 @@ namespace ConexionSQL
                 currentIndex++;
                 MostrarRegistro(currentIndex);
 
-                btnAtrasZ.Enabled = true;
-            }
-            else
-            {
-                btnSiguienteZ.Enabled = false;
+                // Enable/Disable navigation buttons
+                btnAtrasZ.Enabled = true; // Siempre habilitar "Atras" si no estamos en el primer registro
+                btnSiguienteZ.Enabled = currentIndex < dtw_Zapatos.Rows.Count - 1; // Deshabilitar si estamos en el último registro
             }
         }
-
         private void btnUltimoZ_Click(object sender, EventArgs e)
         {
             currentIndex = dtw_Zapatos.Rows.Count - 1;
             MostrarRegistro(currentIndex);
 
-            btnSiguienteZ.Enabled = false;
-            btnAtrasZ.Enabled = true;
+            // Habilitar/deshabilitar botones de navegación
+            btnSiguienteZ.Enabled = false; // Deshabilitar "Siguiente" en el último registro
+            btnAtrasZ.Enabled = true; // Habilitar "Atras" si no estamos en el primer registro
         }
 
         private void btnPrimerZ_Click(object sender, EventArgs e)
@@ -354,8 +355,9 @@ namespace ConexionSQL
             currentIndex = 0;
             MostrarRegistro(currentIndex);
 
-            btnAtrasZ.Enabled = false;
-            btnSiguienteZ.Enabled = true;
+            // Habilitar/deshabilitar botones de navegación
+            btnAtrasZ.Enabled = false; // Deshabilitar "Atras" en el primer registro
+            btnSiguienteZ.Enabled = dtw_Zapatos.Rows.Count > 1; // Habilitar "Siguiente" si hay más de un registro
         }
     }
 }
