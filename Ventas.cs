@@ -131,22 +131,22 @@ namespace ConexionSQL
                 return;
             }
 
-            // Generar un ID único para el nuevo proveedor
+            // Generar un ID único para la venta
             int valor = id.Next(100, 999);
             lbl_ID.Text = "V" + valor.ToString();
 
-            // Preparar la consulta para insertar el nuevo proveedor en la base de datos
+            // Preparar la consulta para insertar la venta
             SqlCommand cmd = new SqlCommand(
                 "INSERT INTO Ventas (ID_Venta, ID_Zapato, Fecha, Total) VALUES (@ID_Venta, @ID_Zapato, @Fecha, @Total)",
                 Conexion);
 
-            // Asignar parámetros a la consulta
+            // Asignar parámetros
             cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
             cmd.Parameters.AddWithValue("@ID_Zapato", Zapatos);
-            cmd.Parameters.AddWithValue("@Fecha", fechaVenta);  // Usar la variable fechaVenta
+            cmd.Parameters.AddWithValue("@Fecha", fechaVenta);
             cmd.Parameters.AddWithValue("@Total", Total);
 
-            // Ejecutar la consulta para insertar los datos
+            // Ejecutar consulta
             Conexion.Open();
             try
             {
@@ -162,9 +162,9 @@ namespace ConexionSQL
                 Conexion.Close();
             }
 
-            // Recargar los datos en el DataGridView para mostrar la nueva venta
-            CargarDatos(); // Este método recarga todas las ventas
-            Limpiar(); // Limpiar los campos de texto
+            // Recargar datos
+            CargarDatos();
+            Limpiar();
         }
 
         private void btnModificarV_Click(object sender, EventArgs e)
@@ -180,11 +180,13 @@ namespace ConexionSQL
                 return;
             }
 
+            // Asignar parámetros
             cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
             cmd.Parameters.AddWithValue("@ID_Zapato", txtZapatos.Text);
-            cmd.Parameters.AddWithValue("@Fecha", fechaVenta);  // Usar la variable fechaVenta
+            cmd.Parameters.AddWithValue("@Fecha", fechaVenta);
             cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
 
+            // Ejecutar consulta
             Conexion.Open();
             try
             {
@@ -200,7 +202,8 @@ namespace ConexionSQL
                 Conexion.Close();
             }
 
-            CargarDatos(); // Recarga los datos después de modificar
+            // Recargar datos
+            CargarDatos();
             Limpiar();
         }
 
@@ -209,8 +212,10 @@ namespace ConexionSQL
             string query = "DELETE FROM Ventas WHERE ID_Venta = @ID_Venta";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
+            // Asignar parámetro
             cmd.Parameters.AddWithValue("@ID_Venta", lbl_ID.Text);
 
+            // Ejecutar consulta
             Conexion.Open();
             try
             {
@@ -226,26 +231,57 @@ namespace ConexionSQL
                 Conexion.Close();
             }
 
-            CargarDatos(); // Recarga los datos después de eliminar
+            // Recargar datos
+            CargarDatos();
             Limpiar();
         }
 
         private void btnBuscarV_Click(object sender, EventArgs e)
         {
-            if (txtBuscarV.Text != "")
+            if (!string.IsNullOrEmpty(txtBuscarV.Text))
             {
-                Busqueda(dtw_Ventas, 0);
-                Busqueda(dtw_Ventas, 1);
+                // Limpiar la conexión antes de realizar la búsqueda
+                Conexion.Close();
+                Conexion.Open();
+
+                // Consulta para buscar por Fecha o Total, sin incluir ID_Venta o ID_Zapato
+                string query = "SELECT * FROM Ventas WHERE Fecha LIKE @Buscar OR Total LIKE @Buscar";
+                SqlCommand cmd = new SqlCommand(query, Conexion);
+                cmd.Parameters.AddWithValue("@Buscar", "%" + txtBuscarV.Text.Trim() + "%");
+
+                // Crear el DataTable para almacenar los resultados filtrados
+                DataTable dt = new DataTable();
+
+                // Usar SqlDataAdapter para llenar el DataTable con los resultados de la búsqueda
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+
+                // Verificar si hay resultados
+                if (dt.Rows.Count > 0)
+                {
+                    // Asignar los valores del primer registro a los TextBox
+                    DataRow row = dt.Rows[0]; // Obtener el primer registro
+                    lbl_ID.Text = row["ID_Venta"].ToString();
+                    txtZapatos.Text = row["ID_Zapato"].ToString();
+                    txtFecha.Text = row["Fecha"].ToString();
+                    txtTotal.Text = row["Total"].ToString();
+
+                    // Deshabilitar el botón de agregar después de realizar la búsqueda
+                    btnAgregarV.Enabled = false;
+                    btnModificarV.Enabled = true;
+                    btnEliminarV.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró ninguna venta con los datos proporcionados.");
+                }
+
+                Conexion.Close();
             }
             else
             {
-                MessageBox.Show("Error. Intentelo de nuevo :)");
+                MessageBox.Show("Debe ingresar un valor para buscar.");
             }
-
-            txtBuscarV.Clear();
-
-            btnModificarV.Enabled = true;
-            btnEliminarV.Enabled = true;
         }
 
         private void Ventas_Load(object sender, EventArgs e)
@@ -253,3 +289,11 @@ namespace ConexionSQL
         }
     }
 }
+
+
+
+
+
+
+
+

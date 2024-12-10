@@ -21,6 +21,8 @@ namespace ConexionSQL
         private IconButton currentBtn;
         private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");
         private Random id = new Random();
+        private List<DataRow> searchResults = new List<DataRow>();  // Lista para almacenar los resultados de la búsqueda
+        private int currentIndex = -1;  // Índice del registro actual en los resultados
 
         public Zapatos()
         {
@@ -34,7 +36,11 @@ namespace ConexionSQL
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
-            CargarDatos();
+            CargarDatos();  // Cargar los datos en el DataGridView
+
+            // Deshabilitar botones al inicio
+            btnModificarZ.Enabled = false;
+            btnEliminarZ.Enabled = false;
         }
 
         private void CargarDatos()
@@ -44,78 +50,84 @@ namespace ConexionSQL
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            dtw_Zapatos.DataSource = dt;
+            dtw_Zapatos.DataSource = dt;  // Cargar los datos en el DataGridView
         }
 
-        private void ActivateButtom(object senderBtn, Color color)
+        private void Busqueda()
         {
-            if (senderBtn != null)
-            {
-                DisableButtom();
-                currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(240, 128, 128);
-                currentBtn.ForeColor = color;
-                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
-                currentBtn.IconColor = color;
-                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
-                //borde de boton
-                leftBorderBtn.BackColor = color;
-                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
-                leftBorderBtn.Visible = true;
-                leftBorderBtn.BringToFront();
-            }
-        }
+            string searchText = txtBuscarZ.Text.Trim();
+            string query = "SELECT * FROM Zapatos WHERE Categoria LIKE @SearchText OR Marca LIKE @SearchText OR ID_Proveedor LIKE @SearchText OR Medida LIKE @SearchText OR Color LIKE @SearchText OR Material LIKE @SearchText";
 
-        private void DisableButtom()
-        {
-            if (currentBtn != null)
-            {
-                currentBtn.BackColor = Color.FromArgb(255, 128, 128);
-                currentBtn.ForeColor = Color.White;
-                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
-                currentBtn.IconColor = Color.White;
-                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            }
-        }
-
-        void Limpiar()
-        {
-            txtCategoria.Clear();
-            txtMedida.Clear();
-            txtColor.Clear();
-            txtMarca.Clear();
-            txtMaterial.Clear();
-            txtProveedor.Clear();
-
-            btnEliminarZ.Enabled = false;
-            btnModificarZ.Enabled = false;
-        }
-
-        private void Busqueda(int col)
-        {
-            string query = "SELECT * FROM Zapatos WHERE ID_Zapato = @ID_Zapato";
             SqlCommand cmd = new SqlCommand(query, Conexion);
-            cmd.Parameters.AddWithValue("@ID_Zapato", txtBuscarZ.Text.Trim());
+            cmd.Parameters.AddWithValue("@SearchText", "%" + searchText + "%");
 
             Conexion.Open();
             SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
+            searchResults.Clear(); // Limpiar resultados anteriores
+            while (reader.Read())
             {
-                lbl_ID.Text = reader["ID_Zapato"].ToString();
-                txtCategoria.Text = reader["Categoria"].ToString();
-                txtMedida.Text = reader["Medida"].ToString();
-                txtColor.Text = reader["Color"].ToString();
-                txtMarca.Text = reader["Marca"].ToString();
-                txtMaterial.Text = reader["Material"].ToString();
-                txtProveedor.Text = reader["ID_Proveedor"].ToString(); // Corregido: ID_Proveedor en vez de ID_Zapato
+                // Agregar cada fila encontrada a la lista de resultados
+                DataRow row = ((DataTable)dtw_Zapatos.DataSource).NewRow();
+                row["ID_Zapato"] = reader["ID_Zapato"];
+                row["Categoria"] = reader["Categoria"];
+                row["Medida"] = reader["Medida"];
+                row["Color"] = reader["Color"];
+                row["Marca"] = reader["Marca"];
+                row["Material"] = reader["Material"];
+                row["ID_Proveedor"] = reader["ID_Proveedor"];
+                searchResults.Add(row);
+            }
+
+            if (searchResults.Count > 0)
+            {
+                currentIndex = 0; // Iniciar en el primer registro
+                MostrarRegistro();
+                btnModificarZ.Enabled = true;
+                btnEliminarZ.Enabled = true;
+
+                // Desactivar el botón de agregar
+                btnAgregarZ.Enabled = false;
+
+                // Actualizar el DataGridView con los resultados de la búsqueda
+                DataTable searchResultsTable = new DataTable();
+                searchResultsTable.Columns.Add("ID_Zapato");
+                searchResultsTable.Columns.Add("Categoria");
+                searchResultsTable.Columns.Add("Medida");
+                searchResultsTable.Columns.Add("Color");
+                searchResultsTable.Columns.Add("Marca");
+                searchResultsTable.Columns.Add("Material");
+                searchResultsTable.Columns.Add("ID_Proveedor");
+
+                foreach (var row in searchResults)
+                {
+                    searchResultsTable.Rows.Add(row.ItemArray);
+                }
+
+                dtw_Zapatos.DataSource = searchResultsTable;  // Actualizar el DataGridView con los resultados de búsqueda
             }
             else
             {
                 MessageBox.Show("Registro no encontrado.");
+                Limpiar();  // Limpiar los campos de texto si no se encuentra el registro
+                btnModificarZ.Enabled = false;
+                btnEliminarZ.Enabled = false;
             }
             Conexion.Close();
+        }
+
+        private void MostrarRegistro()
+        {
+            if (currentIndex >= 0 && currentIndex < searchResults.Count)
+            {
+                var row = searchResults[currentIndex];
+                lbl_ID.Text = row["ID_Zapato"].ToString();
+                txtCategoria.Text = row["Categoria"].ToString();
+                txtMedida.Text = row["Medida"].ToString();
+                txtColor.Text = row["Color"].ToString();
+                txtMarca.Text = row["Marca"].ToString();
+                txtMaterial.Text = row["Material"].ToString();
+                txtProveedor.Text = row["ID_Proveedor"].ToString();
+            }
         }
 
         private void btnAgregarZ_Click(object sender, EventArgs e)
@@ -200,7 +212,7 @@ namespace ConexionSQL
                 Conexion.Close();
             }
 
-            CargarDatos(); // Recarga los datos después de modificar
+            CargarDatos(); // Recargar los datos después de modificar
             Limpiar();
         }
 
@@ -226,7 +238,7 @@ namespace ConexionSQL
                 Conexion.Close();
             }
 
-            CargarDatos(); // Recarga los datos después de eliminar
+            CargarDatos(); // Recargar los datos después de eliminar
             Limpiar();
         }
 
@@ -234,16 +246,30 @@ namespace ConexionSQL
         {
             if (txtBuscarZ.Text != "")
             {
-                Busqueda(0); // 0: columna que corresponde al ID_Zapato
+                Busqueda(); // Realiza la búsqueda cuando el campo no esté vacío
             }
             else
             {
                 MessageBox.Show("Error. Intentelo de nuevo :)");
             }
-            txtBuscarZ.Clear();
+            txtBuscarZ.Clear();  // Limpiar el cuadro de búsqueda después de buscar
+        }
 
-            btnModificarZ.Enabled = true;
-            btnEliminarZ.Enabled = true;
+        private void Limpiar()
+        {
+            txtCategoria.Clear();
+            txtMedida.Clear();
+            txtColor.Clear();
+            txtMarca.Clear();
+            txtMaterial.Clear();
+            txtProveedor.Clear();
+            lbl_ID.Text = "";
         }
     }
 }
+
+
+
+
+
+

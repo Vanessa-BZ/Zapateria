@@ -52,6 +52,8 @@
             this.btnAgregarV = new BotonRedondeado();
             this.btnEliminarV = new BotonRedondeado();
             this.btnModificarV = new BotonRedondeado();
+            this.btnSiguienteP = new FontAwesome.Sharp.IconButton();
+            this.btnAtrasP = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre5)).BeginInit();
@@ -112,7 +114,7 @@
             // 
             this.lblNombre5.AutoSize = true;
             this.lblNombre5.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre5.Location = new System.Drawing.Point(513, 241);
+            this.lblNombre5.Location = new System.Drawing.Point(458, 240);
             this.lblNombre5.Name = "lblNombre5";
             this.lblNombre5.Size = new System.Drawing.Size(48, 29);
             this.lblNombre5.TabIndex = 94;
@@ -124,7 +126,7 @@
             this.txtTotal.BackColor = System.Drawing.Color.MediumOrchid;
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(507, 273);
+            this.txtTotal.Location = new System.Drawing.Point(452, 272);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTotal.Multiline = true;
             this.txtTotal.Name = "txtTotal";
@@ -135,7 +137,7 @@
             // pbNombre5
             // 
             this.pbNombre5.BackColor = System.Drawing.Color.MediumOrchid;
-            this.pbNombre5.Location = new System.Drawing.Point(505, 261);
+            this.pbNombre5.Location = new System.Drawing.Point(450, 260);
             this.pbNombre5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbNombre5.Name = "pbNombre5";
             this.pbNombre5.Size = new System.Drawing.Size(272, 39);
@@ -146,7 +148,7 @@
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Black;
-            this.pictureBox9.Location = new System.Drawing.Point(504, 258);
+            this.pictureBox9.Location = new System.Drawing.Point(449, 257);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(276, 44);
@@ -252,7 +254,7 @@
             this.dtw_Ventas.BackgroundColor = System.Drawing.Color.MediumOrchid;
             this.dtw_Ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtw_Ventas.Location = new System.Drawing.Point(12, 11);
-            this.dtw_Ventas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtw_Ventas.Margin = new System.Windows.Forms.Padding(4);
             this.dtw_Ventas.Name = "dtw_Ventas";
             this.dtw_Ventas.RowHeadersWidth = 51;
             this.dtw_Ventas.Size = new System.Drawing.Size(669, 116);
@@ -275,18 +277,18 @@
             this.label1.Location = new System.Drawing.Point(280, 153);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 16);
+            this.label1.Size = new System.Drawing.Size(124, 16);
             this.label1.TabIndex = 105;
-            this.label1.Text = "Ingrese ID de Venta";
+            this.label1.Text = "Ingrese Año o Total";
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LavenderBlush;
             this.groupBox1.Controls.Add(this.dtw_Ventas);
-            this.groupBox1.Location = new System.Drawing.Point(103, 373);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(110, 632);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(693, 135);
             this.groupBox1.TabIndex = 106;
             this.groupBox1.TabStop = false;
@@ -313,7 +315,7 @@
             this.btnAgregarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
             this.btnAgregarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarV.GrosorBorde = 2;
-            this.btnAgregarV.Location = new System.Drawing.Point(600, 526);
+            this.btnAgregarV.Location = new System.Drawing.Point(786, 185);
             this.btnAgregarV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarV.Name = "btnAgregarV";
             this.btnAgregarV.Radio = 20;
@@ -329,7 +331,7 @@
             this.btnEliminarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
             this.btnEliminarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarV.GrosorBorde = 2;
-            this.btnEliminarV.Location = new System.Drawing.Point(396, 526);
+            this.btnEliminarV.Location = new System.Drawing.Point(786, 343);
             this.btnEliminarV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarV.Name = "btnEliminarV";
             this.btnEliminarV.Radio = 20;
@@ -346,7 +348,7 @@
             this.btnModificarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
             this.btnModificarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarV.GrosorBorde = 2;
-            this.btnModificarV.Location = new System.Drawing.Point(204, 526);
+            this.btnModificarV.Location = new System.Drawing.Point(786, 261);
             this.btnModificarV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificarV.Name = "btnModificarV";
             this.btnModificarV.Radio = 20;
@@ -356,12 +358,48 @@
             this.btnModificarV.UseVisualStyleBackColor = false;
             this.btnModificarV.Click += new System.EventHandler(this.btnModificarV_Click);
             // 
+            // btnSiguienteP
+            // 
+            this.btnSiguienteP.FlatAppearance.BorderSize = 0;
+            this.btnSiguienteP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguienteP.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguienteP.IconChar = FontAwesome.Sharp.IconChar.AngleRight;
+            this.btnSiguienteP.IconColor = System.Drawing.Color.Black;
+            this.btnSiguienteP.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSiguienteP.IconSize = 30;
+            this.btnSiguienteP.Location = new System.Drawing.Point(449, 427);
+            this.btnSiguienteP.Name = "btnSiguienteP";
+            this.btnSiguienteP.Size = new System.Drawing.Size(117, 53);
+            this.btnSiguienteP.TabIndex = 108;
+            this.btnSiguienteP.Text = "Siguiente";
+            this.btnSiguienteP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSiguienteP.UseVisualStyleBackColor = true;
+            // 
+            // btnAtrasP
+            // 
+            this.btnAtrasP.FlatAppearance.BorderSize = 0;
+            this.btnAtrasP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtrasP.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtrasP.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            this.btnAtrasP.IconColor = System.Drawing.Color.Black;
+            this.btnAtrasP.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAtrasP.IconSize = 30;
+            this.btnAtrasP.Location = new System.Drawing.Point(327, 427);
+            this.btnAtrasP.Name = "btnAtrasP";
+            this.btnAtrasP.Size = new System.Drawing.Size(116, 53);
+            this.btnAtrasP.TabIndex = 107;
+            this.btnAtrasP.Text = "Atras";
+            this.btnAtrasP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAtrasP.UseVisualStyleBackColor = true;
+            // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumOrchid;
-            this.ClientSize = new System.Drawing.Size(940, 603);
+            this.ClientSize = new System.Drawing.Size(944, 824);
+            this.Controls.Add(this.btnSiguienteP);
+            this.Controls.Add(this.btnAtrasP);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_ID);
@@ -388,7 +426,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Ventas";
             this.Text = "Agregar";
-            this.Load += new System.EventHandler(this.Ventas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNombre5)).EndInit();
@@ -430,5 +467,7 @@
         private System.Windows.Forms.Label lbl_ID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private FontAwesome.Sharp.IconButton btnSiguienteP;
+        private FontAwesome.Sharp.IconButton btnAtrasP;
     }
 }

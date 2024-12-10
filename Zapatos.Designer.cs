@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panelZapatos = new System.Windows.Forms.Panel();
+            this.btnAtrasZ = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.txtProveedor = new System.Windows.Forms.TextBox();
             this.lbl_ID = new System.Windows.Forms.Label();
@@ -42,10 +43,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnBuscarZ = new BotonRedondeado();
-            this.btnAgregarZ = new BotonRedondeado();
-            this.btnEliminarZ = new BotonRedondeado();
-            this.btnModificarZ = new BotonRedondeado();
             this.txtBuscarZ = new System.Windows.Forms.TextBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -67,6 +64,11 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtw_Zapatos = new System.Windows.Forms.DataGridView();
+            this.btnBuscarZ = new BotonRedondeado();
+            this.btnAgregarZ = new BotonRedondeado();
+            this.btnEliminarZ = new BotonRedondeado();
+            this.btnModificarZ = new BotonRedondeado();
+            this.btnSiguienteZ = new FontAwesome.Sharp.IconButton();
             this.panelZapatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -97,6 +99,8 @@
             // 
             // panelZapatos
             // 
+            this.panelZapatos.Controls.Add(this.btnSiguienteZ);
+            this.panelZapatos.Controls.Add(this.btnAtrasZ);
             this.panelZapatos.Controls.Add(this.label4);
             this.panelZapatos.Controls.Add(this.txtProveedor);
             this.panelZapatos.Controls.Add(this.lbl_ID);
@@ -136,8 +140,25 @@
             this.panelZapatos.Location = new System.Drawing.Point(0, 0);
             this.panelZapatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelZapatos.Name = "panelZapatos";
-            this.panelZapatos.Size = new System.Drawing.Size(1084, 617);
+            this.panelZapatos.Size = new System.Drawing.Size(1065, 782);
             this.panelZapatos.TabIndex = 5;
+            // 
+            // btnAtrasZ
+            // 
+            this.btnAtrasZ.FlatAppearance.BorderSize = 0;
+            this.btnAtrasZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtrasZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtrasZ.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            this.btnAtrasZ.IconColor = System.Drawing.Color.Black;
+            this.btnAtrasZ.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAtrasZ.IconSize = 30;
+            this.btnAtrasZ.Location = new System.Drawing.Point(341, 456);
+            this.btnAtrasZ.Name = "btnAtrasZ";
+            this.btnAtrasZ.Size = new System.Drawing.Size(116, 53);
+            this.btnAtrasZ.TabIndex = 88;
+            this.btnAtrasZ.Text = "Atras";
+            this.btnAtrasZ.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAtrasZ.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -145,9 +166,9 @@
             this.label4.Location = new System.Drawing.Point(252, 126);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 16);
+            this.label4.Size = new System.Drawing.Size(85, 16);
             this.label4.TabIndex = 87;
-            this.label4.Text = "Ingrese ID de Zapatos";
+            this.label4.Text = "Ingrese dato ";
             // 
             // txtProveedor
             // 
@@ -261,80 +282,15 @@
             this.label5.TabIndex = 60;
             this.label5.Text = "Bienvenido a la ventana de Zapatos";
             // 
-            // btnBuscarZ
-            // 
-            this.btnBuscarZ.ColorBorde = System.Drawing.Color.Black;
-            this.btnBuscarZ.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnBuscarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarZ.GrosorBorde = 2;
-            this.btnBuscarZ.Location = new System.Drawing.Point(599, 86);
-            this.btnBuscarZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBuscarZ.Name = "btnBuscarZ";
-            this.btnBuscarZ.Radio = 20;
-            this.btnBuscarZ.Size = new System.Drawing.Size(123, 32);
-            this.btnBuscarZ.TabIndex = 73;
-            this.btnBuscarZ.Text = "Buscar";
-            this.btnBuscarZ.UseVisualStyleBackColor = true;
-            this.btnBuscarZ.Click += new System.EventHandler(this.btnBuscarZ_Click);
-            // 
-            // btnAgregarZ
-            // 
-            this.btnAgregarZ.ColorBorde = System.Drawing.Color.Black;
-            this.btnAgregarZ.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnAgregarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarZ.GrosorBorde = 2;
-            this.btnAgregarZ.Location = new System.Drawing.Point(824, 222);
-            this.btnAgregarZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAgregarZ.Name = "btnAgregarZ";
-            this.btnAgregarZ.Radio = 20;
-            this.btnAgregarZ.Size = new System.Drawing.Size(123, 32);
-            this.btnAgregarZ.TabIndex = 71;
-            this.btnAgregarZ.Text = "Agregar";
-            this.btnAgregarZ.UseVisualStyleBackColor = true;
-            this.btnAgregarZ.Click += new System.EventHandler(this.btnAgregarZ_Click);
-            // 
-            // btnEliminarZ
-            // 
-            this.btnEliminarZ.ColorBorde = System.Drawing.Color.Black;
-            this.btnEliminarZ.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnEliminarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarZ.GrosorBorde = 2;
-            this.btnEliminarZ.Location = new System.Drawing.Point(824, 276);
-            this.btnEliminarZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEliminarZ.Name = "btnEliminarZ";
-            this.btnEliminarZ.Radio = 20;
-            this.btnEliminarZ.Size = new System.Drawing.Size(123, 32);
-            this.btnEliminarZ.TabIndex = 70;
-            this.btnEliminarZ.Text = "Eliminar";
-            this.btnEliminarZ.UseVisualStyleBackColor = true;
-            this.btnEliminarZ.Click += new System.EventHandler(this.btnEliminarZ_Click);
-            // 
-            // btnModificarZ
-            // 
-            this.btnModificarZ.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnModificarZ.ColorBorde = System.Drawing.Color.Black;
-            this.btnModificarZ.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnModificarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarZ.GrosorBorde = 2;
-            this.btnModificarZ.Location = new System.Drawing.Point(824, 338);
-            this.btnModificarZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnModificarZ.Name = "btnModificarZ";
-            this.btnModificarZ.Radio = 20;
-            this.btnModificarZ.Size = new System.Drawing.Size(123, 32);
-            this.btnModificarZ.TabIndex = 69;
-            this.btnModificarZ.Text = "Modificar";
-            this.btnModificarZ.UseVisualStyleBackColor = false;
-            this.btnModificarZ.Click += new System.EventHandler(this.btnModificarZ_Click);
-            // 
             // txtBuscarZ
             // 
             this.txtBuscarZ.BackColor = System.Drawing.Color.Plum;
             this.txtBuscarZ.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarZ.Location = new System.Drawing.Point(311, 94);
+            this.txtBuscarZ.Location = new System.Drawing.Point(271, 94);
             this.txtBuscarZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscarZ.Name = "txtBuscarZ";
-            this.txtBuscarZ.Size = new System.Drawing.Size(269, 23);
+            this.txtBuscarZ.Size = new System.Drawing.Size(309, 23);
             this.txtBuscarZ.TabIndex = 66;
             this.txtBuscarZ.Tag = "Nombre";
             // 
@@ -543,10 +499,10 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LavenderBlush;
             this.groupBox1.Controls.Add(this.dtw_Zapatos);
-            this.groupBox1.Location = new System.Drawing.Point(135, 437);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(135, 604);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(616, 165);
             this.groupBox1.TabIndex = 85;
             this.groupBox1.TabStop = false;
@@ -559,28 +515,110 @@
             this.dtw_Zapatos.AllowUserToResizeRows = false;
             this.dtw_Zapatos.BackgroundColor = System.Drawing.Color.Plum;
             this.dtw_Zapatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Violet;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtw_Zapatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Violet;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtw_Zapatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtw_Zapatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtw_Zapatos.Location = new System.Drawing.Point(11, 11);
-            this.dtw_Zapatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtw_Zapatos.Margin = new System.Windows.Forms.Padding(4);
             this.dtw_Zapatos.Name = "dtw_Zapatos";
             this.dtw_Zapatos.RowHeadersWidth = 51;
             this.dtw_Zapatos.Size = new System.Drawing.Size(592, 145);
             this.dtw_Zapatos.TabIndex = 86;
+            // 
+            // btnBuscarZ
+            // 
+            this.btnBuscarZ.ColorBorde = System.Drawing.Color.Black;
+            this.btnBuscarZ.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnBuscarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarZ.GrosorBorde = 2;
+            this.btnBuscarZ.Location = new System.Drawing.Point(599, 86);
+            this.btnBuscarZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscarZ.Name = "btnBuscarZ";
+            this.btnBuscarZ.Radio = 20;
+            this.btnBuscarZ.Size = new System.Drawing.Size(123, 32);
+            this.btnBuscarZ.TabIndex = 73;
+            this.btnBuscarZ.Text = "Buscar";
+            this.btnBuscarZ.UseVisualStyleBackColor = true;
+            this.btnBuscarZ.Click += new System.EventHandler(this.btnBuscarZ_Click);
+            // 
+            // btnAgregarZ
+            // 
+            this.btnAgregarZ.ColorBorde = System.Drawing.Color.Black;
+            this.btnAgregarZ.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnAgregarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarZ.GrosorBorde = 2;
+            this.btnAgregarZ.Location = new System.Drawing.Point(824, 222);
+            this.btnAgregarZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarZ.Name = "btnAgregarZ";
+            this.btnAgregarZ.Radio = 20;
+            this.btnAgregarZ.Size = new System.Drawing.Size(123, 32);
+            this.btnAgregarZ.TabIndex = 71;
+            this.btnAgregarZ.Text = "Agregar";
+            this.btnAgregarZ.UseVisualStyleBackColor = true;
+            this.btnAgregarZ.Click += new System.EventHandler(this.btnAgregarZ_Click);
+            // 
+            // btnEliminarZ
+            // 
+            this.btnEliminarZ.ColorBorde = System.Drawing.Color.Black;
+            this.btnEliminarZ.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnEliminarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarZ.GrosorBorde = 2;
+            this.btnEliminarZ.Location = new System.Drawing.Point(824, 276);
+            this.btnEliminarZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminarZ.Name = "btnEliminarZ";
+            this.btnEliminarZ.Radio = 20;
+            this.btnEliminarZ.Size = new System.Drawing.Size(123, 32);
+            this.btnEliminarZ.TabIndex = 70;
+            this.btnEliminarZ.Text = "Eliminar";
+            this.btnEliminarZ.UseVisualStyleBackColor = true;
+            this.btnEliminarZ.Click += new System.EventHandler(this.btnEliminarZ_Click);
+            // 
+            // btnModificarZ
+            // 
+            this.btnModificarZ.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnModificarZ.ColorBorde = System.Drawing.Color.Black;
+            this.btnModificarZ.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnModificarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarZ.GrosorBorde = 2;
+            this.btnModificarZ.Location = new System.Drawing.Point(824, 338);
+            this.btnModificarZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificarZ.Name = "btnModificarZ";
+            this.btnModificarZ.Radio = 20;
+            this.btnModificarZ.Size = new System.Drawing.Size(123, 32);
+            this.btnModificarZ.TabIndex = 69;
+            this.btnModificarZ.Text = "Modificar";
+            this.btnModificarZ.UseVisualStyleBackColor = false;
+            this.btnModificarZ.Click += new System.EventHandler(this.btnModificarZ_Click);
+            // 
+            // btnSiguienteZ
+            // 
+            this.btnSiguienteZ.FlatAppearance.BorderSize = 0;
+            this.btnSiguienteZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguienteZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguienteZ.IconChar = FontAwesome.Sharp.IconChar.AngleRight;
+            this.btnSiguienteZ.IconColor = System.Drawing.Color.Black;
+            this.btnSiguienteZ.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSiguienteZ.IconSize = 30;
+            this.btnSiguienteZ.Location = new System.Drawing.Point(463, 456);
+            this.btnSiguienteZ.Name = "btnSiguienteZ";
+            this.btnSiguienteZ.Size = new System.Drawing.Size(117, 53);
+            this.btnSiguienteZ.TabIndex = 89;
+            this.btnSiguienteZ.Text = "Siguiente";
+            this.btnSiguienteZ.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSiguienteZ.UseVisualStyleBackColor = true;
             // 
             // Zapatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Plum;
-            this.ClientSize = new System.Drawing.Size(1084, 617);
+            this.ClientSize = new System.Drawing.Size(1065, 782);
             this.Controls.Add(this.panelZapatos);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -649,5 +687,7 @@
         private System.Windows.Forms.DataGridView dtw_Zapatos;
         private System.Windows.Forms.TextBox txtProveedor;
         private System.Windows.Forms.Label label4;
+        private FontAwesome.Sharp.IconButton btnAtrasZ;
+        private FontAwesome.Sharp.IconButton btnSiguienteZ;
     }
 }

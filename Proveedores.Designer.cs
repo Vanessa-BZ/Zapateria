@@ -39,10 +39,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtw_Proveedores = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnBuscarP = new BotonRedondeado();
-            this.btnAgregarP = new BotonRedondeado();
-            this.btnEliminarP = new BotonRedondeado();
-            this.btnModificarP = new BotonRedondeado();
             this.txtBuscarP = new System.Windows.Forms.TextBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -61,6 +57,12 @@
             this.txtNombreProv = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbNombre = new System.Windows.Forms.PictureBox();
+            this.btnSiguienteP = new FontAwesome.Sharp.IconButton();
+            this.btnAtrasP = new FontAwesome.Sharp.IconButton();
+            this.btnBuscarP = new BotonRedondeado();
+            this.btnAgregarP = new BotonRedondeado();
+            this.btnEliminarP = new BotonRedondeado();
+            this.btnModificarP = new BotonRedondeado();
             this.panelProveedores.SuspendLayout();
             this.pContainerP.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -84,11 +86,13 @@
             this.panelProveedores.Location = new System.Drawing.Point(0, 0);
             this.panelProveedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelProveedores.Name = "panelProveedores";
-            this.panelProveedores.Size = new System.Drawing.Size(981, 703);
+            this.panelProveedores.Size = new System.Drawing.Size(962, 850);
             this.panelProveedores.TabIndex = 4;
             // 
             // pContainerP
             // 
+            this.pContainerP.Controls.Add(this.btnSiguienteP);
+            this.pContainerP.Controls.Add(this.btnAtrasP);
             this.pContainerP.Controls.Add(this.label1);
             this.pContainerP.Controls.Add(this.lbl_id);
             this.pContainerP.Controls.Add(this.CBXcomercio);
@@ -120,7 +124,7 @@
             this.pContainerP.Location = new System.Drawing.Point(0, 0);
             this.pContainerP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pContainerP.Name = "pContainerP";
-            this.pContainerP.Size = new System.Drawing.Size(981, 703);
+            this.pContainerP.Size = new System.Drawing.Size(962, 850);
             this.pContainerP.TabIndex = 26;
             // 
             // label1
@@ -129,9 +133,9 @@
             this.label1.Location = new System.Drawing.Point(243, 145);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 16);
+            this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 48;
-            this.label1.Text = "Ingrese ID de Proveedor ";
+            this.label1.Text = "Ingrese dato ";
             // 
             // lbl_id
             // 
@@ -153,8 +157,8 @@
             this.CBXcomercio.Items.AddRange(new object[] {
             "Nacional",
             "Internacional"});
-            this.CBXcomercio.Location = new System.Drawing.Point(461, 302);
-            this.CBXcomercio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CBXcomercio.Location = new System.Drawing.Point(468, 340);
+            this.CBXcomercio.Margin = new System.Windows.Forms.Padding(4);
             this.CBXcomercio.MaxDropDownItems = 2;
             this.CBXcomercio.Name = "CBXcomercio";
             this.CBXcomercio.Size = new System.Drawing.Size(255, 28);
@@ -165,10 +169,10 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LavenderBlush;
             this.groupBox1.Controls.Add(this.dtw_Proveedores);
-            this.groupBox1.Location = new System.Drawing.Point(109, 369);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(145, 549);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(571, 223);
             this.groupBox1.TabIndex = 45;
             this.groupBox1.TabStop = false;
@@ -199,7 +203,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtw_Proveedores.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtw_Proveedores.Location = new System.Drawing.Point(25, 18);
-            this.dtw_Proveedores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtw_Proveedores.Margin = new System.Windows.Forms.Padding(4);
             this.dtw_Proveedores.Name = "dtw_Proveedores";
             this.dtw_Proveedores.RightToLeft = System.Windows.Forms.RightToLeft.No;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -224,73 +228,6 @@
             this.label5.Size = new System.Drawing.Size(729, 46);
             this.label5.TabIndex = 13;
             this.label5.Text = "Bienvenido a la ventana de Proveedores";
-            // 
-            // btnBuscarP
-            // 
-            this.btnBuscarP.ColorBorde = System.Drawing.Color.Black;
-            this.btnBuscarP.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnBuscarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarP.GrosorBorde = 2;
-            this.btnBuscarP.Location = new System.Drawing.Point(628, 103);
-            this.btnBuscarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBuscarP.Name = "btnBuscarP";
-            this.btnBuscarP.Radio = 20;
-            this.btnBuscarP.Size = new System.Drawing.Size(123, 32);
-            this.btnBuscarP.TabIndex = 44;
-            this.btnBuscarP.Text = "&Buscar";
-            this.btnBuscarP.UseVisualStyleBackColor = true;
-            this.btnBuscarP.Click += new System.EventHandler(this.btnBuscarP_Click);
-            // 
-            // btnAgregarP
-            // 
-            this.btnAgregarP.ColorBorde = System.Drawing.Color.Black;
-            this.btnAgregarP.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnAgregarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarP.GrosorBorde = 2;
-            this.btnAgregarP.Location = new System.Drawing.Point(753, 164);
-            this.btnAgregarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAgregarP.Name = "btnAgregarP";
-            this.btnAgregarP.Radio = 20;
-            this.btnAgregarP.Size = new System.Drawing.Size(123, 32);
-            this.btnAgregarP.TabIndex = 42;
-            this.btnAgregarP.Text = "Agregar";
-            this.btnAgregarP.UseVisualStyleBackColor = true;
-            this.btnAgregarP.Click += new System.EventHandler(this.btnAgregarP_Click);
-            // 
-            // btnEliminarP
-            // 
-            this.btnEliminarP.ColorBorde = System.Drawing.Color.Black;
-            this.btnEliminarP.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnEliminarP.Enabled = false;
-            this.btnEliminarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarP.GrosorBorde = 2;
-            this.btnEliminarP.Location = new System.Drawing.Point(753, 298);
-            this.btnEliminarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEliminarP.Name = "btnEliminarP";
-            this.btnEliminarP.Radio = 20;
-            this.btnEliminarP.Size = new System.Drawing.Size(123, 32);
-            this.btnEliminarP.TabIndex = 41;
-            this.btnEliminarP.Text = "Eliminar";
-            this.btnEliminarP.UseVisualStyleBackColor = true;
-            this.btnEliminarP.Click += new System.EventHandler(this.btnEliminarP_Click);
-            // 
-            // btnModificarP
-            // 
-            this.btnModificarP.BackColor = System.Drawing.Color.MediumPurple;
-            this.btnModificarP.ColorBorde = System.Drawing.Color.Black;
-            this.btnModificarP.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnModificarP.Enabled = false;
-            this.btnModificarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarP.GrosorBorde = 2;
-            this.btnModificarP.Location = new System.Drawing.Point(753, 226);
-            this.btnModificarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnModificarP.Name = "btnModificarP";
-            this.btnModificarP.Radio = 20;
-            this.btnModificarP.Size = new System.Drawing.Size(123, 32);
-            this.btnModificarP.TabIndex = 40;
-            this.btnModificarP.Text = "Modificar";
-            this.btnModificarP.UseVisualStyleBackColor = false;
-            this.btnModificarP.Click += new System.EventHandler(this.btnModificarP_Click);
             // 
             // txtBuscarP
             // 
@@ -329,7 +266,7 @@
             // 
             this.lblNombre5.AutoSize = true;
             this.lblNombre5.Font = new System.Drawing.Font("Javanese Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre5.Location = new System.Drawing.Point(461, 270);
+            this.lblNombre5.Location = new System.Drawing.Point(468, 308);
             this.lblNombre5.Name = "lblNombre5";
             this.lblNombre5.Size = new System.Drawing.Size(159, 38);
             this.lblNombre5.TabIndex = 18;
@@ -339,7 +276,7 @@
             // pbNombre5
             // 
             this.pbNombre5.BackColor = System.Drawing.Color.Thistle;
-            this.pbNombre5.Location = new System.Drawing.Point(452, 297);
+            this.pbNombre5.Location = new System.Drawing.Point(459, 335);
             this.pbNombre5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbNombre5.Name = "pbNombre5";
             this.pbNombre5.Size = new System.Drawing.Size(272, 39);
@@ -350,7 +287,7 @@
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Black;
-            this.pictureBox9.Location = new System.Drawing.Point(451, 294);
+            this.pictureBox9.Location = new System.Drawing.Point(458, 332);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(276, 44);
@@ -361,7 +298,7 @@
             // 
             this.lblNombre4.AutoSize = true;
             this.lblNombre4.Font = new System.Drawing.Font("Javanese Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre4.Location = new System.Drawing.Point(461, 164);
+            this.lblNombre4.Location = new System.Drawing.Point(468, 202);
             this.lblNombre4.Name = "lblNombre4";
             this.lblNombre4.Size = new System.Drawing.Size(92, 38);
             this.lblNombre4.TabIndex = 14;
@@ -373,7 +310,7 @@
             this.txtUnidades.BackColor = System.Drawing.Color.Thistle;
             this.txtUnidades.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUnidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnidades.Location = new System.Drawing.Point(457, 204);
+            this.txtUnidades.Location = new System.Drawing.Point(464, 242);
             this.txtUnidades.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUnidades.Multiline = true;
             this.txtUnidades.Name = "txtUnidades";
@@ -384,7 +321,7 @@
             // pbNombre4
             // 
             this.pbNombre4.BackColor = System.Drawing.Color.Thistle;
-            this.pbNombre4.Location = new System.Drawing.Point(453, 193);
+            this.pbNombre4.Location = new System.Drawing.Point(460, 231);
             this.pbNombre4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbNombre4.Name = "pbNombre4";
             this.pbNombre4.Size = new System.Drawing.Size(272, 39);
@@ -395,7 +332,7 @@
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Black;
-            this.pictureBox7.Location = new System.Drawing.Point(452, 191);
+            this.pictureBox7.Location = new System.Drawing.Point(459, 229);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(276, 44);
@@ -406,7 +343,7 @@
             // 
             this.lblNombre3.AutoSize = true;
             this.lblNombre3.Font = new System.Drawing.Font("Javanese Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre3.Location = new System.Drawing.Point(75, 270);
+            this.lblNombre3.Location = new System.Drawing.Point(82, 308);
             this.lblNombre3.Margin = new System.Windows.Forms.Padding(0);
             this.lblNombre3.Name = "lblNombre3";
             this.lblNombre3.Size = new System.Drawing.Size(70, 38);
@@ -419,7 +356,7 @@
             this.txtPrecio.BackColor = System.Drawing.Color.Thistle;
             this.txtPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(72, 308);
+            this.txtPrecio.Location = new System.Drawing.Point(79, 346);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrecio.Multiline = true;
             this.txtPrecio.Name = "txtPrecio";
@@ -430,7 +367,7 @@
             // pbNombre3
             // 
             this.pbNombre3.BackColor = System.Drawing.Color.Thistle;
-            this.pbNombre3.Location = new System.Drawing.Point(68, 298);
+            this.pbNombre3.Location = new System.Drawing.Point(75, 336);
             this.pbNombre3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbNombre3.Name = "pbNombre3";
             this.pbNombre3.Size = new System.Drawing.Size(272, 39);
@@ -441,7 +378,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Black;
-            this.pictureBox5.Location = new System.Drawing.Point(65, 297);
+            this.pictureBox5.Location = new System.Drawing.Point(72, 335);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(276, 44);
@@ -452,7 +389,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Javanese Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(75, 164);
+            this.lblNombre.Location = new System.Drawing.Point(82, 202);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(170, 38);
             this.lblNombre.TabIndex = 2;
@@ -464,7 +401,7 @@
             this.txtNombreProv.BackColor = System.Drawing.Color.Thistle;
             this.txtNombreProv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreProv.Location = new System.Drawing.Point(75, 206);
+            this.txtNombreProv.Location = new System.Drawing.Point(82, 244);
             this.txtNombreProv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreProv.Multiline = true;
             this.txtNombreProv.Name = "txtNombreProv";
@@ -475,7 +412,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Thistle;
-            this.pictureBox1.Location = new System.Drawing.Point(68, 194);
+            this.pictureBox1.Location = new System.Drawing.Point(75, 232);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(272, 39);
@@ -486,19 +423,120 @@
             // pbNombre
             // 
             this.pbNombre.BackColor = System.Drawing.Color.Black;
-            this.pbNombre.Location = new System.Drawing.Point(67, 192);
+            this.pbNombre.Location = new System.Drawing.Point(74, 230);
             this.pbNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbNombre.Name = "pbNombre";
             this.pbNombre.Size = new System.Drawing.Size(276, 44);
             this.pbNombre.TabIndex = 1;
             this.pbNombre.TabStop = false;
             // 
+            // btnSiguienteP
+            // 
+            this.btnSiguienteP.FlatAppearance.BorderSize = 0;
+            this.btnSiguienteP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguienteP.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguienteP.IconChar = FontAwesome.Sharp.IconChar.AngleRight;
+            this.btnSiguienteP.IconColor = System.Drawing.Color.Black;
+            this.btnSiguienteP.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSiguienteP.IconSize = 30;
+            this.btnSiguienteP.Location = new System.Drawing.Point(423, 445);
+            this.btnSiguienteP.Name = "btnSiguienteP";
+            this.btnSiguienteP.Size = new System.Drawing.Size(117, 53);
+            this.btnSiguienteP.TabIndex = 91;
+            this.btnSiguienteP.Text = "Siguiente";
+            this.btnSiguienteP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSiguienteP.UseVisualStyleBackColor = true;
+            // 
+            // btnAtrasP
+            // 
+            this.btnAtrasP.FlatAppearance.BorderSize = 0;
+            this.btnAtrasP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtrasP.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtrasP.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
+            this.btnAtrasP.IconColor = System.Drawing.Color.Black;
+            this.btnAtrasP.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAtrasP.IconSize = 30;
+            this.btnAtrasP.Location = new System.Drawing.Point(301, 445);
+            this.btnAtrasP.Name = "btnAtrasP";
+            this.btnAtrasP.Size = new System.Drawing.Size(116, 53);
+            this.btnAtrasP.TabIndex = 90;
+            this.btnAtrasP.Text = "Atras";
+            this.btnAtrasP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAtrasP.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscarP
+            // 
+            this.btnBuscarP.ColorBorde = System.Drawing.Color.Black;
+            this.btnBuscarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnBuscarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarP.GrosorBorde = 2;
+            this.btnBuscarP.Location = new System.Drawing.Point(628, 103);
+            this.btnBuscarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscarP.Name = "btnBuscarP";
+            this.btnBuscarP.Radio = 20;
+            this.btnBuscarP.Size = new System.Drawing.Size(123, 32);
+            this.btnBuscarP.TabIndex = 44;
+            this.btnBuscarP.Text = "&Buscar";
+            this.btnBuscarP.UseVisualStyleBackColor = true;
+            this.btnBuscarP.Click += new System.EventHandler(this.btnBuscarP_Click);
+            // 
+            // btnAgregarP
+            // 
+            this.btnAgregarP.ColorBorde = System.Drawing.Color.Black;
+            this.btnAgregarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnAgregarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarP.GrosorBorde = 2;
+            this.btnAgregarP.Location = new System.Drawing.Point(760, 202);
+            this.btnAgregarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarP.Name = "btnAgregarP";
+            this.btnAgregarP.Radio = 20;
+            this.btnAgregarP.Size = new System.Drawing.Size(123, 32);
+            this.btnAgregarP.TabIndex = 42;
+            this.btnAgregarP.Text = "Agregar";
+            this.btnAgregarP.UseVisualStyleBackColor = true;
+            this.btnAgregarP.Click += new System.EventHandler(this.btnAgregarP_Click);
+            // 
+            // btnEliminarP
+            // 
+            this.btnEliminarP.ColorBorde = System.Drawing.Color.Black;
+            this.btnEliminarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnEliminarP.Enabled = false;
+            this.btnEliminarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarP.GrosorBorde = 2;
+            this.btnEliminarP.Location = new System.Drawing.Point(760, 336);
+            this.btnEliminarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminarP.Name = "btnEliminarP";
+            this.btnEliminarP.Radio = 20;
+            this.btnEliminarP.Size = new System.Drawing.Size(123, 32);
+            this.btnEliminarP.TabIndex = 41;
+            this.btnEliminarP.Text = "Eliminar";
+            this.btnEliminarP.UseVisualStyleBackColor = true;
+            this.btnEliminarP.Click += new System.EventHandler(this.btnEliminarP_Click);
+            // 
+            // btnModificarP
+            // 
+            this.btnModificarP.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnModificarP.ColorBorde = System.Drawing.Color.Black;
+            this.btnModificarP.ColorDeFondo = System.Drawing.Color.Violet;
+            this.btnModificarP.Enabled = false;
+            this.btnModificarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarP.GrosorBorde = 2;
+            this.btnModificarP.Location = new System.Drawing.Point(760, 264);
+            this.btnModificarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificarP.Name = "btnModificarP";
+            this.btnModificarP.Radio = 20;
+            this.btnModificarP.Size = new System.Drawing.Size(123, 32);
+            this.btnModificarP.TabIndex = 40;
+            this.btnModificarP.Text = "Modificar";
+            this.btnModificarP.UseVisualStyleBackColor = false;
+            this.btnModificarP.Click += new System.EventHandler(this.btnModificarP_Click);
+            // 
             // Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
-            this.ClientSize = new System.Drawing.Size(981, 703);
+            this.ClientSize = new System.Drawing.Size(962, 850);
             this.Controls.Add(this.panelProveedores);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Proveedores";
@@ -553,5 +591,7 @@
         private System.Windows.Forms.ComboBox CBXcomercio;
         private System.Windows.Forms.Label lbl_id;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton btnSiguienteP;
+        private FontAwesome.Sharp.IconButton btnAtrasP;
     }
 }

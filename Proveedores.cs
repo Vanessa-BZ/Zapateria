@@ -2,9 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 
@@ -93,25 +90,19 @@ namespace ConexionSQL
         // Método modificado para hacer la búsqueda en la base de datos
         private void Busqueda(DataGridView d, int col)
         {
-            string query = "SELECT * FROM Proveedores WHERE ID_Proveedor = @ID_Proveedor";
+            string query = "SELECT * FROM Proveedores WHERE ID_Proveedor LIKE @ID_Proveedor OR Nombre_P LIKE @Nombre_P OR Precio LIKE @Precio OR Unidades LIKE @Unidades OR Comercializacion LIKE @Comercializacion";
             SqlCommand cmd = new SqlCommand(query, Conexion);
-            cmd.Parameters.AddWithValue("@ID_Proveedor", txtBuscarP.Text.Trim());
+            cmd.Parameters.AddWithValue("@ID_Proveedor", "%" + txtBuscarP.Text.Trim() + "%");
+            cmd.Parameters.AddWithValue("@Nombre_P", "%" + txtBuscarP.Text.Trim() + "%");
+            cmd.Parameters.AddWithValue("@Precio", "%" + txtBuscarP.Text.Trim() + "%");
+            cmd.Parameters.AddWithValue("@Unidades", "%" + txtBuscarP.Text.Trim() + "%");
+            cmd.Parameters.AddWithValue("@Comercializacion", "%" + txtBuscarP.Text.Trim() + "%");
 
-            Conexion.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                lbl_id.Text = reader["ID_Proveedor"].ToString();
-                txtNombreProv.Text = reader["Nombre_P"].ToString();
-                txtPrecio.Text = reader["Precio"].ToString();
-                txtUnidades.Text = reader["Unidades"].ToString();
-                CBXcomercio.Text = reader["Comercializacion"].ToString();
-            }
-            else
-            {
-                MessageBox.Show("Proveedor no encontrado.");
-            }
-            Conexion.Close();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            dtw_Proveedores.DataSource = dt;
         }
 
         private void btnAgregarP_Click(object sender, EventArgs e)
@@ -224,17 +215,45 @@ namespace ConexionSQL
         {
             if (txtBuscarP.Text != "")
             {
+                // Realiza la búsqueda
                 Busqueda(dtw_Proveedores, 0);
-                Busqueda(dtw_Proveedores, 1);
+
+                // Desactiva el botón de agregar para evitar duplicados
+                btnAgregarP.Enabled = false;
+
+                // Activa los botones de modificar y eliminar
+                btnModificarP.Enabled = true;
+                btnEliminarP.Enabled = true;
+
+                // Asegura que el primer registro se cargue en los TextBox
+                CargarPrimerRegistro();
             }
             else
             {
                 MessageBox.Show("Error. Intentelo de nuevo :)");
             }
-            txtBuscarP.Clear();
 
-            btnModificarP.Enabled = true;
-            btnEliminarP.Enabled = true;
+            // Limpiar el campo de búsqueda
+            txtBuscarP.Clear();
+        }
+
+        private void CargarPrimerRegistro()
+        {
+            // Verifica si hay filas en el DataGridView
+            if (dtw_Proveedores.Rows.Count > 0)
+            {
+                // Obtiene la primera fila del DataGridView
+                DataGridViewRow row = dtw_Proveedores.Rows[0];
+
+                // Carga los datos de la primera fila en los TextBox
+                lbl_id.Text = row.Cells["ID_Proveedor"].Value.ToString();
+                txtNombreProv.Text = row.Cells["Nombre_P"].Value.ToString();
+                txtPrecio.Text = row.Cells["Precio"].Value.ToString();
+                txtUnidades.Text = row.Cells["Unidades"].Value.ToString();
+                CBXcomercio.Text = row.Cells["Comercializacion"].Value.ToString();
+            }
         }
     }
 }
+
+

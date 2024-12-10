@@ -63,7 +63,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(253, 652);
+            this.panelMenu.Size = new System.Drawing.Size(253, 577);
             this.panelMenu.TabIndex = 0;
             // 
             // btnZapatos
@@ -170,7 +170,7 @@
             this.panelBarraTitulo.Location = new System.Drawing.Point(253, 0);
             this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(995, 57);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(977, 57);
             this.panelBarraTitulo.TabIndex = 1;
             this.panelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseDown);
             // 
@@ -181,7 +181,7 @@
             this.exit.IconColor = System.Drawing.Color.White;
             this.exit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.exit.IconSize = 33;
-            this.exit.Location = new System.Drawing.Point(948, 12);
+            this.exit.Location = new System.Drawing.Point(894, 12);
             this.exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(33, 34);
@@ -225,14 +225,14 @@
             this.panelEscritorio.Location = new System.Drawing.Point(253, 57);
             this.panelEscritorio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelEscritorio.Name = "panelEscritorio";
-            this.panelEscritorio.Size = new System.Drawing.Size(995, 595);
+            this.panelEscritorio.Size = new System.Drawing.Size(977, 520);
             this.panelEscritorio.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(415, 103);
+            this.label2.Location = new System.Drawing.Point(372, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 35);
             this.label2.TabIndex = 6;
@@ -241,7 +241,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ConexionSQL.Properties.Resources.image_removebg_preview__21_;
-            this.pictureBox1.Location = new System.Drawing.Point(258, 186);
+            this.pictureBox1.Location = new System.Drawing.Point(215, 121);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(504, 366);
@@ -256,14 +256,14 @@
             this.panel1.Location = new System.Drawing.Point(253, 57);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(995, 11);
+            this.panel1.Size = new System.Drawing.Size(977, 11);
             this.panel1.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1248, 652);
+            this.ClientSize = new System.Drawing.Size(1230, 577);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelEscritorio);
             this.Controls.Add(this.panelBarraTitulo);
