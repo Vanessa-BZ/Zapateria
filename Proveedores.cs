@@ -19,8 +19,8 @@ namespace ConexionSQL
     {
         private Panel leftBorderBtn;
         private IconButton currentBtn;
-        //private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Salma
-        private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Vanessita
+        private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Salma
+        //private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Vanessita
         private Random id = new Random();
         private int currentIndex = 0;
 
@@ -97,6 +97,12 @@ namespace ConexionSQL
 
             btnModificarP.Enabled = false;
             btnEliminarP.Enabled = false;
+
+            btnLimpiarP.Visible = false;
+            btnAtrasP.Enabled = false;
+            btnSiguienteP.Enabled = false;
+            btnPrimerP.Enabled = false;
+            btnUltimoP.Enabled = false;
         }
 
         // Método modificado para hacer la búsqueda en la base de datos
@@ -277,15 +283,21 @@ namespace ConexionSQL
 
                 // Asegura que el primer registro se cargue en los TextBox
                 CargarPrimerRegistro(currentIndex);
+
+                // Limpiar el campo de búsqueda
+                txtBuscarP.Clear();
+                btnLimpiarP.Visible = true;
+                btnAtrasP.Enabled = true;
+                btnSiguienteP.Enabled = true;
+                btnPrimerP.Enabled = true;
+                btnUltimoP.Enabled = true;
             }
             else
             {
                 MessageBox.Show("Error. Intentelo de nuevo :)", "\u26A0 Error de busqueda/Proveedores", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            // Limpiar el campo de búsqueda
-            txtBuscarP.Clear();
-            btnLimpiarP.Visible = true;
+            
         }
 
         private void CargarPrimerRegistro(int index)

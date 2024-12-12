@@ -19,8 +19,8 @@ namespace ConexionSQL
     {
         private Panel leftBorderBtn;
         private IconButton currentBtn;
-       // private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Salma
-        private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Vanessita
+        private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Salma
+        //private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True");  //Vanessita
         private Random id = new Random();
         private int currentIndex = 0;  // Índice del registro actual en los resultados
 
@@ -51,11 +51,12 @@ namespace ConexionSQL
             da.Fill(dt);
 
             dtw_Zapatos.DataSource = dt;  // Cargar los datos en el DataGridView
+            cmbTipoM.SelectedIndex = 0;
         }
 
         private void Busqueda(DataGridView d)
         {
-            string query = "SELECT * FROM Zapatos WHERE ID_Zapato LIKE @ID_Zapato OR Categoria LIKE @Categoria OR Medida LIKE @Medida OR Color LIKE @Color OR Marca LIKE @Marca OR Material LIKE @Material OR ID_Proveedor LIKE @ID_Proveedor";
+            string query = "SELECT * FROM Zapatos WHERE ID_Zapato LIKE @ID_Zapato OR Categoria LIKE @Categoria OR Medida LIKE @Medida OR Color LIKE @Color OR Marca LIKE @Marca OR Material LIKE @Material OR ID_Proveedor LIKE @ID_Proveedor OR TipoMedida LIKE @TipoMedida";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
             // Usar el campo de búsqueda
@@ -67,6 +68,7 @@ namespace ConexionSQL
             cmd.Parameters.AddWithValue("@Marca", "%" + searchTerm + "%");
             cmd.Parameters.AddWithValue("@Material", "%" + searchTerm + "%");
             cmd.Parameters.AddWithValue("@ID_Proveedor", "%" + searchTerm + "%");
+            cmd.Parameters.AddWithValue("@TipoMedida", "%" + searchTerm + "%");
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -91,6 +93,7 @@ namespace ConexionSQL
         }
         private void MostrarRegistro(int index)
         {
+            string medida = cmbMedidas.Text;
             if (dtw_Zapatos.Rows.Count > 0)
             {
               
@@ -100,13 +103,14 @@ namespace ConexionSQL
                 DataGridViewRow row = dtw_Zapatos.Rows[index];
 
                 lbl_ID.Text = row.Cells["ID_Zapato"].Value.ToString();
-                txtCategoria.Text = row.Cells["Categoria"].Value.ToString();
-                txtMedida.Text = row.Cells["Medida"].Value.ToString();
-                txtColor.Text = row.Cells["Color"].Value.ToString();
+                cmbCategoria.Text = row.Cells["Categoria"].Value.ToString();
+                cmbMedidas.Text = row.Cells["Medida"].Value.ToString();
+                cmbColor.Text = row.Cells["Color"].Value.ToString();
                 txtMarca.Text = row.Cells["Marca"].Value.ToString();
-                txtMaterial.Text = row.Cells["Material"].Value.ToString();
+                cmbMaterial.Text = row.Cells["Material"].Value.ToString();
                 txtProveedor.Text = row.Cells["ID_Proveedor"].Value.ToString();
-            }
+                cmbTipoM.Text = row.Cells["TipoMedida"].Value.ToString();
+                }
                 else
                 {
                     MessageBox.Show("Índice inválido.");
@@ -120,14 +124,15 @@ namespace ConexionSQL
 
         private void btnAgregarZ_Click(object sender, EventArgs e)
         {
-            string Categoria = txtCategoria.Text.ToUpper();
-            string Medida = txtMedida.Text;
-            string Color = txtColor.Text.ToUpper();
+            string Categoria = cmbCategoria.Text.ToUpper();
+            string Medida = cmbMedidas.Text;
+            string Color = cmbColor.Text.ToUpper();
             string Marca = txtMarca.Text.ToUpper();
-            string Material = txtMaterial.Text.ToUpper();
-            string Proveedor = txtProveedor.Text;
+            string Material = cmbMaterial.Text.ToUpper();
+            string Proveedor = txtProveedor.Text.ToUpper();
+            string TipoMedida = cmbTipoM.Text;
 
-            if (string.IsNullOrEmpty(Categoria) || string.IsNullOrEmpty(Medida) || string.IsNullOrEmpty(Color) || string.IsNullOrEmpty(Marca) || string.IsNullOrEmpty(Material) || string.IsNullOrEmpty(Proveedor))
+            if (string.IsNullOrEmpty(Categoria) ||  string.IsNullOrEmpty(Medida) || string.IsNullOrEmpty(Color) || string.IsNullOrEmpty(Marca) || string.IsNullOrEmpty(Material) || string.IsNullOrEmpty(Proveedor) || string.IsNullOrEmpty(TipoMedida))
             {
                 MessageBox.Show(this, "Campos incompletos", "\u26A0Error de validación-Zapatos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -139,7 +144,7 @@ namespace ConexionSQL
 
             // Preparar la consulta para insertar el nuevo zapato en la base de datos
             SqlCommand cmd = new SqlCommand(
-                "INSERT INTO Zapatos (ID_Zapato, Categoria, Medida, Color, Marca, Material, ID_Proveedor) VALUES (@ID_Zapato, @Categoria, @Medida, @Color, @Marca, @Material, @ID_Proveedor)",
+                "INSERT INTO Zapatos (ID_Zapato, Categoria, Medida, Color, Marca, Material, ID_Proveedor, TipoMedida) VALUES (@ID_Zapato, @Categoria, @Medida, @Color, @Marca, @Material, @ID_Proveedor, @TipoMedida)",
                 Conexion);
 
             // Asignar parámetros a la consulta
@@ -150,6 +155,7 @@ namespace ConexionSQL
             cmd.Parameters.AddWithValue("@Marca", Marca);
             cmd.Parameters.AddWithValue("@Material", Material);
             cmd.Parameters.AddWithValue("@ID_Proveedor", Proveedor);
+            cmd.Parameters.AddWithValue("@TipoMedida", TipoMedida);
 
             // Ejecutar la consulta para insertar los datos
             Conexion.Open();
@@ -174,16 +180,17 @@ namespace ConexionSQL
 
         private void btnModificarZ_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE Zapatos SET Categoria = @Categoria, Medida = @Medida, Color = @Color, Marca = @Marca, Material = @Material, ID_Proveedor = @ID_Proveedor WHERE ID_Zapato = @ID_Zapato";
+            string query = "UPDATE Zapatos SET Categoria = @Categoria, Medida = @Medida, Color = @Color, Marca = @Marca, Material = @Material, ID_Proveedor = @ID_Proveedor, TipoMedida = @TipoMedida WHERE ID_Zapato = @ID_Zapato";
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
             cmd.Parameters.AddWithValue("@ID_Zapato", lbl_ID.Text);
-            cmd.Parameters.AddWithValue("@Categoria", txtCategoria.Text.ToUpper());
-            cmd.Parameters.AddWithValue("@Medida", txtMedida.Text);
-            cmd.Parameters.AddWithValue("@Color", txtColor.Text.ToUpper());
+            cmd.Parameters.AddWithValue("@Categoria", cmbCategoria.Text.ToUpper());
+            cmd.Parameters.AddWithValue("@Medida", cmbMedidas.Text);
+            cmd.Parameters.AddWithValue("@Color", cmbColor.Text.ToUpper());
             cmd.Parameters.AddWithValue("@Marca", txtMarca.Text.ToUpper());
-            cmd.Parameters.AddWithValue("@Material", txtMaterial.Text.ToUpper());
+            cmd.Parameters.AddWithValue("@Material", cmbMaterial.Text.ToUpper());
             cmd.Parameters.AddWithValue("@ID_Proveedor", txtProveedor.Text);
+            cmd.Parameters.AddWithValue("@TipoMedida", cmbTipoM.Text.ToUpper());
             Conexion.Open();
             try
             {
@@ -257,15 +264,20 @@ namespace ConexionSQL
 
                 // Asegura que el primer registro se cargue en los TextBox
                 MostrarRegistro(currentIndex);
+
+                // Limpiar el campo de búsqueda
+                txtBuscarZ.Clear();
+                btnLimpiarZ.Visible = true;
+                btnAtrasZ.Enabled = true;
+                btnSiguienteZ.Enabled = true;
+                btnPrimerZ.Enabled = true;
+                btnUltimoZ.Enabled = true;
+
             }
             else
             {
                 MessageBox.Show("Error. Intentelo de nuevo :)", "\u26A0 Error de busqueda/Zapatos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            // Limpiar el campo de búsqueda
-            txtBuscarZ.Clear();
-            btnLimpiarZ.Visible = true;
         }
 
         private void CargarPrimerRegistro(int index)
@@ -280,11 +292,11 @@ namespace ConexionSQL
                     DataGridViewRow row = dtw_Zapatos.Rows[index];
 
                     // Carga los datos de la fila en los TextBox
-                    txtCategoria.Text = row.Cells["Categoria"].Value.ToString();
-                    txtMedida.Text = row.Cells["Medida"].Value.ToString();
-                    txtColor.Text = row.Cells["Color"].Value.ToString();
+                    cmbCategoria.Text = row.Cells["Categoria"].Value.ToString();
+                    cmbMedidas.Text = row.Cells["Medida"].Value.ToString();
+                    cmbColor.Text = row.Cells["Color"].Value.ToString();
                     txtMarca.Text = row.Cells["Marca"].Value.ToString();
-                    txtMaterial.Text = row.Cells["Material"].Value.ToString();
+                    cmbMaterial.Text = row.Cells["Material"].Value.ToString();
                     txtProveedor.Text = row.Cells["ID_Proveedor"].Value.ToString();
                 }
                 else
@@ -300,13 +312,21 @@ namespace ConexionSQL
 
         private void Limpiar()
         {
-            txtCategoria.Clear();
-            txtMedida.Clear();
-            txtColor.Clear();
+            cmbCategoria.SelectedIndex = -1;
+            cmbTipoM.SelectedIndex = 0;
+            cmbMedidas.Enabled = false;
+            cmbMedidas.SelectedIndex = -1;
+            cmbColor.SelectedIndex = -1;
             txtMarca.Clear();
-            txtMaterial.Clear();
+            cmbMaterial.SelectedIndex = -1;
             txtProveedor.Clear();
             lbl_ID.Text = "";
+            btnLimpiarZ.Visible = false;
+            btnAtrasZ.Enabled = false;
+            btnSiguienteZ.Enabled = false;
+            btnPrimerZ.Enabled = false;
+            btnUltimoZ.Enabled = false;
+            cmbTipoM.SelectedIndex = 0;
         }
 
         private void btnLimpiarZ_Click(object sender, EventArgs e)
@@ -358,6 +378,47 @@ namespace ConexionSQL
             // Habilitar/deshabilitar botones de navegación
             btnAtrasZ.Enabled = false; // Deshabilitar "Atras" en el primer registro
             btnSiguienteZ.Enabled = dtw_Zapatos.Rows.Count > 1; // Habilitar "Siguiente" si hay más de un registro
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbMedidas.SelectedIndex = 0;
+
+            DataTable ninos = new DataTable();
+            ninos.Columns.Add("Medida");
+            // Populate children sizes
+            ninos.Rows.Add("12");
+            ninos.Rows.Add("13");
+            ninos.Rows.Add("14");
+            ninos.Rows.Add("15");
+            ninos.Rows.Add("16");
+
+            DataTable adultos = new DataTable();
+            adultos.Columns.Add("Medida");
+            // Populate adult sizes
+            adultos.Rows.Add("22");
+            adultos.Rows.Add("23");
+            adultos.Rows.Add("24");
+            adultos.Rows.Add("25");
+            adultos.Rows.Add("26");
+            adultos.Rows.Add("27");
+
+            if (cmbTipoM.SelectedIndex == 1)
+            {
+                cmbMedidas.Enabled = true;
+                cmbMedidas.DataSource = ninos;
+                cmbMedidas.DisplayMember = "Medida";
+            }
+            else if (cmbTipoM.SelectedIndex == 2)
+            {
+                cmbMedidas.Enabled = true;
+                cmbMedidas.DataSource = adultos;
+                cmbMedidas.DisplayMember = "Medida";
+            }
+            else
+            {
+                cmbMedidas.Enabled = false;
+                cmbMedidas.SelectedIndex = -1;
+            }
         }
     }
 }

@@ -13,8 +13,8 @@ namespace ConexionSQL
         private Form FormularioVentasActual;
         private Panel leftBorderBtn;
         private IconButton currentBtn;
-        //private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True"); //Salma
-        private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True"); //Vanessita
+        private SqlConnection Conexion = new SqlConnection("Data Source=LATPTOP\\SQLSERVEREXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True"); //Salma
+        //private SqlConnection Conexion = new SqlConnection("Data Source=DESKTOP-L2KNQNU\\SQLEXPRESS; Initial Catalog=Inventario_Zapateria; Integrated Security=True"); //Vanessita
         private Random id = new Random();
         private int currentIndex = 0;
 
@@ -92,6 +92,12 @@ namespace ConexionSQL
 
             btnModificarV.Enabled = false;
             btnEliminarV.Enabled = false;
+
+            btnLimpiarV.Visible = false;
+            btnAtrasV.Enabled = false;
+            btnSiguienteV.Enabled = false;
+            btnPrimerV.Enabled = false;
+            btnUltimoV.Enabled = false;
         }
 
         private void Busqueda(DataGridView d, int col)
@@ -293,8 +299,13 @@ namespace ConexionSQL
             {
                 Busqueda(dtw_Ventas, 0);
                 btnAgregarV.Enabled = false;
-                btnLimpiarV.Enabled = true;  // Activar el botón de limpiar
+
+                // Activar el botón de limpiar
                 btnLimpiarV.Visible = true;
+                btnAtrasV.Enabled = true;
+                btnSiguienteV.Enabled = true;
+                btnPrimerV.Enabled = true;
+                btnUltimoV.Enabled = true;
             }
             else
             {
@@ -305,8 +316,7 @@ namespace ConexionSQL
         private void btnLimpiarV_Click(object sender, EventArgs e)
         {
             Limpiar();
-            btnAgregarV.Enabled = true;
-            btnLimpiarV.Enabled = false;  // Desactivar el botón de limpiar
+            btnAgregarV.Enabled = true;  // Desactivar el botón de limpiar
         }
 
         private void btnAtrasP_Click(object sender, EventArgs e)
@@ -331,8 +341,8 @@ namespace ConexionSQL
             currentIndex = dtw_Ventas.Rows.Count - 1;
             CargarPrimerRegistro(currentIndex);
 
-            btnSiguienteP.Enabled = false;
-            btnAtrasP.Enabled = true;
+            btnSiguienteV.Enabled = false;
+            btnAtrasV.Enabled = true;
         }
 
         private void btnPrimerV_Click(object sender, EventArgs e)
@@ -340,8 +350,8 @@ namespace ConexionSQL
             currentIndex = 0;
             CargarPrimerRegistro(currentIndex);
 
-            btnAtrasP.Enabled = false;
-            btnSiguienteP.Enabled = true;
+            btnAtrasV.Enabled = false;
+            btnSiguienteV.Enabled = true;
         }
 
 
