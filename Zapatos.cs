@@ -85,7 +85,7 @@ namespace ConexionSQL
             }
             else
             {
-                MessageBox.Show("No se encontraron registros.");
+                MessageBox.Show("No se encontraron registros.", "\u26AE Error de busqueda/Zapatos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Limpiar(); // Limpia los campos si no hay registros
             }
         }
@@ -129,7 +129,7 @@ namespace ConexionSQL
 
             if (string.IsNullOrEmpty(Categoria) || string.IsNullOrEmpty(Medida) || string.IsNullOrEmpty(Color) || string.IsNullOrEmpty(Marca) || string.IsNullOrEmpty(Material) || string.IsNullOrEmpty(Proveedor))
             {
-                MessageBox.Show("Campos incompletos");
+                MessageBox.Show(this, "Campos incompletos", "\u26A0Error de validación-Zapatos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -156,11 +156,11 @@ namespace ConexionSQL
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Zapato agregado correctamente.");
+                MessageBox.Show("Zapato agregado correctamente.", "\u2705Zapato Añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al agregar el zapato: {ex.Message}");
+                MessageBox.Show(this, "Error: No se puede agregar el zapato", "\u26AEError-Añadir Zapatos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -190,11 +190,11 @@ namespace ConexionSQL
                 int rowsAffected = cmd.ExecuteNonQuery();
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show("Registro modificado en la base de datos");
+                    MessageBox.Show("Registro modificado en la base de datos", "\u2705Zapato Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró el registro para modificar.");
+                    MessageBox.Show("No se encontró el registro para modificar.", "\u26AEError-Modificar Zapato", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -222,13 +222,13 @@ namespace ConexionSQL
                 int rowsAffected = cmd.ExecuteNonQuery();
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show("Registro eliminado de la base de datos");
+                    MessageBox.Show("Registro eliminado de la base de datos", "\u2705Zapato Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CargarDatos(); // Recargar datos después de eliminar
                     Limpiar(); // Limpiar campos
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró el registro para eliminar.");
+                    MessageBox.Show("No se encontró el registro para eliminar.", "\u26AEError-Eliminar Zapato", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -260,7 +260,7 @@ namespace ConexionSQL
             }
             else
             {
-                MessageBox.Show("Error. Intentelo de nuevo :)");
+                MessageBox.Show("Error. Intentelo de nuevo :)", "\u26A0 Error de busqueda/Zapatos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             // Limpiar el campo de búsqueda

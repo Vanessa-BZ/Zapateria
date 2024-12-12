@@ -121,7 +121,7 @@ namespace ConexionSQL
             }
             else
             {
-                MessageBox.Show("Por favor ingrese una fecha válida.");
+                MessageBox.Show("Por favor ingrese una fecha válida.", "\u26A0 Error de busqueda/Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -152,7 +152,7 @@ namespace ConexionSQL
             }
             else
             {
-                MessageBox.Show("No se encontraron registros.");
+                MessageBox.Show("No se encontraron registros.", "\u26A0 Error de busqueda/Ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Limpiar();
             }
         }
@@ -181,14 +181,14 @@ namespace ConexionSQL
 
             if (string.IsNullOrEmpty(Zapatos) || string.IsNullOrEmpty(Fecha) || string.IsNullOrEmpty(Total))
             {
-                MessageBox.Show("Campos incompletos");
+                MessageBox.Show(this, "Campos incompletos", "\u26A0Error de validación-Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             DateTime fechaVenta;
             if (!DateTime.TryParse(Fecha, out fechaVenta))
             {
-                MessageBox.Show("Fecha no válida. Por favor ingrese una fecha válida.");
+                MessageBox.Show("Fecha no válida. Por favor ingrese una fecha válida.", "\u26A0 Error Agregar/Venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -209,11 +209,12 @@ namespace ConexionSQL
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Venta guardada correctamente.");
+                MessageBox.Show("Venta guardada correctamente.", "\u2705Venta Añadida", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al registrar la venta: {ex.Message}");
+
+                MessageBox.Show(this, "Error al registrar venta", "\u26AEError-Añadir venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -232,7 +233,7 @@ namespace ConexionSQL
             DateTime fechaVenta;
             if (!DateTime.TryParse(txtFecha.Text, out fechaVenta))
             {
-                MessageBox.Show("Fecha no válida. Por favor ingrese una fecha válida.");
+                MessageBox.Show("Fecha no válida. Por favor ingrese una fecha válida.", "\u26A0 Error Modificar/Venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -245,11 +246,11 @@ namespace ConexionSQL
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Cambio realizado en la base de datos");
+                MessageBox.Show("Cambio realizado en la base de datos", "\u2705Venta Modificada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al modificar: {ex.Message}");
+                MessageBox.Show("Error al modificar", "\u26A0 Error Modificar/Venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -271,11 +272,11 @@ namespace ConexionSQL
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Registro eliminado de la base de datos");
+                MessageBox.Show("Registro eliminado de la base de datos", "\u2705Venta Eliminada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al eliminar: {ex.Message}");
+                MessageBox.Show("Error al eliminar", "\u26A0 Error Eliminar/Venta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -297,7 +298,7 @@ namespace ConexionSQL
             }
             else
             {
-                MessageBox.Show("Ingrese un término de búsqueda");
+                MessageBox.Show("Error. Intentelo de nuevo :)", "\u26A0 Error de busqueda/Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

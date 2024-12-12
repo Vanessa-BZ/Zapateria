@@ -123,7 +123,7 @@ namespace ConexionSQL
             }
             else
             {
-                MessageBox.Show("No se encontraron registros.");
+                MessageBox.Show("No se encontraron registros.", "\u26A0 Error de busqueda/Proveedores", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Limpiar(); // Limpia los campos si no hay registros
             }
         }
@@ -137,8 +137,10 @@ namespace ConexionSQL
 
             if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(Precio) || string.IsNullOrEmpty(Unidades) || string.IsNullOrEmpty(Comercio))
             {
-                //MessageBox.Show("Campos incompletos");
+               MessageBox.Show(this, "Campos incompletos", "\u26A0 Error de validación/Proveedores", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
                 return;
+               
             }
 
             // Generar un ID único para el nuevo proveedor
@@ -162,11 +164,11 @@ namespace ConexionSQL
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Proveedor agregado correctamente.");
+                MessageBox.Show(this, "Proveedor agregado correctamente", "\u2705Proveedor Añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al agregar el proveedor: {ex.Message}");
+                MessageBox.Show(this, "Error: No se puede agregar el proveedor", "\u26AEError-Añadir Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -182,7 +184,7 @@ namespace ConexionSQL
         {
             if (string.IsNullOrEmpty(lbl_id.Text))
             {
-                MessageBox.Show("Por favor seleccione un proveedor para modificar.");
+                MessageBox.Show(this,"Por favor seleccione un proveedor para modificar.", "\u26AEError- Modificar Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -201,11 +203,11 @@ namespace ConexionSQL
                 int rowsAffected = cmd.ExecuteNonQuery();
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show("Registro modificado en la base de datos");
+                    MessageBox.Show("Registro modificado en la base de datos","\u2705Proveedor Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró el registro para modificar.");
+                    MessageBox.Show("No se encontró el registro para modificar.", "\u26AEError-Modificar Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -225,7 +227,7 @@ namespace ConexionSQL
         {
             if (string.IsNullOrEmpty(lbl_id.Text))
             {
-                MessageBox.Show("Por favor seleccione un proveedor para eliminar.");
+                MessageBox.Show("Por favor seleccione un proveedor para eliminar.", "\u26AEError- Eliminar Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -240,13 +242,13 @@ namespace ConexionSQL
                 int rowsAffected = cmd.ExecuteNonQuery();
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show("Registro eliminado de la base de datos");
+                    MessageBox.Show("Registro eliminado de la base de datos", "\u2705Proveedor Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CargarDatos(); // Recargar datos después de eliminar
                     Limpiar(); // Limpiar campos
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró el registro para eliminar.");
+                    MessageBox.Show("No se encontró el registro para eliminar.", "\u26AEError-Eliminar Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -278,7 +280,7 @@ namespace ConexionSQL
             }
             else
             {
-                MessageBox.Show("Error. Intentelo de nuevo :)");
+                MessageBox.Show("Error. Intentelo de nuevo :)", "\u26A0 Error de busqueda/Proveedores", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             // Limpiar el campo de búsqueda
