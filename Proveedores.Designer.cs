@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelProveedores = new System.Windows.Forms.Panel();
             this.pContainerP = new System.Windows.Forms.Panel();
             this.btnPrimerP = new FontAwesome.Sharp.IconButton();
@@ -169,7 +169,7 @@
             // 
             this.btnLimpiarP.ColorBorde = System.Drawing.Color.Black;
             this.btnLimpiarP.ColorDeFondo = System.Drawing.Color.LightPink;
-            this.btnLimpiarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarP.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarP.GrosorBorde = 2;
             this.btnLimpiarP.Location = new System.Drawing.Point(753, 393);
             this.btnLimpiarP.Margin = new System.Windows.Forms.Padding(4);
@@ -190,35 +190,35 @@
             this.dtw_Proveedores.AllowUserToResizeRows = false;
             this.dtw_Proveedores.BackgroundColor = System.Drawing.Color.Thistle;
             this.dtw_Proveedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Plum;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtw_Proveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Plum;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtw_Proveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtw_Proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Plum;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtw_Proveedores.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Plum;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtw_Proveedores.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtw_Proveedores.Location = new System.Drawing.Point(151, 514);
             this.dtw_Proveedores.Margin = new System.Windows.Forms.Padding(4);
             this.dtw_Proveedores.Name = "dtw_Proveedores";
             this.dtw_Proveedores.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Plum;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.LavenderBlush;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtw_Proveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Plum;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.LavenderBlush;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtw_Proveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dtw_Proveedores.RowHeadersWidth = 51;
             this.dtw_Proveedores.Size = new System.Drawing.Size(537, 183);
             this.dtw_Proveedores.TabIndex = 0;
@@ -280,6 +280,7 @@
             this.lbl_id.Size = new System.Drawing.Size(79, 16);
             this.lbl_id.TabIndex = 47;
             this.lbl_id.Text = "Label del ID";
+            this.lbl_id.Visible = false;
             // 
             // CBXcomercio
             // 
@@ -313,7 +314,7 @@
             // 
             this.btnBuscarP.ColorBorde = System.Drawing.Color.Black;
             this.btnBuscarP.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnBuscarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarP.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarP.GrosorBorde = 2;
             this.btnBuscarP.Location = new System.Drawing.Point(621, 90);
             this.btnBuscarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -329,7 +330,7 @@
             // 
             this.btnAgregarP.ColorBorde = System.Drawing.Color.Black;
             this.btnAgregarP.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnAgregarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarP.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarP.GrosorBorde = 2;
             this.btnAgregarP.Location = new System.Drawing.Point(753, 188);
             this.btnAgregarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -346,7 +347,7 @@
             this.btnEliminarP.ColorBorde = System.Drawing.Color.Black;
             this.btnEliminarP.ColorDeFondo = System.Drawing.Color.Violet;
             this.btnEliminarP.Enabled = false;
-            this.btnEliminarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarP.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarP.GrosorBorde = 2;
             this.btnEliminarP.Location = new System.Drawing.Point(753, 322);
             this.btnEliminarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -364,7 +365,7 @@
             this.btnModificarP.ColorBorde = System.Drawing.Color.Black;
             this.btnModificarP.ColorDeFondo = System.Drawing.Color.Violet;
             this.btnModificarP.Enabled = false;
-            this.btnModificarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarP.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarP.GrosorBorde = 2;
             this.btnModificarP.Location = new System.Drawing.Point(753, 250);
             this.btnModificarP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

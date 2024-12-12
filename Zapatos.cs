@@ -120,11 +120,11 @@ namespace ConexionSQL
 
         private void btnAgregarZ_Click(object sender, EventArgs e)
         {
-            string Categoria = txtCategoria.Text;
+            string Categoria = txtCategoria.Text.ToUpper();
             string Medida = txtMedida.Text;
-            string Color = txtColor.Text;
-            string Marca = txtMarca.Text;
-            string Material = txtMaterial.Text;
+            string Color = txtColor.Text.ToUpper();
+            string Marca = txtMarca.Text.ToUpper();
+            string Material = txtMaterial.Text.ToUpper();
             string Proveedor = txtProveedor.Text;
 
             if (string.IsNullOrEmpty(Categoria) || string.IsNullOrEmpty(Medida) || string.IsNullOrEmpty(Color) || string.IsNullOrEmpty(Marca) || string.IsNullOrEmpty(Material) || string.IsNullOrEmpty(Proveedor))
@@ -178,11 +178,11 @@ namespace ConexionSQL
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
             cmd.Parameters.AddWithValue("@ID_Zapato", lbl_ID.Text);
-            cmd.Parameters.AddWithValue("@Categoria", txtCategoria.Text);
+            cmd.Parameters.AddWithValue("@Categoria", txtCategoria.Text.ToUpper());
             cmd.Parameters.AddWithValue("@Medida", txtMedida.Text);
-            cmd.Parameters.AddWithValue("@Color", txtColor.Text);
-            cmd.Parameters.AddWithValue("@Marca", txtMarca.Text);
-            cmd.Parameters.AddWithValue("@Material", txtMaterial.Text);
+            cmd.Parameters.AddWithValue("@Color", txtColor.Text.ToUpper());
+            cmd.Parameters.AddWithValue("@Marca", txtMarca.Text.ToUpper());
+            cmd.Parameters.AddWithValue("@Material", txtMaterial.Text.ToUpper());
             cmd.Parameters.AddWithValue("@ID_Proveedor", txtProveedor.Text);
             Conexion.Open();
             try

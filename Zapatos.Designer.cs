@@ -209,7 +209,7 @@
             // 
             this.btnLimpiarZ.ColorBorde = System.Drawing.Color.Black;
             this.btnLimpiarZ.ColorDeFondo = System.Drawing.Color.LightPink;
-            this.btnLimpiarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarZ.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarZ.GrosorBorde = 2;
             this.btnLimpiarZ.Location = new System.Drawing.Point(824, 388);
             this.btnLimpiarZ.Margin = new System.Windows.Forms.Padding(4);
@@ -292,6 +292,7 @@
             this.lbl_ID.Size = new System.Drawing.Size(147, 16);
             this.lbl_ID.TabIndex = 83;
             this.lbl_ID.Text = "Label del ID del Zapato";
+            this.lbl_ID.Visible = false;
             // 
             // label3
             // 
@@ -385,7 +386,7 @@
             // 
             this.btnBuscarZ.ColorBorde = System.Drawing.Color.Black;
             this.btnBuscarZ.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnBuscarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarZ.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarZ.GrosorBorde = 2;
             this.btnBuscarZ.Location = new System.Drawing.Point(599, 86);
             this.btnBuscarZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -401,7 +402,7 @@
             // 
             this.btnAgregarZ.ColorBorde = System.Drawing.Color.Black;
             this.btnAgregarZ.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnAgregarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarZ.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarZ.GrosorBorde = 2;
             this.btnAgregarZ.Location = new System.Drawing.Point(824, 222);
             this.btnAgregarZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -417,7 +418,7 @@
             // 
             this.btnEliminarZ.ColorBorde = System.Drawing.Color.Black;
             this.btnEliminarZ.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnEliminarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarZ.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarZ.GrosorBorde = 2;
             this.btnEliminarZ.Location = new System.Drawing.Point(824, 276);
             this.btnEliminarZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -434,7 +435,7 @@
             this.btnModificarZ.BackColor = System.Drawing.Color.MediumPurple;
             this.btnModificarZ.ColorBorde = System.Drawing.Color.Black;
             this.btnModificarZ.ColorDeFondo = System.Drawing.Color.Violet;
-            this.btnModificarZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarZ.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarZ.GrosorBorde = 2;
             this.btnModificarZ.Location = new System.Drawing.Point(824, 338);
             this.btnModificarZ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

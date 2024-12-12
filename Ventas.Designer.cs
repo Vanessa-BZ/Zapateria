@@ -82,7 +82,7 @@
             // 
             // txtBuscarV
             // 
-            this.txtBuscarV.BackColor = System.Drawing.Color.MediumOrchid;
+            this.txtBuscarV.BackColor = System.Drawing.Color.Thistle;
             this.txtBuscarV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarV.Location = new System.Drawing.Point(279, 121);
@@ -94,7 +94,7 @@
             // 
             // pictureBox10
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.MediumOrchid;
+            this.pictureBox10.BackColor = System.Drawing.Color.Thistle;
             this.pictureBox10.Location = new System.Drawing.Point(277, 108);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox10.Name = "pictureBox10";
@@ -126,7 +126,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.BackColor = System.Drawing.Color.MediumOrchid;
+            this.txtTotal.BackColor = System.Drawing.Color.Thistle;
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(452, 272);
@@ -139,7 +139,7 @@
             // 
             // pbNombre5
             // 
-            this.pbNombre5.BackColor = System.Drawing.Color.MediumOrchid;
+            this.pbNombre5.BackColor = System.Drawing.Color.Thistle;
             this.pbNombre5.Location = new System.Drawing.Point(451, 260);
             this.pbNombre5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbNombre5.Name = "pbNombre5";
@@ -171,7 +171,7 @@
             // 
             // txtFecha
             // 
-            this.txtFecha.BackColor = System.Drawing.Color.MediumOrchid;
+            this.txtFecha.BackColor = System.Drawing.Color.Thistle;
             this.txtFecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFecha.Location = new System.Drawing.Point(121, 320);
@@ -184,7 +184,7 @@
             // 
             // pbNombre3
             // 
-            this.pbNombre3.BackColor = System.Drawing.Color.MediumOrchid;
+            this.pbNombre3.BackColor = System.Drawing.Color.Thistle;
             this.pbNombre3.Location = new System.Drawing.Point(120, 306);
             this.pbNombre3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbNombre3.Name = "pbNombre3";
@@ -216,7 +216,7 @@
             // 
             // txtZapatos
             // 
-            this.txtZapatos.BackColor = System.Drawing.Color.MediumOrchid;
+            this.txtZapatos.BackColor = System.Drawing.Color.Thistle;
             this.txtZapatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtZapatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtZapatos.Location = new System.Drawing.Point(124, 223);
@@ -229,7 +229,7 @@
             // 
             // pbNombre1
             // 
-            this.pbNombre1.BackColor = System.Drawing.Color.MediumOrchid;
+            this.pbNombre1.BackColor = System.Drawing.Color.Thistle;
             this.pbNombre1.Location = new System.Drawing.Point(123, 210);
             this.pbNombre1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbNombre1.Name = "pbNombre1";
@@ -272,6 +272,7 @@
             this.lbl_ID.Size = new System.Drawing.Size(79, 16);
             this.lbl_ID.TabIndex = 104;
             this.lbl_ID.Text = "Label del ID";
+            this.lbl_ID.Visible = false;
             // 
             // label1
             // 
@@ -298,8 +299,8 @@
             // btnBuscarV
             // 
             this.btnBuscarV.ColorBorde = System.Drawing.Color.Black;
-            this.btnBuscarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
-            this.btnBuscarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarV.ColorDeFondo = System.Drawing.Color.Orchid;
+            this.btnBuscarV.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarV.GrosorBorde = 2;
             this.btnBuscarV.Location = new System.Drawing.Point(567, 107);
             this.btnBuscarV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -314,8 +315,8 @@
             // btnAgregarV
             // 
             this.btnAgregarV.ColorBorde = System.Drawing.Color.Black;
-            this.btnAgregarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
-            this.btnAgregarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarV.ColorDeFondo = System.Drawing.Color.Orchid;
+            this.btnAgregarV.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarV.GrosorBorde = 2;
             this.btnAgregarV.Location = new System.Drawing.Point(787, 185);
             this.btnAgregarV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -330,8 +331,8 @@
             // btnEliminarV
             // 
             this.btnEliminarV.ColorBorde = System.Drawing.Color.Black;
-            this.btnEliminarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
-            this.btnEliminarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarV.ColorDeFondo = System.Drawing.Color.Orchid;
+            this.btnEliminarV.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarV.GrosorBorde = 2;
             this.btnEliminarV.Location = new System.Drawing.Point(787, 343);
             this.btnEliminarV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -347,8 +348,8 @@
             // 
             this.btnModificarV.BackColor = System.Drawing.Color.MediumPurple;
             this.btnModificarV.ColorBorde = System.Drawing.Color.Black;
-            this.btnModificarV.ColorDeFondo = System.Drawing.Color.SlateBlue;
-            this.btnModificarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarV.ColorDeFondo = System.Drawing.Color.Orchid;
+            this.btnModificarV.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarV.GrosorBorde = 2;
             this.btnModificarV.Location = new System.Drawing.Point(787, 261);
             this.btnModificarV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -402,7 +403,7 @@
             // 
             this.btnLimpiarV.ColorBorde = System.Drawing.Color.Black;
             this.btnLimpiarV.ColorDeFondo = System.Drawing.Color.LightPink;
-            this.btnLimpiarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarV.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarV.GrosorBorde = 2;
             this.btnLimpiarV.Location = new System.Drawing.Point(787, 405);
             this.btnLimpiarV.Margin = new System.Windows.Forms.Padding(4);
@@ -452,7 +453,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MediumOrchid;
+            this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(944, 750);
             this.Controls.Add(this.btnUltimoV);
             this.Controls.Add(this.btnPrimerV);

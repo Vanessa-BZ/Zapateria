@@ -130,14 +130,14 @@ namespace ConexionSQL
 
         private void btnAgregarP_Click(object sender, EventArgs e)
         {
-            string Nombre = txtNombreProv.Text;
+            string Nombre = txtNombreProv.Text.ToUpper();
             string Precio = txtPrecio.Text;
             string Unidades = txtUnidades.Text;
             string Comercio = CBXcomercio.Text;
 
             if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(Precio) || string.IsNullOrEmpty(Unidades) || string.IsNullOrEmpty(Comercio))
             {
-                MessageBox.Show("Campos incompletos");
+                //MessageBox.Show("Campos incompletos");
                 return;
             }
 
@@ -190,7 +190,7 @@ namespace ConexionSQL
             SqlCommand cmd = new SqlCommand(query, Conexion);
 
             cmd.Parameters.AddWithValue("@ID_Proveedor", lbl_id.Text);
-            cmd.Parameters.AddWithValue("@Nombre_P", txtNombreProv.Text);
+            cmd.Parameters.AddWithValue("@Nombre_P", txtNombreProv.Text.ToUpper());
             cmd.Parameters.AddWithValue("@Precio", txtPrecio.Text);
             cmd.Parameters.AddWithValue("@Unidades", txtUnidades.Text);
             cmd.Parameters.AddWithValue("@Comercializacion", CBXcomercio.Text);
